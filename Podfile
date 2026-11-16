@@ -1,0 +1,19 @@
+require_relative 'node_modules/react-native/scripts/react_native_pods'
+
+platform :ios, min_ios_version_supported
+prepare_react_native_project!
+project 'Nina.xcodeproj'
+workspace 'Nina.xcworkspace'
+
+target 'Nina' do
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :app_path => Pod::Config.instance.installation_root.to_s
+  )
+
+  post_install do |installer|
+    react_native_post_install(installer, config[:reactNativePath], :mac_catalyst_enabled => false)
+  end
+end

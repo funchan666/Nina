@@ -7,129 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040B51C9110618E25E06887F /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11240E297137201FBE9A81D /* ProfileEditor.swift */; };
-		0BB32F162980B74072CD79D2 /* SkateMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6295E7CFAECF59E844A1E14 /* SkateMedia.swift */; };
-		138344BC9578B448BC8AA8C8 /* NinaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B7A94E039225342AAC7E70 /* NinaTheme.swift */; };
 		15FD0C59AE029F3A6C3721D9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5CA3B538D4A2B2BF531A4754 /* PrivacyInfo.xcprivacy */; };
+		1A778877B99977D27D0BD9C7 /* NinaPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF8636D7CD7425EBC869FFD /* NinaPlatform.swift */; };
+		1C2C32B4067D8CE13EEAF31A /* PlatformPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD527D1525D2FFF842EE16C6 /* PlatformPurchases.swift */; };
+		244E840511FEF80D22760208 /* PlatformPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7462B7C613810B3DACA7DB /* PlatformPicker.swift */; };
 		295063CED270EACD7B4A3089 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 723707FFDBFBF18CC196FFB3 /* privacy.html */; };
-		29B7236C39C207AFC57DF08D /* SkateCallPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC73432996E9774FDECFF9 /* SkateCallPage.swift */; };
-		2CC86BD392CDCF50043FADE1 /* NinaWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE635AC51EEF03DB1E8A75 /* NinaWelcome.swift */; };
 		3709D0E545E6DE9AD854C2F0 /* Barlow-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F13F60C7705842C3A41C879 /* Barlow-SemiBold.ttf */; };
-		378B406164D62BCB5C774705 /* NinaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E238C1819B5756A6B861022 /* NinaConfiguration.swift */; };
-		3BCBF59AF7DB9CFC72256502 /* GripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EC97C5F3149064C8AAD98E /* GripStore.swift */; };
-		40E4E90D2FD2F07959C75F9C /* SessionVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B72EC9A4B318280E867EDA /* SessionVault.swift */; };
-		417C8A25338471CFB42F6BE7 /* LineLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C13B28814022FF2601262E5 /* LineLibrary.swift */; };
-		567BC70CE4109D4B3FE551DC /* LineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B75B07E2C5FA4EBAFA25A1 /* LineDetail.swift */; };
-		586337C8497955F79111C5A1 /* GripWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD836089A6DE01CC3439C45C /* GripWallet.swift */; };
+		489B8BF3C64C6340784AF4CD /* NinaSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC51A849E0F7D77219A128A /* NinaSurfaceView.swift */; };
+		4CA7B9F393E463B12B7FDC88 /* libPods-Nina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E74A9A89CE2272D3D59DBC /* libPods-Nina.a */; };
 		5A5276ED492AB1D8E762F87B /* Barlow-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C61BA93E5E414FC9A533A150 /* Barlow-OFL.txt */; };
 		5A7E8193870541D64D59128C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153E18C228AB46644FE526A8 /* Assets.xcassets */; };
-		5B6CE8E4A163E1C87B34A87C /* LineRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3653E4A82AADFD8AE79A6 /* LineRecord.swift */; };
-		5E437E514E41DD83914E0B40 /* MessagesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE1FCF51773D7AB6F8008E /* MessagesPage.swift */; };
 		661680C23F1608820901B74A /* BarlowCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24D1869DBCF6BA3DBA2A8D50 /* BarlowCondensed-Bold.ttf */; };
-		67B536EB9FC043DBDA3CED57 /* LinesCatalog.json in Resources */ = {isa = PBXBuildFile; fileRef = 91DCED9769C63534B6625F7E /* LinesCatalog.json */; };
 		6A08BDA6C6E391DD0BFF0D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB75DBCC096CEFD7C27B5C9 /* LaunchScreen.storyboard */; };
 		7053D6E82BE0EB499B99B4EF /* Barlow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 462C4A7F84AC86E3EE8A7533 /* Barlow-Regular.ttf */; };
-		7661194DFA46BEB0A8B12262 /* GripRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AADD6CE0F84224A6420CF2 /* GripRecord.swift */; };
-		82BF26A4FE3D43E4362ACA37 /* LineArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F5CCE1802C505F45774AA /* LineArtwork.swift */; };
-		8931FC210A335FF141EFDD35 /* CrewRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519794FEB77F5059D60983CD /* CrewRecord.swift */; };
-		9764F2568E5A458A4353FD4F /* CrewLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3320E1FB63BB70FA650C498 /* CrewLibrary.swift */; };
-		9998F8DE9CD59AAE99F3CAB9 /* CrewPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135C768E033C3BFFD6D78ABC /* CrewPages.swift */; };
-		9BC9892B32DDBFE124B61095 /* PracticeEditors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C6F40E8922BDEED05630A /* PracticeEditors.swift */; };
-		9E68FE0010162FFBEF9CA922 /* NinaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129537E1A21B9A8ACD9180DF /* NinaApp.swift */; };
+		AA7F1FE8EA330954EC76A699 /* NinaHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D6ED17E399853A70190CD /* NinaHost.swift */; };
 		ACB60365F94341B885571A49 /* rules.html in Resources */ = {isa = PBXBuildFile; fileRef = DFE38566D7309D7C9E142DEF /* rules.html */; };
-		AFF0A6448EAAF886C3B6FC8D /* NinaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD08B789B34E552D4B034C1 /* NinaPage.swift */; };
-		B18E1A085A8989DFD775BCD2 /* SkatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF43426A98495D7E2AE4E3BF /* SkatePicker.swift */; };
+		BAC3F481EB3DC2D73E90D00C /* PlatformIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF06228D199D052A57F3B8F /* PlatformIdentity.swift */; };
 		BD58DBBEAD14E27AEB9AB7E5 /* BarlowCondensed-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D2347CE31FD1F8610327697 /* BarlowCondensed-OFL.txt */; };
-		CF636D71B30B5F72A7450ABF /* CrewSafety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2EFEC240E8F47470C8FA8 /* CrewSafety.swift */; };
-		D344C9424ADC556610394DDB /* SessionBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C44FF9840A1CDB636E39E5 /* SessionBook.swift */; };
-		D59D7BF56A632294D816ECE1 /* NinaFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBAB3482AFA89519D6502EF /* NinaFlow.swift */; };
+		D2CCA1813470D08C8B1E23FF /* SessionVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51623DDE7AC4DED5473170E8 /* SessionVault.swift */; };
 		D7BAEBBF31408296F0007017 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E7460373376E189C24916 /* terms.html */; };
-		DC1575F3FF2D84E6091DEFC0 /* PracticeRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369306A972F7F27B2336F830 /* PracticeRecord.swift */; };
-		E064AA56B5846E03BD810031 /* DeckPlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B910CDAE26545F8B1EB3721 /* DeckPlayback.swift */; };
-		EDBD3C4F81402C4609DC2212 /* PracticeLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798F71DCE68EB5590D56FFC /* PracticeLibrary.swift */; };
-		EDC20FCFE3F17D4C306B3DFB /* LinesIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7E3D80229761EA7A070C9C /* LinesIndex.swift */; };
-		F756DB91E39FAC8E0B08DEE9 /* NinaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3174C9711C190308B3B755B /* NinaLibrary.swift */; };
-		FE6D1A93EB600C2A9B4EB603 /* NinaPolicyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A50A6C09A988BB55300F16 /* NinaPolicyPage.swift */; };
-		FF1E4090988244BC40ABAF7D /* SubmissionsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CD63814732C165EE8BE630 /* SubmissionsPage.swift */; };
+		F29E2F6628BB3A1B5F3A0530 /* SkateFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0035AEB6EB9BE991C18CD37 /* SkateFiles.swift */; };
+		F2DDA4DCF6EA4B63A0AF6D92 /* DeckPlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221F012D8265763EA3167BE /* DeckPlayback.swift */; };
+		F85FA8484D1A43E36BE94142 /* SkateCallCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440D812CE2F34A84585E1C /* SkateCallCamera.swift */; };
+		F8FF39F6E7D74DCBEE24422F /* NinaBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8179EDDA6C183490BD03BE /* NinaBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07C3653E4A82AADFD8AE79A6 /* LineRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRecord.swift; sourceTree = "<group>"; };
-		0B910CDAE26545F8B1EB3721 /* DeckPlayback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPlayback.swift; sourceTree = "<group>"; };
-		129537E1A21B9A8ACD9180DF /* NinaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaApp.swift; sourceTree = "<group>"; };
-		135C768E033C3BFFD6D78ABC /* CrewPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewPages.swift; sourceTree = "<group>"; };
+		013D6ED17E399853A70190CD /* NinaHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaHost.swift; sourceTree = "<group>"; };
 		153E18C228AB46644FE526A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D2347CE31FD1F8610327697 /* BarlowCondensed-OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BarlowCondensed-OFL.txt"; sourceTree = "<group>"; };
 		24D1869DBCF6BA3DBA2A8D50 /* BarlowCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		2FB75DBCC096CEFD7C27B5C9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2FD08B789B34E552D4B034C1 /* NinaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaPage.swift; sourceTree = "<group>"; };
-		369306A972F7F27B2336F830 /* PracticeRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeRecord.swift; sourceTree = "<group>"; };
+		2FF06228D199D052A57F3B8F /* PlatformIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformIdentity.swift; sourceTree = "<group>"; };
 		3748899FDF6B3EFAB7950CEE /* Products.storekit */ = {isa = PBXFileReference; path = Products.storekit; sourceTree = "<group>"; };
-		39CE1FCF51773D7AB6F8008E /* MessagesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesPage.swift; sourceTree = "<group>"; };
-		3CF2EFEC240E8F47470C8FA8 /* CrewSafety.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewSafety.swift; sourceTree = "<group>"; };
-		3D2F5CCE1802C505F45774AA /* LineArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineArtwork.swift; sourceTree = "<group>"; };
 		40011E0611441F1BE6771CC5 /* Nina.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Nina.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		40A50A6C09A988BB55300F16 /* NinaPolicyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaPolicyPage.swift; sourceTree = "<group>"; };
+		429C73C05909AC69F5BFD029 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		462C4A7F84AC86E3EE8A7533 /* Barlow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Regular.ttf"; sourceTree = "<group>"; };
-		4CBAB3482AFA89519D6502EF /* NinaFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaFlow.swift; sourceTree = "<group>"; };
+		47537F6ECC436577B0B75FF9 /* Pods-Nina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nina.release.xcconfig"; path = "Target Support Files/Pods-Nina/Pods-Nina.release.xcconfig"; sourceTree = "<group>"; };
+		4CF8379BBB1F685DBE8C0D36 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		4DC51A849E0F7D77219A128A /* NinaSurfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaSurfaceView.swift; sourceTree = "<group>"; };
 		4F13F60C7705842C3A41C879 /* Barlow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-SemiBold.ttf"; sourceTree = "<group>"; };
 		4F1E7460373376E189C24916 /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
-		4FCC73432996E9774FDECFF9 /* SkateCallPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateCallPage.swift; sourceTree = "<group>"; };
-		519794FEB77F5059D60983CD /* CrewRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewRecord.swift; sourceTree = "<group>"; };
-		59CD63814732C165EE8BE630 /* SubmissionsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionsPage.swift; sourceTree = "<group>"; };
+		51623DDE7AC4DED5473170E8 /* SessionVault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionVault.swift; sourceTree = "<group>"; };
 		5CA3B538D4A2B2BF531A4754 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		63BE635AC51EEF03DB1E8A75 /* NinaWelcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaWelcome.swift; sourceTree = "<group>"; };
-		6C13B28814022FF2601262E5 /* LineLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLibrary.swift; sourceTree = "<group>"; };
+		5E8179EDDA6C183490BD03BE /* NinaBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NinaBridge.m; sourceTree = "<group>"; };
 		723707FFDBFBF18CC196FFB3 /* privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
-		85B7A94E039225342AAC7E70 /* NinaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaTheme.swift; sourceTree = "<group>"; };
-		8E238C1819B5756A6B861022 /* NinaConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaConfiguration.swift; sourceTree = "<group>"; };
-		91DCED9769C63534B6625F7E /* LinesCatalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LinesCatalog.json; sourceTree = "<group>"; };
-		A3174C9711C190308B3B755B /* NinaLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaLibrary.swift; sourceTree = "<group>"; };
-		AB7E3D80229761EA7A070C9C /* LinesIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesIndex.swift; sourceTree = "<group>"; };
-		B3320E1FB63BB70FA650C498 /* CrewLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewLibrary.swift; sourceTree = "<group>"; };
-		B5AADD6CE0F84224A6420CF2 /* GripRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GripRecord.swift; sourceTree = "<group>"; };
-		B8B75B07E2C5FA4EBAFA25A1 /* LineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDetail.swift; sourceTree = "<group>"; };
+		7AF8636D7CD7425EBC869FFD /* NinaPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaPlatform.swift; sourceTree = "<group>"; };
+		A221F012D8265763EA3167BE /* DeckPlayback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPlayback.swift; sourceTree = "<group>"; };
 		BF324C181E81EBA8A032DC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		C11240E297137201FBE9A81D /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		C61BA93E5E414FC9A533A150 /* Barlow-OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Barlow-OFL.txt"; sourceTree = "<group>"; };
-		CB9C6F40E8922BDEED05630A /* PracticeEditors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeEditors.swift; sourceTree = "<group>"; };
+		CC7462B7C613810B3DACA7DB /* PlatformPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPicker.swift; sourceTree = "<group>"; };
+		DE15DE81B78C5EC4E426A815 /* Pods-Nina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nina.debug.xcconfig"; path = "Target Support Files/Pods-Nina/Pods-Nina.debug.xcconfig"; sourceTree = "<group>"; };
 		DFE38566D7309D7C9E142DEF /* rules.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = rules.html; sourceTree = "<group>"; };
-		E0C44FF9840A1CDB636E39E5 /* SessionBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBook.swift; sourceTree = "<group>"; };
-		E1B72EC9A4B318280E867EDA /* SessionVault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionVault.swift; sourceTree = "<group>"; };
-		E6295E7CFAECF59E844A1E14 /* SkateMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateMedia.swift; sourceTree = "<group>"; };
-		E798F71DCE68EB5590D56FFC /* PracticeLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeLibrary.swift; sourceTree = "<group>"; };
-		EAD89AFEAAB07BB3573DF660 /* Nina.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Nina.xcconfig; sourceTree = "<group>"; };
-		EF43426A98495D7E2AE4E3BF /* SkatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkatePicker.swift; sourceTree = "<group>"; };
-		F6EC97C5F3149064C8AAD98E /* GripStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GripStore.swift; sourceTree = "<group>"; };
-		FD836089A6DE01CC3439C45C /* GripWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GripWallet.swift; sourceTree = "<group>"; };
+		E1440D812CE2F34A84585E1C /* SkateCallCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateCallCamera.swift; sourceTree = "<group>"; };
+		E1E74A9A89CE2272D3D59DBC /* libPods-Nina.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nina.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0035AEB6EB9BE991C18CD37 /* SkateFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateFiles.swift; sourceTree = "<group>"; };
+		FD527D1525D2FFF842EE16C6 /* PlatformPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPurchases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		A408E86248DC67D771512A33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CA7B9F393E463B12B7FDC88 /* libPods-Nina.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
-		019F6B5C00074F2163D13258 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				8E238C1819B5756A6B861022 /* NinaConfiguration.swift */,
-				E1B72EC9A4B318280E867EDA /* SessionVault.swift */,
-				E6295E7CFAECF59E844A1E14 /* SkateMedia.swift */,
-				EF43426A98495D7E2AE4E3BF /* SkatePicker.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		185832CEA69C1038B771AC7F /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				40A50A6C09A988BB55300F16 /* NinaPolicyPage.swift */,
-				63BE635AC51EEF03DB1E8A75 /* NinaWelcome.swift */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
 		1A158FCCB3423F5712F08B1B = {
 			isa = PBXGroup;
 			children = (
 				6C699FB5335828F1FED4F467 /* Nina */,
 				4534B51D7C0E156262001105 /* Products */,
+				5D7DE4FCB5A18073C428C91D /* Pods */,
+				C2E36C6DA92C6974061B746E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,7 +93,6 @@
 				153E18C228AB46644FE526A8 /* Assets.xcassets */,
 				BF324C181E81EBA8A032DC27 /* Info.plist */,
 				2FB75DBCC096CEFD7C27B5C9 /* LaunchScreen.storyboard */,
-				91DCED9769C63534B6625F7E /* LinesCatalog.json */,
 				5CA3B538D4A2B2BF531A4754 /* PrivacyInfo.xcprivacy */,
 				3748899FDF6B3EFAB7950CEE /* Products.storekit */,
 				EA270F0D06F8A78C21BA6E73 /* Fonts */,
@@ -148,45 +101,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		221B7F4ECD3CAC43565ED55F /* Crew */ = {
-			isa = PBXGroup;
-			children = (
-				B3320E1FB63BB70FA650C498 /* CrewLibrary.swift */,
-				135C768E033C3BFFD6D78ABC /* CrewPages.swift */,
-				519794FEB77F5059D60983CD /* CrewRecord.swift */,
-				3CF2EFEC240E8F47470C8FA8 /* CrewSafety.swift */,
-				39CE1FCF51773D7AB6F8008E /* MessagesPage.swift */,
-				C11240E297137201FBE9A81D /* ProfileEditor.swift */,
-				4FCC73432996E9774FDECFF9 /* SkateCallPage.swift */,
-			);
-			path = Crew;
-			sourceTree = "<group>";
-		};
-		27456001C78F0A91ACCB692B /* Grip */ = {
-			isa = PBXGroup;
-			children = (
-				B5AADD6CE0F84224A6420CF2 /* GripRecord.swift */,
-				F6EC97C5F3149064C8AAD98E /* GripStore.swift */,
-				FD836089A6DE01CC3439C45C /* GripWallet.swift */,
-			);
-			path = Grip;
-			sourceTree = "<group>";
-		};
-		3100FB0C84B63D30BE49C0E9 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				C68422F32DEABAAF11EE0578 /* Application */,
-				DF870E6241172FB3483D237A /* Design */,
-				EA30F09D755F7DFAFE9BB2CA /* Features */,
-				019F6B5C00074F2163D13258 /* Services */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		436D19D442CCE6B595B44B0D /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				EAD89AFEAAB07BB3573DF660 /* Nina.xcconfig */,
+				4CF8379BBB1F685DBE8C0D36 /* Debug.xcconfig */,
+				429C73C05909AC69F5BFD029 /* Release.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -197,6 +116,34 @@
 				40011E0611441F1BE6771CC5 /* Nina.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5D7DE4FCB5A18073C428C91D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE15DE81B78C5EC4E426A815 /* Pods-Nina.debug.xcconfig */,
+				47537F6ECC436577B0B75FF9 /* Pods-Nina.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		60CB49914E0CD521FD43E5D0 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				A221F012D8265763EA3167BE /* DeckPlayback.swift */,
+				5E8179EDDA6C183490BD03BE /* NinaBridge.m */,
+				013D6ED17E399853A70190CD /* NinaHost.swift */,
+				7AF8636D7CD7425EBC869FFD /* NinaPlatform.swift */,
+				4DC51A849E0F7D77219A128A /* NinaSurfaceView.swift */,
+				2FF06228D199D052A57F3B8F /* PlatformIdentity.swift */,
+				CC7462B7C613810B3DACA7DB /* PlatformPicker.swift */,
+				FD527D1525D2FFF842EE16C6 /* PlatformPurchases.swift */,
+				51623DDE7AC4DED5473170E8 /* SessionVault.swift */,
+				E1440D812CE2F34A84585E1C /* SkateCallCamera.swift */,
+				F0035AEB6EB9BE991C18CD37 /* SkateFiles.swift */,
+			);
+			path = Platform;
 			sourceTree = "<group>";
 		};
 		65950F2EB051F85609CBF613 /* Legal */ = {
@@ -213,43 +160,18 @@
 			isa = PBXGroup;
 			children = (
 				436D19D442CCE6B595B44B0D /* Config */,
+				60CB49914E0CD521FD43E5D0 /* Platform */,
 				20E519CA7700C969D23EF5FB /* Resources */,
-				3100FB0C84B63D30BE49C0E9 /* Sources */,
 			);
 			path = Nina;
 			sourceTree = "<group>";
 		};
-		A9E86EEB1738F5CF9DE3B867 /* Lines */ = {
+		C2E36C6DA92C6974061B746E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B910CDAE26545F8B1EB3721 /* DeckPlayback.swift */,
-				3D2F5CCE1802C505F45774AA /* LineArtwork.swift */,
-				B8B75B07E2C5FA4EBAFA25A1 /* LineDetail.swift */,
-				6C13B28814022FF2601262E5 /* LineLibrary.swift */,
-				07C3653E4A82AADFD8AE79A6 /* LineRecord.swift */,
-				AB7E3D80229761EA7A070C9C /* LinesIndex.swift */,
-				59CD63814732C165EE8BE630 /* SubmissionsPage.swift */,
+				E1E74A9A89CE2272D3D59DBC /* libPods-Nina.a */,
 			);
-			path = Lines;
-			sourceTree = "<group>";
-		};
-		C68422F32DEABAAF11EE0578 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				129537E1A21B9A8ACD9180DF /* NinaApp.swift */,
-				4CBAB3482AFA89519D6502EF /* NinaFlow.swift */,
-				A3174C9711C190308B3B755B /* NinaLibrary.swift */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		DF870E6241172FB3483D237A /* Design */ = {
-			isa = PBXGroup;
-			children = (
-				2FD08B789B34E552D4B034C1 /* NinaPage.swift */,
-				85B7A94E039225342AAC7E70 /* NinaTheme.swift */,
-			);
-			path = Design;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EA270F0D06F8A78C21BA6E73 /* Fonts */ = {
@@ -264,29 +186,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		EA30F09D755F7DFAFE9BB2CA /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				185832CEA69C1038B771AC7F /* Account */,
-				221B7F4ECD3CAC43565ED55F /* Crew */,
-				27456001C78F0A91ACCB692B /* Grip */,
-				A9E86EEB1738F5CF9DE3B867 /* Lines */,
-				F1EDBC45C53C8FA7EF489694 /* SessionBook */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		F1EDBC45C53C8FA7EF489694 /* SessionBook */ = {
-			isa = PBXGroup;
-			children = (
-				CB9C6F40E8922BDEED05630A /* PracticeEditors.swift */,
-				E798F71DCE68EB5590D56FFC /* PracticeLibrary.swift */,
-				369306A972F7F27B2336F830 /* PracticeRecord.swift */,
-				E0C44FF9840A1CDB636E39E5 /* SessionBook.swift */,
-			);
-			path = SessionBook;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,16 +193,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35AA0330E1DD4065D8895770 /* Build configuration list for PBXNativeTarget "Nina" */;
 			buildPhases = (
+				F08535F11B7B0E2D68274BAD /* [CP] Check Pods Manifest.lock */,
 				49469269837F6CEC4A9FE361 /* Sources */,
 				D5C69EA34C419FABC76F51A9 /* Resources */,
+				CB94DF7C6F87570007EAC85C /* Bundle React Native code and images */,
+				A408E86248DC67D771512A33 /* Frameworks */,
+				3E626CC3598BEDBD80A559E6 /* [CP] Embed Pods Frameworks */,
+				A15835E1F78757272728EE39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Nina;
-			packageProductDependencies = (
-			);
 			productName = Nina;
 			productReference = 40011E0611441F1BE6771CC5 /* Nina.app */;
 			productType = "com.apple.product-type.application";
@@ -334,6 +236,7 @@
 			mainGroup = 1A158FCCB3423F5712F08B1B;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			productRefGroup = 4534B51D7C0E156262001105 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -354,7 +257,6 @@
 				661680C23F1608820901B74A /* BarlowCondensed-Bold.ttf in Resources */,
 				BD58DBBEAD14E27AEB9AB7E5 /* BarlowCondensed-OFL.txt in Resources */,
 				6A08BDA6C6E391DD0BFF0D1B /* LaunchScreen.storyboard in Resources */,
-				67B536EB9FC043DBDA3CED57 /* LinesCatalog.json in Resources */,
 				15FD0C59AE029F3A6C3721D9 /* PrivacyInfo.xcprivacy in Resources */,
 				295063CED270EACD7B4A3089 /* privacy.html in Resources */,
 				ACB60365F94341B885571A49 /* rules.html in Resources */,
@@ -364,43 +266,100 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E626CC3598BEDBD80A559E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nina/Pods-Nina-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nina/Pods-Nina-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nina/Pods-Nina-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A15835E1F78757272728EE39 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nina/Pods-Nina-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nina/Pods-Nina-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nina/Pods-Nina-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB94DF7C6F87570007EAC85C /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nexport PROJECT_ROOT=\"$PROJECT_DIR\"\nRN_SCRIPTS=\"$PROJECT_DIR/node_modules/react-native/scripts\"\n/bin/bash \"$RN_SCRIPTS/xcode/with-environment.sh\" \"$RN_SCRIPTS/react-native-xcode.sh\"\n";
+		};
+		F08535F11B7B0E2D68274BAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nina-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49469269837F6CEC4A9FE361 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9764F2568E5A458A4353FD4F /* CrewLibrary.swift in Sources */,
-				9998F8DE9CD59AAE99F3CAB9 /* CrewPages.swift in Sources */,
-				8931FC210A335FF141EFDD35 /* CrewRecord.swift in Sources */,
-				CF636D71B30B5F72A7450ABF /* CrewSafety.swift in Sources */,
-				E064AA56B5846E03BD810031 /* DeckPlayback.swift in Sources */,
-				7661194DFA46BEB0A8B12262 /* GripRecord.swift in Sources */,
-				3BCBF59AF7DB9CFC72256502 /* GripStore.swift in Sources */,
-				586337C8497955F79111C5A1 /* GripWallet.swift in Sources */,
-				82BF26A4FE3D43E4362ACA37 /* LineArtwork.swift in Sources */,
-				567BC70CE4109D4B3FE551DC /* LineDetail.swift in Sources */,
-				417C8A25338471CFB42F6BE7 /* LineLibrary.swift in Sources */,
-				5B6CE8E4A163E1C87B34A87C /* LineRecord.swift in Sources */,
-				EDC20FCFE3F17D4C306B3DFB /* LinesIndex.swift in Sources */,
-				5E437E514E41DD83914E0B40 /* MessagesPage.swift in Sources */,
-				9E68FE0010162FFBEF9CA922 /* NinaApp.swift in Sources */,
-				378B406164D62BCB5C774705 /* NinaConfiguration.swift in Sources */,
-				D59D7BF56A632294D816ECE1 /* NinaFlow.swift in Sources */,
-				F756DB91E39FAC8E0B08DEE9 /* NinaLibrary.swift in Sources */,
-				AFF0A6448EAAF886C3B6FC8D /* NinaPage.swift in Sources */,
-				FE6D1A93EB600C2A9B4EB603 /* NinaPolicyPage.swift in Sources */,
-				138344BC9578B448BC8AA8C8 /* NinaTheme.swift in Sources */,
-				2CC86BD392CDCF50043FADE1 /* NinaWelcome.swift in Sources */,
-				9BC9892B32DDBFE124B61095 /* PracticeEditors.swift in Sources */,
-				EDBD3C4F81402C4609DC2212 /* PracticeLibrary.swift in Sources */,
-				DC1575F3FF2D84E6091DEFC0 /* PracticeRecord.swift in Sources */,
-				040B51C9110618E25E06887F /* ProfileEditor.swift in Sources */,
-				D344C9424ADC556610394DDB /* SessionBook.swift in Sources */,
-				40E4E90D2FD2F07959C75F9C /* SessionVault.swift in Sources */,
-				29B7236C39C207AFC57DF08D /* SkateCallPage.swift in Sources */,
-				0BB32F162980B74072CD79D2 /* SkateMedia.swift in Sources */,
-				B18E1A085A8989DFD775BCD2 /* SkatePicker.swift in Sources */,
-				FF1E4090988244BC40ABAF7D /* SubmissionsPage.swift in Sources */,
+				F2DDA4DCF6EA4B63A0AF6D92 /* DeckPlayback.swift in Sources */,
+				F8FF39F6E7D74DCBEE24422F /* NinaBridge.m in Sources */,
+				AA7F1FE8EA330954EC76A699 /* NinaHost.swift in Sources */,
+				1A778877B99977D27D0BD9C7 /* NinaPlatform.swift in Sources */,
+				489B8BF3C64C6340784AF4CD /* NinaSurfaceView.swift in Sources */,
+				BAC3F481EB3DC2D73E90D00C /* PlatformIdentity.swift in Sources */,
+				244E840511FEF80D22760208 /* PlatformPicker.swift in Sources */,
+				1C2C32B4067D8CE13EEAF31A /* PlatformPurchases.swift in Sources */,
+				D2CCA1813470D08C8B1E23FF /* SessionVault.swift in Sources */,
+				F85FA8484D1A43E36BE94142 /* SkateCallCamera.swift in Sources */,
+				F29E2F6628BB3A1B5F3A0530 /* SkateFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,16 +368,17 @@
 /* Begin XCBuildConfiguration section */
 		14BB426D0A5CA921A93305FD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAD89AFEAAB07BB3573DF660 /* Nina.xcconfig */;
+			baseConfigurationReference = 429C73C05909AC69F5BFD029 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nina/Config/Nina.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Nina/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,7 +400,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -479,14 +439,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DRCT_REMOVE_LEGACY_ARCH=1",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-DRCT_REMOVE_LEGACY_ARCH=1",
+				);
+				PODFILE_DIR = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
+				USE_HERMES = true;
 			};
 			name = Release;
 		};
@@ -496,7 +467,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -541,30 +512,42 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DRCT_REMOVE_LEGACY_ARCH=1",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-DRCT_REMOVE_LEGACY_ARCH=1",
+				);
+				PODFILE_DIR = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../node_modules/react-native";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
 		78DB9AF85A57F8EAAA70BFD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAD89AFEAAB07BB3573DF660 /* Nina.xcconfig */;
+			baseConfigurationReference = 4CF8379BBB1F685DBE8C0D36 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nina/Config/Nina.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Nina/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

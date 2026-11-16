@@ -1,0 +1,2 @@
+#include? "../../Pods/Target Support Files/Pods-Nina/Pods-Nina.debug.xcconfig"
+#include "Nina.xcconfig"

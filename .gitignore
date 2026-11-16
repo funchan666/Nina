@@ -5,3 +5,8 @@
 # Supplied content is staged outside the app target for Storage.
 /photos/
 /videos/
+/node_modules/
+/Pods/
+/build/
+/.xcode.env.local
+*.jsbundle
