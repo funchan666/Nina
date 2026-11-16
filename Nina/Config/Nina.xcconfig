@@ -1,0 +1,7 @@
+// Xcode treats a literal double slash as a comment in xcconfig files.
+NINA_URL_SLASH = /
+NINA_MEDIA_PUBLIC_BASE_URL = https:$(NINA_URL_SLASH)$(NINA_URL_SLASH)xmasonxwiupkrtbpvrlh.supabase.co/storage/v1/object/public/nina-media
+NINA_TERMS_URL =
+NINA_PRIVACY_URL =
+NINA_SUPPORT_EMAIL =
+DEVELOPMENT_TEAM =

@@ -1,0 +1,7 @@
+.DS_Store
+/DerivedData/
+**/xcuserdata/
+*.xcuserstate
+# Supplied content is staged outside the app target for Storage.
+/photos/
+/videos/

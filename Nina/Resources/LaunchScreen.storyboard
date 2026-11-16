@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" targetRuntime="iOS.CocoaTouch" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nina-launch">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="nina-scene">
+            <objects>
+                <viewController id="nina-launch" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nina-root">
+                        <rect key="frame" x="0" y="0" width="393" height="852"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="WheelMark" translatesAutoresizingMaskIntoConstraints="NO" id="nina-mark">
+                                <rect key="frame" x="132.5" y="362" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="nina-width"/>
+                                    <constraint firstAttribute="height" constant="128" id="nina-height"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nina-safe"/>
+                        <color key="backgroundColor" red="0.0863" green="0.1451" blue="0.1137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nina-mark" firstAttribute="centerX" secondItem="nina-safe" secondAttribute="centerX" id="nina-center-x"/>
+                            <constraint firstItem="nina-mark" firstAttribute="centerY" secondItem="nina-safe" secondAttribute="centerY" id="nina-center-y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nina-first" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources><image name="WheelMark" width="384" height="384"/></resources>
+</document>

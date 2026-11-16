@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleDevelopmentRegion</key><string>en</string>
+    <key>CFBundleDisplayName</key><string>Nina</string>
+    <key>CFBundleExecutable</key><string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+    <key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
+    <key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>LSRequiresIPhoneOS</key><true/>
+    <key>UILaunchStoryboardName</key><string>LaunchScreen</string>
+    <key>UISupportedInterfaceOrientations</key><array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UIAppFonts</key><array>
+        <string>Barlow-Regular.ttf</string>
+        <string>Barlow-SemiBold.ttf</string>
+        <string>BarlowCondensed-Bold.ttf</string>
+    </array>
+    <key>NSCameraUsageDescription</key><string>Nina uses the camera to capture your skating clips, take profile photos and show your camera check before a video call.</string>
+    <key>NSPhotoLibraryUsageDescription</key><string>Choose a photo or film from your library to attach to your Nina profile or skate journal.</string>
+    <key>NSMicrophoneUsageDescription</key><string>Nina uses the microphone to record audio with skating clips and check access before a voice or video call.</string>
+    <key>NinaMediaPublicBaseURL</key><string>$(NINA_MEDIA_PUBLIC_BASE_URL)</string>
+    <key>NinaTermsURL</key><string>$(NINA_TERMS_URL)</string>
+    <key>NinaPrivacyURL</key><string>$(NINA_PRIVACY_URL)</string>
+    <key>NinaSupportEmail</key><string>$(NINA_SUPPORT_EMAIL)</string>
+    <key>NinaPurchasesEnabled</key><string>$(NINA_PURCHASES_ENABLED)</string>
+</dict></plist>
