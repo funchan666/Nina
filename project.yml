@@ -2,7 +2,7 @@ name: Nina
 options:
   minimumXcodeGenVersion: 2.44.1
   deploymentTarget:
-    iOS: "15.1"
+    iOS: "17.6"
   createIntermediateGroups: true
 settings:
   base:
@@ -11,7 +11,7 @@ targets:
   Nina:
     type: application
     platform: iOS
-    deploymentTarget: "15.1"
+    deploymentTarget: "17.6"
     sources:
       - path: Nina/Platform
       - path: Nina/Resources

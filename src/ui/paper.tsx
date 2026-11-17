@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  Image, Keyboard, Pressable, ScrollView, StyleSheet, Text, TextInput, View,
+  I18nManager, Image, Keyboard, Pressable, ScrollView, StyleSheet, Text, TextInput, View,
 } from 'react-native';
 import type {StyleProp, TextInputProps, TextStyle, ViewStyle} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useFlow} from '../navigation';
+import {glyphs, grounds} from './artwork';
 import {ActionBand, useWindowLayout} from './geometry';
 
 export const colors = {
@@ -19,17 +20,8 @@ const heading = 'BarlowCondensed-Bold';
 const body = 'Barlow-Regular';
 const bold = 'Barlow-SemiBold';
 
-export const art = {
-  lines: 'InkLines', sessions: 'InkSessions', crew: 'InkCrew', add: 'InkAdd',
-  back: 'InkBack', close: 'InkClose', play: 'InkPlay', pause: 'InkPause',
-  speaker: 'InkSpeaker', muted: 'InkMuted', expand: 'InkExpand', like: 'InkLike',
-  liked: 'InkLiked', save: 'InkSave', comment: 'InkComment', flag: 'InkFlag',
-  saved: 'InkSaved', grip: 'InkGrip', more: 'InkMore', send: 'InkSend',
-  phone: 'InkPhone', video: 'InkVideo', check: 'InkCheck', settings: 'InkSettings',
-  camera: 'InkCamera', load: 'InkLoad', spot: 'InkSpot', edit: 'InkEdit',
-  ramp: 'InkRamp', deck: 'InkDeck', avatar: 'InkAvatar', thumb: 'InkThumb',
-} as const;
-export type GlyphName = keyof typeof art;
+export type GlyphName = keyof typeof glyphs;
+type Ground = keyof typeof grounds;
 
 export const layout = StyleSheet.create({
   fill: {flex: 1},
@@ -54,12 +46,13 @@ export function Copy({children, size = 'body', color = colors.ink, style, limit,
 }
 
 export function Glyph({name, size = 24, color = colors.ink}: {name: GlyphName; size?: number; color?: string}) {
-  return <Image accessible={false} source={{uri: art[name]}} resizeMode="contain"
-    style={{width: size, height: size, tintColor: color}} />;
+  return <Image accessible={false} source={glyphs[name]} resizeMode="contain"
+    style={{width: size, height: size, tintColor: color,
+      transform: name === 'back' && I18nManager.isRTL ? [{scaleX: -1}] : undefined}} />;
 }
 
-export function Backdrop({image}: {image: string}) {
-  return <Image accessible={false} resizeMode="cover" pointerEvents="none" source={{uri: image}}
+export function Backdrop({image}: {image: Ground}) {
+  return <Image accessible={false} resizeMode="cover" pointerEvents="none" source={grounds[image]}
     style={[StyleSheet.absoluteFill, styles.background]} />;
 }
 
@@ -159,7 +152,7 @@ export function Field({label, multiline, ...options}: TextInputProps & {label: s
 }
 
 export function PageHeading({title, large, children}: {title: string; large?: boolean; children?: React.ReactNode}) {
-  return <View style={layout.split}>
+  return <View style={[layout.split, styles.headingRow]}>
     <Copy size={large ? 'title' : 'heading'} header style={styles.pageTitle}>{title}</Copy>
     {children}
   </View>;
@@ -167,7 +160,7 @@ export function PageHeading({title, large, children}: {title: string; large?: bo
 
 export function Screen({title, ground, root = false, editing = false, action, children}: {
   title: string;
-  ground: string;
+  ground: Ground;
   root?: boolean;
   editing?: boolean;
   action?: React.ReactNode;
@@ -224,6 +217,7 @@ const styles = StyleSheet.create({
   input: {minHeight: 46, paddingVertical: 8, paddingHorizontal: 12, backgroundColor: colors.paper, fontFamily: body, fontSize: 17, color: colors.ink},
   multiline: {minHeight: 90, textAlignVertical: 'top'},
   navBar: {minHeight: 54, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 5},
+  headingRow: {flexWrap: 'wrap'},
   pageTitle: {flexShrink: 1},
   scrollContent: {width: '100%', maxWidth: 730, alignSelf: 'center', gap: 17, paddingTop: 8},
 });

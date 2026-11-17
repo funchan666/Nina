@@ -1,0 +1,1766 @@
+{
+  "archive": "Nina/Resources/Nina.zip",
+  "archiveBytes": 37026288,
+  "archiveSHA256": "f3e40fa7ea22ba4cae7296f822f4e834416f26bfe492c7533a3a1018b8a71dea",
+  "expandedBytes": 37284611,
+  "archiveEntries": 98,
+  "photos": 50,
+  "videos": 16,
+  "posters": 16,
+  "previousMediaBytes": 50914422,
+  "priorVerifiedObjectCount": 82,
+  "bundledMediaBytes": 36344727,
+  "sourceMediaBytes": 56909835,
+  "media": [
+    {
+      "path": "media/lines-v1-offboard-lawn-break.jpg",
+      "bytes": 269721,
+      "sha256": "aa7002c2ce0509c8623497ea50e0255831e3fcc6ce53642a1234739b8bc1e3f8",
+      "id": "lawn-break",
+      "type": "photo",
+      "dimensions": [
+        880,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 269721,
+      "source": "photos/463950893_18254691619250076_2444393694601099606_n.jpg",
+      "sourceBytes": 279967,
+      "sourceDimensions": [
+        1080,
+        1350
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "90ed8822850727fb1cc3ef59838c8df7ca84e2aab9f84aec264b63a49f724e15",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "aa7002c2ce0509c8623497ea50e0255831e3fcc6ce53642a1234739b8bc1e3f8"
+    },
+    {
+      "path": "media/lines-v1-street-boards-at-the-steps.jpg",
+      "bytes": 272336,
+      "sha256": "6427a021dbbdd9e0873aee2f4ef4ed90b0e7da91cfb912e47773a7058413155b",
+      "id": "boards-at-the-steps",
+      "type": "photo",
+      "dimensions": [
+        960,
+        1200
+      ],
+      "seconds": null,
+      "priorBytes": 272336,
+      "source": "photos/486549015_17909244420099282_5311634421798795358_n.jpg",
+      "sourceBytes": 292199,
+      "sourceDimensions": [
+        1080,
+        1350
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "d4f3cf8a955c6385712edddcc7738d798277a2dfdfd5aa1f577b70c68729aab8",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "6427a021dbbdd9e0873aee2f4ef4ed90b0e7da91cfb912e47773a7058413155b"
+    },
+    {
+      "path": "media/lines-v1-street-stairwell-deck.jpg",
+      "bytes": 289472,
+      "sha256": "eaf187740e9d2aefad8bf1cd8e00ae2430d468ead4a54c023f091000fe85a91f",
+      "id": "stairwell-deck",
+      "type": "photo",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "seconds": null,
+      "priorBytes": 289472,
+      "source": "photos/517243646_17913801741139613_5860543285751615204_n.webp",
+      "sourceBytes": 335546,
+      "sourceDimensions": [
+        1440,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "c95cba3da7ff3e4ec59a30da2a9c44e698505936b28239157db3f6df28ebd015",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "eaf187740e9d2aefad8bf1cd8e00ae2430d468ead4a54c023f091000fe85a91f"
+    },
+    {
+      "path": "media/lines-v1-offboard-patio-break.jpg",
+      "bytes": 141743,
+      "sha256": "900e33aa93fdd2fc07190a6f56aca2fed8b0690f312be18b40e46d94314db113",
+      "id": "patio-break",
+      "type": "photo",
+      "dimensions": [
+        720,
+        897
+      ],
+      "seconds": null,
+      "priorBytes": 141743,
+      "source": "photos/539450264_18060420980524083_6957317599862562820_n.jpg",
+      "sourceBytes": 141917,
+      "sourceDimensions": [
+        720,
+        897
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "315e79925abb630b9ce2bbeb63bc4121380643bba1b69ce0320cb97b81a8065b",
+      "encoding": "JPEG q80, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "900e33aa93fdd2fc07190a6f56aca2fed8b0690f312be18b40e46d94314db113"
+    },
+    {
+      "path": "media/lines-v1-park-fence-line.jpg",
+      "bytes": 177330,
+      "sha256": "a5d751b0007da00307bd2284a9fd7281fa9a21fed6919005143f4f3e2f139022",
+      "id": "fence-line",
+      "type": "photo",
+      "dimensions": [
+        1080,
+        810
+      ],
+      "seconds": null,
+      "priorBytes": 177330,
+      "source": "photos/541559760_18160976680372383_8883468293442626554_n.jpg",
+      "sourceBytes": 182384,
+      "sourceDimensions": [
+        1080,
+        810
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "5d38dd3069e00a22d2746f71f0e59ca707b6c041c76ffe5ceb5f92e3bbcccb02",
+      "encoding": "JPEG q80, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "a5d751b0007da00307bd2284a9fd7281fa9a21fed6919005143f4f3e2f139022"
+    },
+    {
+      "path": "media/lines-v1-offboard-park-path-crew.jpg",
+      "bytes": 267098,
+      "sha256": "313ae97bc0e98691057c638ecf218f52ca3c9007be2902dc2389aa9ea193e7ba",
+      "id": "park-path-crew",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 267098,
+      "source": "photos/543547935_18529192594007187_7202513295530344442_n.jpg",
+      "sourceBytes": 301808,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "ae047cfc06fa296fc07781edea4f69d3f958394ec4cdde9d74f4d9e95d6ab19c",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "313ae97bc0e98691057c638ecf218f52ca3c9007be2902dc2389aa9ea193e7ba"
+    },
+    {
+      "path": "media/lines-v1-street-stone-ledge-slide.jpg",
+      "bytes": 133702,
+      "sha256": "5e9e5a2d2919c21e039f22f50fa6e0387af5b3f04f0c05895df4a538f1bf07f9",
+      "id": "stone-ledge-slide",
+      "type": "photo",
+      "dimensions": [
+        720,
+        959
+      ],
+      "seconds": null,
+      "priorBytes": 133702,
+      "source": "photos/573445519_18539758285010710_2286637901382322630_n.jpg",
+      "sourceBytes": 146732,
+      "sourceDimensions": [
+        720,
+        959
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "1c69e1331e0151a4d7afcbd8a5aff10891c4f98789a56e3dea4c6f7622111ce2",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "5e9e5a2d2919c21e039f22f50fa6e0387af5b3f04f0c05895df4a538f1bf07f9"
+    },
+    {
+      "path": "media/lines-v1-offboard-grip-and-concrete.jpg",
+      "bytes": 196863,
+      "sha256": "0989ea724bea77a5a869812d559cb6ece2a9a50413ee072e70009eb433ac88f2",
+      "id": "grip-and-concrete",
+      "type": "photo",
+      "dimensions": [
+        826,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 196863,
+      "source": "photos/616405663_18090274070511353_4591713331242089811_n.jpg",
+      "sourceBytes": 228875,
+      "sourceDimensions": [
+        1080,
+        1439
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "346fbcc781fcab23c97b03c7248e3e9a6d865dc296587d930d14c55bd7d6bb81",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "0989ea724bea77a5a869812d559cb6ece2a9a50413ee072e70009eb433ac88f2"
+    },
+    {
+      "path": "media/lines-v1-park-palms-at-the-bowl.jpg",
+      "bytes": 253195,
+      "sha256": "604750f6020cbe5526ceed243047c44920c8561fd3a66e556b2bce01db8f587b",
+      "id": "palms-at-the-bowl",
+      "type": "photo",
+      "dimensions": [
+        960,
+        1200
+      ],
+      "seconds": null,
+      "priorBytes": 253195,
+      "source": "photos/621455416_18115793260610083_6314209507149073934_n.jpg",
+      "sourceBytes": 373183,
+      "sourceDimensions": [
+        1440,
+        1800
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "ea97721f0273b9f402a9802947ea958d87105c560e3852eb93384415431345b9",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "604750f6020cbe5526ceed243047c44920c8561fd3a66e556b2bce01db8f587b"
+    },
+    {
+      "path": "media/lines-v1-street-stair-set-approach.jpg",
+      "bytes": 144839,
+      "sha256": "51bb129864cded1da2bb9f83e35532e83d8259fc63c88ee7eeca72509b999c3b",
+      "id": "stair-set-approach",
+      "type": "photo",
+      "dimensions": [
+        720,
+        720
+      ],
+      "seconds": null,
+      "priorBytes": 144839,
+      "source": "photos/622872094_2667157183647396_6772678560767404343_n.jpg",
+      "sourceBytes": 148374,
+      "sourceDimensions": [
+        720,
+        720
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "3d3a0e7000aea8fb5beeda88b5b131b729fd1a9337934e273090e06f88a8254f",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "51bb129864cded1da2bb9f83e35532e83d8259fc63c88ee7eeca72509b999c3b"
+    },
+    {
+      "path": "media/lines-v1-offboard-room-to-layer.jpg",
+      "bytes": 166622,
+      "sha256": "7e3c85746b6d9a3ffcda6371d4596de88fe85ae868275c10d9e7737fc524e1f4",
+      "id": "room-to-layer",
+      "type": "photo",
+      "dimensions": [
+        880,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 166622,
+      "source": "photos/623958390_18089429690088184_9045085403010063615_n.webp",
+      "sourceBytes": 272036,
+      "sourceDimensions": [
+        1440,
+        1800
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "0c4627504913f3037efa73314086b25571098e9e0615aa3a97bdc48e815bb0c1",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "7e3c85746b6d9a3ffcda6371d4596de88fe85ae868275c10d9e7737fc524e1f4"
+    },
+    {
+      "path": "media/lines-v1-offboard-tunnel-deck-portrait.jpg",
+      "bytes": 118603,
+      "sha256": "02b10776af46603916180b3eb11cd85078ca43ffb500c4c83966fd93174fab89",
+      "id": "tunnel-deck-portrait",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 118603,
+      "source": "photos/627942814_18105546853702075_8139309078352179821_n.jpg",
+      "sourceBytes": 143596,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "14234b7f1d89fd20435578497c18097f385331c05990c180aa2bfb716275a387",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "02b10776af46603916180b3eb11cd85078ca43ffb500c4c83966fd93174fab89"
+    },
+    {
+      "path": "media/lines-v1-park-blue-pool-carve.jpg",
+      "bytes": 194908,
+      "sha256": "51fe483d01b0d36150e9652a516ce47d41e7942ca9371495f7e522ec0c3ac2bf",
+      "id": "blue-pool-carve",
+      "type": "photo",
+      "dimensions": [
+        960,
+        1200
+      ],
+      "seconds": null,
+      "priorBytes": 194908,
+      "source": "photos/643548589_18165410587414314_8419979582742849267_n.jpg",
+      "sourceBytes": 198189,
+      "sourceDimensions": [
+        1080,
+        1350
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "2789d1adc1f924a11c57de4fc0eda703cb784279bd89758f63380eaf86ce5783",
+      "encoding": "JPEG q82, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "51fe483d01b0d36150e9652a516ce47d41e7942ca9371495f7e522ec0c3ac2bf"
+    },
+    {
+      "path": "media/lines-v1-park-boards-under-cover.jpg",
+      "bytes": 219608,
+      "sha256": "1dcdbd50256bb78d23c5a32191bbb120522710444f4e2a8a41ca08f5c7157a43",
+      "id": "boards-under-cover",
+      "type": "photo",
+      "dimensions": [
+        900,
+        1200
+      ],
+      "seconds": null,
+      "priorBytes": 219608,
+      "source": "photos/656057153_17993467892943352_6740524240358832410_n.jpg",
+      "sourceBytes": 222995,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "4de2037bf9ae98396adc764052e6992a892130ee64c2657ef1b6d99d6e05c7c1",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "1dcdbd50256bb78d23c5a32191bbb120522710444f4e2a8a41ca08f5c7157a43"
+    },
+    {
+      "path": "media/lines-v1-park-board-at-night-session.jpg",
+      "bytes": 128854,
+      "sha256": "cb6e143083699f3257766ff2d4b44579dab25a4488696705874ad058ea5b7b11",
+      "id": "board-at-night-session",
+      "type": "photo",
+      "dimensions": [
+        960,
+        1200
+      ],
+      "seconds": null,
+      "priorBytes": 128854,
+      "source": "photos/657590722_18575320261005211_2138682990057973200_n.jpg",
+      "sourceBytes": 129495,
+      "sourceDimensions": [
+        1080,
+        1350
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "03b039ffb7b2d2cae3329a864cbef8249c3fc56e8e502a945f7611e9ddf9bd3f",
+      "encoding": "JPEG q80, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "cb6e143083699f3257766ff2d4b44579dab25a4488696705874ad058ea5b7b11"
+    },
+    {
+      "path": "media/lines-v1-offboard-roadside-deck.jpg",
+      "bytes": 244516,
+      "sha256": "96563e9bbc4479716164035abd266196ba1456a1479595d6632118a047662335",
+      "id": "roadside-deck",
+      "type": "photo",
+      "dimensions": [
+        881,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 244516,
+      "source": "photos/669628672_18089817194465390_7904257582578406964_n.jpg",
+      "sourceBytes": 272034,
+      "sourceDimensions": [
+        1080,
+        1349
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "fdc2e47dfce44513217c04f820dcc80b350c3cfe788d94fc9691fbda168e91f9",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "96563e9bbc4479716164035abd266196ba1456a1479595d6632118a047662335"
+    },
+    {
+      "path": "media/lines-v1-offboard-blue-wall-deck.jpg",
+      "bytes": 80152,
+      "sha256": "b6c000deb9df33e2bfdf5d174ba4e6aa56a8fe5a74c7778b7852571ecbf783e0",
+      "id": "blue-wall-deck",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 80152,
+      "source": "photos/670919401_17898546498443941_1308648412391396454_n.webp",
+      "sourceBytes": 147762,
+      "sourceDimensions": [
+        1350,
+        1800
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "9f7f7901da6d19aa00b6f4cae6e6a12f87d7f0c4f6211ae699fafc5f94bbc5fa",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "b6c000deb9df33e2bfdf5d174ba4e6aa56a8fe5a74c7778b7852571ecbf783e0"
+    },
+    {
+      "path": "media/lines-v1-park-top-down-bowl.jpg",
+      "bytes": 179214,
+      "sha256": "95208138671ce9692bd65fb46fbb943a87e838f135c4758126f6dfe1c389b2d6",
+      "id": "top-down-bowl",
+      "type": "photo",
+      "dimensions": [
+        960,
+        1200
+      ],
+      "seconds": null,
+      "priorBytes": 179214,
+      "source": "photos/688170210_18580515490046370_2907116539245860736_n.jpg",
+      "sourceBytes": 294785,
+      "sourceDimensions": [
+        1024,
+        1280
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "5c730f9ba5da90cc74a6eee025e4ff790293c05fc575e86af81bb1014fcec937",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "95208138671ce9692bd65fb46fbb943a87e838f135c4758126f6dfe1c389b2d6"
+    },
+    {
+      "path": "media/lines-v1-offboard-field-at-last-light.jpg",
+      "bytes": 49018,
+      "sha256": "260732af5cfa4b0c0adc3c0871619b5930372386a5b9035ad8da4421f1ec9b0c",
+      "id": "field-at-last-light",
+      "type": "photo",
+      "dimensions": [
+        720,
+        775
+      ],
+      "seconds": null,
+      "priorBytes": 49018,
+      "source": "photos/688766273_18551993602067607_4731181146689017924_n.jpg",
+      "sourceBytes": 49600,
+      "sourceDimensions": [
+        720,
+        775
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "f401bacd594d3e08b073db22369f35074afd3be921c66849789836518ebb9e90",
+      "encoding": "JPEG q78, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "260732af5cfa4b0c0adc3c0871619b5930372386a5b9035ad8da4421f1ec9b0c"
+    },
+    {
+      "path": "media/lines-v1-offboard-deck-over-shoulder.jpg",
+      "bytes": 91392,
+      "sha256": "c81f8835c0ccde86121e8466d9e9ff4f6b0ad6fbfcbc51d756595315b81dae01",
+      "id": "deck-over-shoulder",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 91392,
+      "source": "photos/750618274_18606269119055745_6865711434962556025_n.jpg",
+      "sourceBytes": 192061,
+      "sourceDimensions": [
+        1448,
+        1931
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "b6585554eafe5c723cc71b7790824bd1ba91c70506f967a5a19e82ea82f652ca",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "c81f8835c0ccde86121e8466d9e9ff4f6b0ad6fbfcbc51d756595315b81dae01"
+    },
+    {
+      "path": "media/lines-v1-park-backside-of-the-ramp.jpg",
+      "bytes": 238788,
+      "sha256": "75775552abea1bcc5b44296bde8bec1b28de01b44023de399d63e988b1bf0a94",
+      "id": "backside-of-the-ramp",
+      "type": "photo",
+      "dimensions": [
+        900,
+        1200
+      ],
+      "seconds": null,
+      "priorBytes": 238788,
+      "source": "photos/762654990_18091018181434188_176375301216833847_n.jpg",
+      "sourceBytes": 1576090,
+      "sourceDimensions": [
+        3072,
+        4096
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "edfcf92fe009d370f97c0aff2ab777c34e5f75e66d207e007f7ff5efdea02901",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "75775552abea1bcc5b44296bde8bec1b28de01b44023de399d63e988b1bf0a94"
+    },
+    {
+      "path": "media/lines-v1-offboard-car-park-walk.jpg",
+      "bytes": 153749,
+      "sha256": "a4d3fe18c529a222b825ee965ec320fe49d0c981a78a01b7bd22fa72bea5798b",
+      "id": "car-park-walk",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 153749,
+      "source": "photos/786390896_18613907296032214_4339871977593040400_n.jpg",
+      "sourceBytes": 170280,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "3683672447a6da882f53f0d3c6fe20ee6668b482c60b39d67f3e7a60c6325f13",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "a4d3fe18c529a222b825ee965ec320fe49d0c981a78a01b7bd22fa72bea5798b"
+    },
+    {
+      "path": "media/lines-v1-offboard-roof-over-the-field.jpg",
+      "bytes": 171213,
+      "sha256": "a4ff948d9ffc2364b1e291923e81a66d03fa1b74213ac6931f62f6ffa9024e87",
+      "id": "roof-over-the-field",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 171213,
+      "source": "photos/808079735_18622464658053117_59587660299441606_n.jpg",
+      "sourceBytes": 194990,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "c609d3e37aff888a69a151c19a98a2d10c676320f3c6fa48615455777b36ef1b",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "a4ff948d9ffc2364b1e291923e81a66d03fa1b74213ac6931f62f6ffa9024e87"
+    },
+    {
+      "path": "media/lines-v1-offboard-coastal-wind.jpg",
+      "bytes": 116234,
+      "sha256": "8a76e462911fc4a87a7e406c9da3022b573312f5a235b3d93dfb9f37f13ec3a3",
+      "id": "coastal-wind",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 116234,
+      "source": "photos/817329419_18629511964053507_4285324691422528801_n.jpg",
+      "sourceBytes": 147680,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "fd27aa4cc92871737e6d5c40bcaaab0ca8a6ec10c2d555e9e3fafce82f47a85b",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "8a76e462911fc4a87a7e406c9da3022b573312f5a235b3d93dfb9f37f13ec3a3"
+    },
+    {
+      "path": "media/lines-v1-offboard-city-corner-portrait.jpg",
+      "bytes": 196960,
+      "sha256": "65b1d3c5859210ce7e2415fcf6a98e0dfcc21e8f6e640bba16cde4debaaa88e3",
+      "id": "city-corner-portrait",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 196960,
+      "source": "photos/825320431_18629089252053092_2539626143160410845_n.jpg",
+      "sourceBytes": 220076,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "d4baa53c73abe2939b1d85c10d92bca8723d94790882c4e4cc21a0664dd5be2d",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "65b1d3c5859210ce7e2415fcf6a98e0dfcc21e8f6e640bba16cde4debaaa88e3"
+    },
+    {
+      "path": "media/lines-v1-flat-plaza-deck-pop.jpg",
+      "bytes": 89588,
+      "sha256": "1345d69a910d5abf03cb0d3f73831b85f3355e21eb3194996bfac7f68d220c06",
+      "id": "plaza-deck-pop",
+      "type": "photo",
+      "dimensions": [
+        720,
+        960
+      ],
+      "seconds": null,
+      "priorBytes": 89588,
+      "source": "photos/852908164_18636633328051670_5131290291451714330_n.jpg",
+      "sourceBytes": 92037,
+      "sourceDimensions": [
+        720,
+        960
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "7495d968bc474f87b270990dab3d5ce4a469511174eff560f4bcfbabc5ee2d7a",
+      "encoding": "JPEG q78, sRGB, long edge ≤ 1200px, EXIF omitted",
+      "priorSHA256": "1345d69a910d5abf03cb0d3f73831b85f3355e21eb3194996bfac7f68d220c06"
+    },
+    {
+      "path": "media/lines-v1-offboard-highland-lookout.jpg",
+      "bytes": 212433,
+      "sha256": "02b7f72570f5b59828fb0968e85f47d479c403a6a71fc71c7a428b2353b32273",
+      "id": "highland-lookout",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 212433,
+      "source": "photos/867931406_18640734091020477_5905279842301553839_n.jpg",
+      "sourceBytes": 306607,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "35ae9b157f40aebff6e5590e45c71b2b7ce9f38d70033aaac59cb9ecd1ae688a",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "02b7f72570f5b59828fb0968e85f47d479c403a6a71fc71c7a428b2353b32273"
+    },
+    {
+      "path": "media/lines-v1-offboard-mountain-street.jpg",
+      "bytes": 247830,
+      "sha256": "aacf829e6447ac967d56651a2019892acaacfc17d0200691c60607589d8eddb7",
+      "id": "mountain-street",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 247830,
+      "source": "photos/869180047_18352201144251967_3873463291729084157_n.jpg",
+      "sourceBytes": 301733,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "8fd37970f32b14ace31c9ed9febb49446c9d6ae5b650fcd75b5b684fcdbb06b5",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "aacf829e6447ac967d56651a2019892acaacfc17d0200691c60607589d8eddb7"
+    },
+    {
+      "path": "media/lines-v1-offboard-lakeside-dock.jpg",
+      "bytes": 154277,
+      "sha256": "269b3b04e27a3e10d08c98c40ee9c175ad73d2d3f47c79c2e180e22bfddc093b",
+      "id": "lakeside-dock",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 154277,
+      "source": "photos/869443587_18645322033026490_2541464999746938043_n.jpg",
+      "sourceBytes": 165336,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "3a86b7c2a947aa89c79a3c86573f47b05ed759d027f24106b3a713a80d10dc93",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "269b3b04e27a3e10d08c98c40ee9c175ad73d2d3f47c79c2e180e22bfddc093b"
+    },
+    {
+      "path": "media/lines-v1-offboard-gilded-roof-courtyard.jpg",
+      "bytes": 221998,
+      "sha256": "b912e76b3a909678fdf6598a19a33ac4fb297ea2ee4ca7cf9ab04f5e6ceb9e5b",
+      "id": "gilded-roof-courtyard",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 221998,
+      "source": "photos/871027233_18640664374025596_609387905914953194_n.jpg",
+      "sourceBytes": 239621,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "df3ddb717da9bb2baf204e81fd29d2852f084354f71f6c531403b4172d95e3ca",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "b912e76b3a909678fdf6598a19a33ac4fb297ea2ee4ca7cf9ab04f5e6ceb9e5b"
+    },
+    {
+      "path": "media/lines-v1-offboard-windward-dunes.jpg",
+      "bytes": 79651,
+      "sha256": "437055496a0877e3d17b9092428925e01646a67e5d9d8b9dcc11e203b5a0bfc8",
+      "id": "windward-dunes",
+      "type": "photo",
+      "dimensions": [
+        880,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 79651,
+      "source": "photos/871842384_18648170779029273_3649031731583146419_n.jpg",
+      "sourceBytes": 79817,
+      "sourceDimensions": [
+        1080,
+        1350
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "35f8da7b7849c8be5aa6d10db6706a4dbe196557c783450b9d8b11fad5dcdcb6",
+      "encoding": "JPEG q84, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "437055496a0877e3d17b9092428925e01646a67e5d9d8b9dcc11e203b5a0bfc8"
+    },
+    {
+      "path": "media/lines-v1-offboard-rock-trail.jpg",
+      "bytes": 325435,
+      "sha256": "eb070fe3aed4afea67c3b543f3479c7204c616ebff168c077f518febf5d141e4",
+      "id": "rock-trail",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 325435,
+      "source": "photos/872152006_18350095993255894_1600529866677809738_n.jpg",
+      "sourceBytes": 430534,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "9f21e37f209aa6c6aab33561db67477a59b449358cb59ab6d83511c8eb79753e",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "eb070fe3aed4afea67c3b543f3479c7204c616ebff168c077f518febf5d141e4"
+    },
+    {
+      "path": "media/lines-v1-offboard-elevator-pair.webp",
+      "bytes": 42060,
+      "sha256": "81b4fe9f4878d8af00d311d3e4810b66cdb539e670563716c646c063e47269c3",
+      "id": "elevator-pair",
+      "type": "photo",
+      "dimensions": [
+        880,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 42060,
+      "source": "photos/876658205_17991219234078574_5229454417538518829_n.webp",
+      "sourceBytes": 45016,
+      "sourceDimensions": [
+        1080,
+        1350
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "8dfa6ac818e3fffbeb7ac6813a95bbe92e29247c52eddc85972a60f719394a0d",
+      "encoding": "WebP q80, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "81b4fe9f4878d8af00d311d3e4810b66cdb539e670563716c646c063e47269c3"
+    },
+    {
+      "path": "media/lines-v1-offboard-courtyard-at-dusk.jpg",
+      "bytes": 121513,
+      "sha256": "30fcfbacce0c3fa1c177c41835464fe0f6abe1b30c79b284f63c47b2a2b56879",
+      "id": "courtyard-at-dusk",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 121513,
+      "source": "photos/878257225_18642849550033336_2514888328814822533_n.jpg",
+      "sourceBytes": 131175,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "39c59135cb18c2942a32636b43d7e7deb13b10684d1968e3de5088021c292c58",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "30fcfbacce0c3fa1c177c41835464fe0f6abe1b30c79b284f63c47b2a2b56879"
+    },
+    {
+      "path": "media/lines-v1-offboard-alpine-field.jpg",
+      "bytes": 211991,
+      "sha256": "23508938c446bda62e7129283b19a81136875b0fd30233baed0b1f3e6bb0bf14",
+      "id": "alpine-field",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 211991,
+      "source": "photos/878749791_18429723631145990_8087246918418891442_n.jpg",
+      "sourceBytes": 273631,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "630a8ed5fca35486f8cf093809a2fa384167a170d2a5560e213346c7da951994",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "23508938c446bda62e7129283b19a81136875b0fd30233baed0b1f3e6bb0bf14"
+    },
+    {
+      "path": "media/lines-v1-offboard-harbor-rail.webp",
+      "bytes": 116926,
+      "sha256": "1196ac2017be6d3fcae8ef5089d2bc90848dcd78c2ab828b451c2edb552791dc",
+      "id": "harbor-rail",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 116926,
+      "source": "photos/881184116_18100687850358038_168109384788181588_n.webp",
+      "sourceBytes": 130912,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "09b160115474b96e8342ddd4c4907fe62096e0079647bee84774344750a850d8",
+      "encoding": "WebP q84, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "1196ac2017be6d3fcae8ef5089d2bc90848dcd78c2ab828b451c2edb552791dc"
+    },
+    {
+      "path": "media/lines-v1-offboard-city-stoop.jpg",
+      "bytes": 246400,
+      "sha256": "9d4debeeafa44249cedecb241cd1367942f2358abd5f72fa463dda6dc5e98fda",
+      "id": "city-stoop",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 246400,
+      "source": "photos/881509885_18646348861022072_1095231194537648265_n.jpg",
+      "sourceBytes": 293129,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "2a2b90c3dc0c9b51874893de349427570b67be45f67850e0a69560732e900a32",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "9d4debeeafa44249cedecb241cd1367942f2358abd5f72fa463dda6dc5e98fda"
+    },
+    {
+      "path": "media/lines-v1-offboard-blue-jacket-passage.jpg",
+      "bytes": 204889,
+      "sha256": "65201fac14441f5f2bbd8ff17b611d0bd8ca68add1cc4572924e673cad3590e1",
+      "id": "blue-jacket-passage",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 204889,
+      "source": "photos/882243261_18650240872023397_9048980056504915992_n.jpg",
+      "sourceBytes": 238800,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "24fdd622d1819fe35d87a74e8d5269cca6f079f05b3cadef33dc28a6be6bab61",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "65201fac14441f5f2bbd8ff17b611d0bd8ca68add1cc4572924e673cad3590e1"
+    },
+    {
+      "path": "media/lines-v1-offboard-wood-floor-portrait.jpg",
+      "bytes": 132872,
+      "sha256": "0ae56c47b393fa67d2954a39f3ede4530e4eda4127e53741b6e33af70c39b08b",
+      "id": "wood-floor-portrait",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 132872,
+      "source": "photos/882747348_18638232955011474_5196209844924653804_n.jpg",
+      "sourceBytes": 135048,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "8fc2344b2c7b1998ceb182cc081d7a3cfff89ea761253d34e4cf72051ae36aa0",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "0ae56c47b393fa67d2954a39f3ede4530e4eda4127e53741b6e33af70c39b08b"
+    },
+    {
+      "path": "media/lines-v1-offboard-stone-gate-courtyard.jpg",
+      "bytes": 99807,
+      "sha256": "d64b4ca151d29280c77f1b40dfa19bd72d57b3b9411bb9973d658fd998998a8b",
+      "id": "stone-gate-courtyard",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 99807,
+      "source": "photos/885053735_18658763581004071_6004079712062271209_n.jpg",
+      "sourceBytes": 106632,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "0f98294f87ce7c6032fc8fb6a84626681259522a66cf96cd113a9de8e206bc91",
+      "encoding": "JPEG q84, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "d64b4ca151d29280c77f1b40dfa19bd72d57b3b9411bb9973d658fd998998a8b"
+    },
+    {
+      "path": "media/lines-v1-offboard-rooftop-skyline.jpg",
+      "bytes": 170027,
+      "sha256": "64915019e5aea705b73495b1544e61203038abf2acabca22a355c993eb3f5358",
+      "id": "rooftop-skyline",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 170027,
+      "source": "photos/885082606_18651610996012652_7810732205117363328_n.jpg",
+      "sourceBytes": 198983,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "aad0de4758886fbe8af4c79f5030374aae20bc886e9deb85a88c3ba8a0b023dd",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "64915019e5aea705b73495b1544e61203038abf2acabca22a355c993eb3f5358"
+    },
+    {
+      "path": "media/lines-v1-offboard-black-layers.jpg",
+      "bytes": 49723,
+      "sha256": "c83acda0aa2bd6a98c396f61f1d9563b5c51c02e65596901157bc3c7b84dc06a",
+      "id": "black-layers",
+      "type": "photo",
+      "dimensions": [
+        1080,
+        809
+      ],
+      "seconds": null,
+      "priorBytes": 49723,
+      "source": "photos/888412078_18376079710245493_8183073896362349535_n.jpg",
+      "sourceBytes": 49912,
+      "sourceDimensions": [
+        1080,
+        809
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "fa922024e2de07b67e4c900c9a570bdbfddf187f36fe530c3379ec5f41d7116e",
+      "encoding": "JPEG q78, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "c83acda0aa2bd6a98c396f61f1d9563b5c51c02e65596901157bc3c7b84dc06a"
+    },
+    {
+      "path": "media/lines-v1-offboard-autumn-bench.jpg",
+      "bytes": 285961,
+      "sha256": "45d88ffe1438c81cefa90e58ff0ca5f0e5d560d57a8069e0ec669209fe13f06e",
+      "id": "autumn-bench",
+      "type": "photo",
+      "dimensions": [
+        879,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 285961,
+      "source": "photos/890716734_18637148179032113_5147235203317548967_n.jpg",
+      "sourceBytes": 379898,
+      "sourceDimensions": [
+        1080,
+        1352
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "1eb2a4b51247a527e1e2af7cde5f93dfa6323b7012bbfa26d99726ee501edc49",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "45d88ffe1438c81cefa90e58ff0ca5f0e5d560d57a8069e0ec669209fe13f06e"
+    },
+    {
+      "path": "media/lines-v1-offboard-mountain-rail.jpg",
+      "bytes": 201093,
+      "sha256": "62cf619f22dab78620e91ef100b55ee3f728a1140014a2fcca6947e184789410",
+      "id": "mountain-rail",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 201093,
+      "source": "photos/893633434_18128509985479484_4080464467766133468_n.jpg",
+      "sourceBytes": 275731,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "c79e53e566acacb599d676ebf42bdf8cd0e8008adb268d3ec23e4a240e6f0aa6",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "62cf619f22dab78620e91ef100b55ee3f728a1140014a2fcca6947e184789410"
+    },
+    {
+      "path": "media/lines-v1-offboard-light-trousers.jpg",
+      "bytes": 123906,
+      "sha256": "632e7d4c08f709fa42c7386474bc4b0097dff18fd47b97a43f9158a930804c77",
+      "id": "light-trousers",
+      "type": "photo",
+      "dimensions": [
+        880,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 123906,
+      "source": "photos/894059046_18649897627000355_7631482687818471006_n.jpg",
+      "sourceBytes": 123963,
+      "sourceDimensions": [
+        1080,
+        1350
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "b8e7fad978c51fee7f71370411bdf9a3312825498a517baa65e7aad95aecf910",
+      "encoding": "JPEG q84, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "632e7d4c08f709fa42c7386474bc4b0097dff18fd47b97a43f9158a930804c77"
+    },
+    {
+      "path": "media/lines-v1-offboard-maple-walk.jpg",
+      "bytes": 300003,
+      "sha256": "7e58d0739c0dc17bd19c522fddbe2e2690ccf2cb3daf40e323ebe1db0a36d7b3",
+      "id": "maple-walk",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 300003,
+      "source": "photos/896051683_18665437813040917_6021879973836839582_n.jpg",
+      "sourceBytes": 373055,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "b27a17bb6ae8109a1f67667c4814b5078d7253b20be0ff7cac867280e5cedd05",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "7e58d0739c0dc17bd19c522fddbe2e2690ccf2cb3daf40e323ebe1db0a36d7b3"
+    },
+    {
+      "path": "media/lines-v1-offboard-everyday-denim.jpg",
+      "bytes": 102438,
+      "sha256": "b99afdc0d56b9f7f74c7f1e4383363bbf1cfb38193da271373012a630fac8634",
+      "id": "everyday-denim",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 102438,
+      "source": "photos/898767977_18643562881023281_4141608413573248642_n.jpg",
+      "sourceBytes": 106920,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "c5ee57f9babaa6b9a3c4b339c6062537943cf345a4d426dce7afc587b19b6656",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "b99afdc0d56b9f7f74c7f1e4383363bbf1cfb38193da271373012a630fac8634"
+    },
+    {
+      "path": "media/lines-v1-offboard-elevator-and-deck.jpg",
+      "bytes": 99016,
+      "sha256": "b4e106e955e3fcf287b11d55534f2c3860b9292cef8d8e622f93f472d051b8ef",
+      "id": "elevator-and-deck",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 99016,
+      "source": "photos/900431681_18251374540313915_5823131541275264688_n.jpg",
+      "sourceBytes": 129513,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "a40f29c49414dd574c7a664833e5c2013d30239ed02b20d70d8af21a23157217",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "b4e106e955e3fcf287b11d55534f2c3860b9292cef8d8e622f93f472d051b8ef"
+    },
+    {
+      "path": "media/lines-v1-offboard-window-seat-study.jpg",
+      "bytes": 217952,
+      "sha256": "ef4dc5d71137810afa5e5c9bbb992a7e7e513e8dd907a4d9cd326848a78bc5ff",
+      "id": "window-seat-study",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 217952,
+      "source": "photos/901686299_18080998829729357_225070608646105991_n.jpg",
+      "sourceBytes": 253049,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "bb36e9e2d77953cc340530b42ba9c34f045eb2b47a71e2008f5d0c37bbac4ff9",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "ef4dc5d71137810afa5e5c9bbb992a7e7e513e8dd907a4d9cd326848a78bc5ff"
+    },
+    {
+      "path": "media/lines-v1-offboard-terrace-below-the-ridge.jpg",
+      "bytes": 304953,
+      "sha256": "d5bd3488572ad72f5caa6b13654eb774934a3e0e436e3d5c748eb085a4259cc9",
+      "id": "terrace-below-the-ridge",
+      "type": "photo",
+      "dimensions": [
+        825,
+        1100
+      ],
+      "seconds": null,
+      "priorBytes": 304953,
+      "source": "photos/903015481_18643403197018724_930017325043419050_n.jpg",
+      "sourceBytes": 383403,
+      "sourceDimensions": [
+        1080,
+        1440
+      ],
+      "sourceSeconds": null,
+      "sourceSHA256": "db95048f4f6cf0029fb812a822eb370900743ac268314c4fd6a41181746c62dd",
+      "encoding": "JPEG q86, sRGB, long edge ≤ 1100px, EXIF omitted",
+      "priorSHA256": "d5bd3488572ad72f5caa6b13654eb774934a3e0e436e3d5c748eb085a4259cc9"
+    },
+    {
+      "path": "media/lines-v1-street-tree-lined-roll-away.mp4",
+      "bytes": 3535821,
+      "sha256": "0430b91537b8e506ebef39ce487cc912e35977e28b49c60cddca7301d464da96",
+      "id": "tree-lined-roll-away",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 13.033333,
+      "priorBytes": 5272930,
+      "source": "videos/AQMIbpe8EXbxZfC75tSIt332RAL8Jb1a5RJHr_4-rbuqaodMDTLoQ65vFzRqGtJFYOuDUgbt-IwO0urvjw0kg8by.mp4",
+      "sourceBytes": 5422319,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 13.033333,
+      "sourceSHA256": "ca3013eda4b0e94b1ae78ad25c72bdada7e83433253d06ab992946865240ac9b",
+      "encoding": "HEVC hvc1 CRF 28, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.974766,
+      "frames": 391,
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-street-tree-lined-roll-away-poster.jpg",
+        "bytes": 16636,
+        "sha256": "cf498db316393a5d572034568ec616b8002bf8a90149f6d58dd34ff4ee240818",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 31144,
+        "source": "first decoded frame",
+        "priorSHA256": "09b854f68ca15208faab4bbd424a42d343d08d5f31660191eba63d3f8ee70a5d"
+      },
+      "priorSHA256": "5901560c989d4cf4a2776a7ab0e006bae15dd2a0fee3160f767ab6f7263b3150"
+    },
+    {
+      "path": "media/lines-v1-street-winter-curb-pop.mp4",
+      "bytes": 922095,
+      "sha256": "de63c43b5da43b056d04879681295625886f2e49ef6d0b0807c6ffa673b70ae6",
+      "id": "winter-curb-pop",
+      "type": "video",
+      "dimensions": [
+        720,
+        900
+      ],
+      "seconds": 12.333333,
+      "priorBytes": 1410003,
+      "source": "videos/AQMdjW8R25EQ3tbJycqNamWmColP-8RdmLNSyZI3KYdhRrhLJseS2HKD6ZKBntbRW9jnKI2C-Ouul7kTE7lhh5jllLRqWWqhWezsUMs.mp4",
+      "sourceBytes": 1508548,
+      "sourceDimensions": [
+        720,
+        900
+      ],
+      "sourceSeconds": 12.353016,
+      "sourceSHA256": "43844ef675188f25288a24af33707fd4ccb861d5100a86253b7944dc67cfd70f",
+      "encoding": "HEVC hvc1 CRF 28, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.980917,
+      "frames": 370,
+      "audioTracks": 1,
+      "poster": {
+        "path": "media/lines-v1-street-winter-curb-pop-poster.jpg",
+        "bytes": 34235,
+        "sha256": "b85ce23700147ec238f1befd82ffc884d1ae042cb65726e93ed75e0a9a6ff746",
+        "dimensions": [
+          672,
+          840
+        ],
+        "priorBytes": 54008,
+        "source": "first decoded frame",
+        "priorSHA256": "e1570509c8f00e744b4be33542d9e055e9f1f1179b095d29111bee0ea432fb99"
+      },
+      "priorSHA256": "b8dcda2d66cda672312f08e6352e72398025a3ff631c0934b56fbee26f968fbf"
+    },
+    {
+      "path": "media/lines-v1-flat-turn-and-roll-out.mp4",
+      "bytes": 1276004,
+      "sha256": "26bb912893dcd9c6fb91fcf6769cdad761d4088dc96dc3f0823b76e337d3f693",
+      "id": "turn-and-roll-out",
+      "type": "video",
+      "dimensions": [
+        720,
+        900
+      ],
+      "seconds": 9.406009,
+      "priorBytes": 1763501,
+      "source": "videos/AQMppnn9lq1RKndh6fGFximZQPSnvFydBuxM36v6ok74AIviDeD7J2JY7MPna-VSySrw0xscThZebq6Hx0WA3CMdyPKzs9er7EgMoj8.mp4",
+      "sourceBytes": 1789109,
+      "sourceDimensions": [
+        720,
+        900
+      ],
+      "sourceSeconds": 9.520181,
+      "sourceSHA256": "fc1a0402706899b87ce04a1db45ae3c13e30713273c9a759dd9fd7a2b2a3c85c",
+      "encoding": "HEVC hvc1 CRF 28, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.978951,
+      "frames": 280,
+      "audioTracks": 1,
+      "poster": {
+        "path": "media/lines-v1-flat-turn-and-roll-out-poster.jpg",
+        "bytes": 30418,
+        "sha256": "d29b45b710164a8c14f9b59dd3d926c2b23516e6d36b33d4265704332e69e3fc",
+        "dimensions": [
+          672,
+          840
+        ],
+        "priorBytes": 48513,
+        "source": "first decoded frame",
+        "priorSHA256": "9bf5e75136319cfc7712ec23c02e93383a9517babf627102c70177f3d3664b98"
+      },
+      "priorSHA256": "b805e24cd2661e22b7843e652be68ba1635573b97923ad77b7a19841dbfc63c5"
+    },
+    {
+      "path": "media/lines-v1-offboard-deck-outside-the-shop.mp4",
+      "bytes": 2228843,
+      "sha256": "a69dd8ab20397327cdd26f7bc1edd229b918a32b01e15c3f941fea15ab8ec3c3",
+      "id": "deck-outside-the-shop",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 11.68,
+      "priorBytes": 2988835,
+      "source": "videos/AQMuobHqGoA0TC1VxCLNEGo0JX-8WmzdGcQ6MbtNniYN4ok2RCtJj9TmaeVRf121vFVVzUWNaW9-TZNFPx_rcMakNkFfy7h_2p2QO70.mp4",
+      "sourceBytes": 3490111,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 11.794331,
+      "sourceSHA256": "59d15494b31ba6881a4110a0c08123f852209df184608cc1cc47d20adcf6fa4a",
+      "encoding": "HEVC hvc1 CRF 28, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.977873,
+      "frames": 350,
+      "audioTracks": 1,
+      "poster": {
+        "path": "media/lines-v1-offboard-deck-outside-the-shop-poster.jpg",
+        "bytes": 41752,
+        "sha256": "e81d1b7b1ea0bbf9f82b98fb1aeeb9806da837e5ff24c124794ae6230003d8fa",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 58613,
+        "source": "first decoded frame",
+        "priorSHA256": "66b47453fee330919f25f2c2ac7e1a10640ff2c1da5b043f77fb412ef3f6ca19"
+      },
+      "priorSHA256": "9b2ba1a50c4226ed10e605baceb61f0325318446b3848d5d61aefc7fe8e97fe0"
+    },
+    {
+      "path": "media/lines-v1-street-night-sidewalk-line.mp4",
+      "bytes": 1690865,
+      "sha256": "45b74a136af5d26cb0e1e3a42442e938927d2f7cc746e0b6b4e2dfcc881a718e",
+      "id": "night-sidewalk-line",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 12.133333,
+      "priorBytes": 2680795,
+      "source": "videos/AQNQlQN_LYIsVUu0Ewdk3uCobrnYtetj8qmwHVljvWiLLnyHFnecK5f8NoyPUb9ef6lizNTV8tHChjbz5p_ODv6MeD1j7xEItD9G--I.mp4",
+      "sourceBytes": 3183587,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 12.133333,
+      "sourceSHA256": "36bbff33db604f80982dabbdca92a63db2fbb9a0a3f164c2001cf95aa392adeb",
+      "encoding": "HEVC hvc1 CRF 28, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.980335,
+      "frames": 364,
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-street-night-sidewalk-line-poster.jpg",
+        "bytes": 28809,
+        "sha256": "46b3b64516a88862e90637e8aef4d82aaad52ace6949be505b61d6ea048bab18",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 45399,
+        "source": "first decoded frame",
+        "priorSHA256": "1cc2660f8580a18d7a105589590d8da84201c89cd58d78818fdc9b7ca7dd163a"
+      },
+      "priorSHA256": "bdfeb12b16b303828d864054c226877c50121635ad87177b770331d1eff87bd3"
+    },
+    {
+      "path": "media/lines-v1-flat-last-light-roll.mp4",
+      "bytes": 2819218,
+      "sha256": "0b2ee4313960569304edd535517d7279a08c9082f3ef3e3026b4723db4656ea5",
+      "id": "last-light-roll",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 21.933333,
+      "priorBytes": 5924523,
+      "source": "videos/AQNVqpL0KYOSaJJwF_gIBmYjkeH-qKMOGualFTU899UqISOAcln1TlFh8kIn4K5kErTtVk3ZhkPhUqzDgMNfwip--97h5Ea2oikE1yw.mp4",
+      "sourceBytes": 6391305,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 21.933333,
+      "sourceSHA256": "dc7d30db88156f5eba455894104f53a42d6757fa1b4a39df03074b249c0fb4c3",
+      "encoding": "HEVC hvc1 CRF 28, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.978158,
+      "frames": 658,
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-flat-last-light-roll-poster.jpg",
+        "bytes": 19517,
+        "sha256": "c3cfdf5be2294ac179e4333f52e51dc00f295d5b73f366748c9c8c165b6cb431",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 30918,
+        "source": "first decoded frame",
+        "priorSHA256": "4d4ac1ad5c777406c78412b7ece4dd56f668d94a309d9cb3ee1c53ca88b7bfb4"
+      },
+      "priorSHA256": "40be3c203fecaab043acc86eed80ec6df89311f5f395d2c7b36190e750666863"
+    },
+    {
+      "path": "media/lines-v1-park-coping-run.mp4",
+      "bytes": 855563,
+      "sha256": "d0e473dab12b0eca43c42ec2c82ee9ca4f8db796a122d37f677592f5ca95ebc9",
+      "id": "coping-run",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 2.666667,
+      "priorBytes": 1164767,
+      "source": "videos/AQNwpmH3fjCelaztw-wCEuWx-wJxxXLHrUUMob5bgo4dkbnFn_AOv27wfk34DgfsNlAzJVuIWQnaRxUTaWBPkte2wHuuRnp3XtZqB3E.mp4",
+      "sourceBytes": 1245019,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 2.666667,
+      "sourceSHA256": "2e3dc103690342f2097ac7af800cca3a0749b8df5958ea60a10f58e4e6f3c6be",
+      "encoding": "HEVC hvc1 CRF 26, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.973568,
+      "frames": 80,
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-park-coping-run-poster.jpg",
+        "bytes": 34255,
+        "sha256": "84c0bcae48eaf25f72a476f8c82e80fe77e020628f8eb5ad244d23b59403a750",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 49337,
+        "source": "first decoded frame",
+        "priorSHA256": "286040937325f6867c8c844b14a1bff725c76b805d9ba24fccf529d0c4801ea7"
+      },
+      "priorSHA256": "ca7ba561fe6cb0df90b5d3ac73cf0cdbdb2fbef8c330bbc561a73c4b94d767db"
+    },
+    {
+      "path": "media/lines-v1-flat-court-deck-flip.mp4",
+      "bytes": 934289,
+      "sha256": "0e2b76754569bfba5d78d493c35d2985b147223e52904b25eeeb6fb76db0d701",
+      "id": "court-deck-flip",
+      "type": "video",
+      "dimensions": [
+        720,
+        900
+      ],
+      "seconds": 5.944308,
+      "priorBytes": 934289,
+      "source": "videos/AQO6y1j5cSAFjSDr_T0C1qRXA7DotsgU_7KBVsUgDdT2tU1cUymKJZ2DFkl3gb55ohSGB4Bxiog4L2YdeEy4-tkEWS3Rt1VoSGw0M0I.mp4",
+      "sourceBytes": 934289,
+      "sourceDimensions": [
+        720,
+        900
+      ],
+      "sourceSeconds": 5.944308,
+      "sourceSHA256": "0e2b76754569bfba5d78d493c35d2985b147223e52904b25eeeb6fb76db0d701",
+      "encoding": "Source h264 retained after size/quality comparison",
+      "audioTracks": 1,
+      "poster": {
+        "path": "media/lines-v1-flat-court-deck-flip-poster.jpg",
+        "bytes": 60247,
+        "sha256": "e1040790151da7f10606f55b66120a72e5795f71f7afe6c8431064cd952a5103",
+        "dimensions": [
+          672,
+          840
+        ],
+        "priorBytes": 60247,
+        "source": "first decoded frame",
+        "priorSHA256": "e1040790151da7f10606f55b66120a72e5795f71f7afe6c8431064cd952a5103"
+      },
+      "priorSHA256": "0e2b76754569bfba5d78d493c35d2985b147223e52904b25eeeb6fb76db0d701"
+    },
+    {
+      "path": "media/lines-v1-street-garage-flatground.mp4",
+      "bytes": 2274845,
+      "sha256": "a4e53678c65561c568081470358d4299caf73722f8067adab03b6af756c84d45",
+      "id": "garage-flatground",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 14.2,
+      "priorBytes": 3336907,
+      "source": "videos/AQOSawqV-DblqVzNn-qIzDgU2gi5AWBn-JF8eNpmLvHDhjj62crd9LodABgNKdjgjxFwUI4pxD5mEZdqj7j9GOMLJD5B-zjC0to_4VI.mp4",
+      "sourceBytes": 3760283,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 14.2,
+      "sourceSHA256": "86955ba699ec824a6283182cbfbc571af757182f34bdef912d75621b8c685286",
+      "encoding": "HEVC hvc1 CRF 28, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.985141,
+      "frames": 426,
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-street-garage-flatground-poster.jpg",
+        "bytes": 30173,
+        "sha256": "a8a38cfda33ca3e76921354c9c7160a5c8ab39e724e52db645c8a8f2920e374a",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 45066,
+        "source": "first decoded frame",
+        "priorSHA256": "0310692ce28a138f47292698d58144fe38c01866b9ccd5e3b35b6452ebda7419"
+      },
+      "priorSHA256": "7bb10cc6b0616c5de12965c9c83ba8abf350a5b6a8f32a72ff19f71b46e82a36"
+    },
+    {
+      "path": "media/lines-v1-offboard-roadside-sunset-pause.mp4",
+      "bytes": 432398,
+      "sha256": "3ae1132c136e55626db8afd3e0cef95eec2faeb185458a4cd8a0a4fe9a093f6f",
+      "id": "roadside-sunset-pause",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 4.233333,
+      "priorBytes": 432398,
+      "source": "videos/AQOlHr-41R4KQHdYNWbmwdpuLo5Q4bB2HNIPmy1YbYpNLHgSbNE0GnaNL8Kok1QyazxjSX6HYNuqthsFKbf2t95WrQqMPFyIuy4SHVs.mp4",
+      "sourceBytes": 468013,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 4.233333,
+      "sourceSHA256": "ff30729d281a7a39b3761a6ff90cd4939c3227c25689e64a1ff09fa48edb109b",
+      "encoding": "H.264 CRF 23, AAC 96 kbps if audio exists, fast start, original frame rate",
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-offboard-roadside-sunset-pause-poster.jpg",
+        "bytes": 31929,
+        "sha256": "9f81e2b5bfd5a5be96369105424171a8002f8f80e886b40d02e8fba7bccc8149",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 31929,
+        "source": "first decoded frame",
+        "priorSHA256": "9f81e2b5bfd5a5be96369105424171a8002f8f80e886b40d02e8fba7bccc8149"
+      },
+      "priorSHA256": "3ae1132c136e55626db8afd3e0cef95eec2faeb185458a4cd8a0a4fe9a093f6f"
+    },
+    {
+      "path": "media/lines-v1-flat-pink-board-cruise.mp4",
+      "bytes": 2569615,
+      "sha256": "1923c0d1e393131e82022341b32d52187276c0e194ec983a993d595a5c7a6a01",
+      "id": "pink-board-cruise",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 18.166667,
+      "priorBytes": 4625407,
+      "source": "videos/AQP8d7_We6Xp6v1SyVFAGNgEcKgPx3TpbBbKidv8XP48BwyLiH5tQ8JhHI_c11uChz1x3x1t03FTNkOAWbLsKmKeeiL3d64b_BzgRfo.mp4",
+      "sourceBytes": 4921153,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 18.248027,
+      "sourceSHA256": "cab3e2d91f16e3c7d1cd8cbd135fcbbd0f82c579f578517a41874e983a79a483",
+      "encoding": "HEVC hvc1 CRF 28, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.978626,
+      "frames": 545,
+      "audioTracks": 1,
+      "poster": {
+        "path": "media/lines-v1-flat-pink-board-cruise-poster.jpg",
+        "bytes": 26902,
+        "sha256": "bf3bb6274b709ee2256ab99db6bbd338a2174087d84f3aa8f078575f493284e6",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 41457,
+        "source": "first decoded frame",
+        "priorSHA256": "9b9202a1ee4b5ac50a6822cc0cd16f5eab21228d3e7d2075d06556fdbde5afa1"
+      },
+      "priorSHA256": "4a3961c713227a52c43ffbb6480ea1e90ef7244be68b4543cb7d0b7ff6523420"
+    },
+    {
+      "path": "media/lines-v1-park-indoor-turn.mp4",
+      "bytes": 1385623,
+      "sha256": "acd48df9465a9f513c15f42e6df4a229eb6673ff517c601e0f69ec2f10a0d889",
+      "id": "indoor-turn",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 7.766667,
+      "priorBytes": 2520528,
+      "source": "videos/AQPH3t7-eRDHDPcmP17cU0TFnC_oPZnhZpYo5BjjPcPwMuZKcdwPwxZtJGiZEfkS4CMcOkcidKLZGSnoX4mWtx3wPkBmJ7v_VYwemQE.mp4",
+      "sourceBytes": 2591238,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 7.766667,
+      "sourceSHA256": "24cd8d6e86c67d582237f1a1738211e4008414c1e0e00c043aec70c815671581",
+      "encoding": "HEVC hvc1 CRF 26, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.985824,
+      "frames": 233,
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-park-indoor-turn-poster.jpg",
+        "bytes": 19317,
+        "sha256": "1f7b573194492a519acf613fd7117cac1eca951b2e1b206666840d44084d46cd",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 32073,
+        "source": "first decoded frame",
+        "priorSHA256": "9d26132156cd3519d197accd5bbb4bb0a427d14e0804595583f72d7ec54b0d5e"
+      },
+      "priorSHA256": "89013baf1aeeecf74b397a3f42d571be8b586f6d6425acf31214c90c905ad150"
+    },
+    {
+      "path": "media/lines-v1-flat-green-fence-flip.mp4",
+      "bytes": 519914,
+      "sha256": "5cf41f2c6070dc03301d5173db38c7b0aa71994ddc6964de13a5bcff8d663c88",
+      "id": "green-fence-flip",
+      "type": "video",
+      "dimensions": [
+        720,
+        900
+      ],
+      "seconds": 6.687347,
+      "priorBytes": 519914,
+      "source": "videos/AQPND23FVCv81Fn3J_rsLOxVlFsa1FXDdg-BAFmURCGjqN6sw29PioZOnfrCXynlotyZdCHpU4xm5Soltt5YE9z2yO5nus0gBME6dYk.mp4",
+      "sourceBytes": 519914,
+      "sourceDimensions": [
+        720,
+        900
+      ],
+      "sourceSeconds": 6.687347,
+      "sourceSHA256": "5cf41f2c6070dc03301d5173db38c7b0aa71994ddc6964de13a5bcff8d663c88",
+      "encoding": "Source h264 retained after size/quality comparison",
+      "audioTracks": 1,
+      "poster": {
+        "path": "media/lines-v1-flat-green-fence-flip-poster.jpg",
+        "bytes": 67350,
+        "sha256": "62e64b4d788873bdc71682b95a0d211f947cdd4d3334ef9c51f149cea83d31bf",
+        "dimensions": [
+          672,
+          840
+        ],
+        "priorBytes": 67350,
+        "source": "first decoded frame",
+        "priorSHA256": "62e64b4d788873bdc71682b95a0d211f947cdd4d3334ef9c51f149cea83d31bf"
+      },
+      "priorSHA256": "5cf41f2c6070dc03301d5173db38c7b0aa71994ddc6964de13a5bcff8d663c88"
+    },
+    {
+      "path": "media/lines-v1-park-warehouse-roll-in.mp4",
+      "bytes": 2753790,
+      "sha256": "5de0af7f252712cc180d6657ee18121d1a9e712b0577a1f5299bae44fb92e1e4",
+      "id": "warehouse-roll-in",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 11.133333,
+      "priorBytes": 4599858,
+      "source": "videos/AQPYq1vSoNzumn13yiLH5681-tdjzd_OokP-Mdq2y75gRkUnXLBm1mj3d1bpUjAKs_Irezq1Z2uFmEVDnHJJ_hpU7-GeMZAzc6j1s0jMd4iFbQ.mp4",
+      "sourceBytes": 5246836,
+      "sourceDimensions": [
+        1080,
+        1920
+      ],
+      "sourceSeconds": 11.133333,
+      "sourceSHA256": "25ad1a0e266d8e07e17db35c86c3bbe5ffb0de8c47ffc0d7453d6a2f70b44dbf",
+      "encoding": "HEVC hvc1 CRF 26, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.979161,
+      "frames": 334,
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-park-warehouse-roll-in-poster.jpg",
+        "bytes": 25725,
+        "sha256": "9a2d686071cb430933a73885df5022786da2afb29a6b044de706c724f9c2f4b2",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 39892,
+        "source": "first decoded frame",
+        "priorSHA256": "b2622b945559b4ee5e042fa6aac59d469716c21bdc3fa8e2c6635e20b8fcfe12"
+      },
+      "priorSHA256": "620fa5c9b16588d3c46e9ce5bc3defec32f4c221ec8626315b5a428ab33d6031"
+    },
+    {
+      "path": "media/lines-v1-park-rail-to-roll-away.mp4",
+      "bytes": 2042485,
+      "sha256": "4b68b3a8344cd98886dcae6f9fd8c4cca2fa3a7fd1496a0d33bf595fc6d4dd61",
+      "id": "rail-to-roll-away",
+      "type": "video",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "seconds": 7.733333,
+      "priorBytes": 2447356,
+      "source": "videos/AQPfX-Mtp7IQjkqV5FO-ZOdYLY7llG5ZrbntZYZIsU6sh-JoVSbncDCiEomh4l1f16BGDL2k5-9vXcnFfQkE08tqYecQkdzybIlqBY4.mp4",
+      "sourceBytes": 2887628,
+      "sourceDimensions": [
+        720,
+        1280
+      ],
+      "sourceSeconds": 7.733333,
+      "sourceSHA256": "6776a0c7fe2800662553851e7163193ecc55265ed48a32e6c6c60feb307217e9",
+      "encoding": "HEVC hvc1 CRF 26, medium, yuv420p, original frame rate and AAC packets",
+      "ssim": 0.978026,
+      "frames": 232,
+      "audioTracks": 0,
+      "poster": {
+        "path": "media/lines-v1-park-rail-to-roll-away-poster.jpg",
+        "bytes": 48208,
+        "sha256": "c9c20f0f09d5d81d5f02160191d299fd29fd06fa9c773fed4ef20effb29dae4f",
+        "dimensions": [
+          472,
+          840
+        ],
+        "priorBytes": 68579,
+        "source": "first decoded frame",
+        "priorSHA256": "36e0d1d5cf7e197c72b6b7121c1c3d4e6beb58542536276b5aff5eb4c1ebdff6"
+      },
+      "priorSHA256": "6990d537d4b423f95d0d3701450c49f8120a7f8e5e8843a657cca2e7b67763f6"
+    },
+    {
+      "path": "media/lines-v1-street-concrete-bench-line.mp4",
+      "bytes": 643374,
+      "sha256": "646b22a9d898cee78cb45f9661af2c5e73d9035b5327ac384a916dd87745d5e9",
+      "id": "concrete-bench-line",
+      "type": "video",
+      "dimensions": [
+        720,
+        720
+      ],
+      "seconds": 3.529433,
+      "priorBytes": 643374,
+      "source": "videos/AQPsGAD7wh7UqDZrLKWhUqkysChi2WhQchTeFpPEFsyW-0gs4OuPgFrdmdhgTMcUKjrUMUBdDVaNI6hZzvQLRCgEddk2-k4sTUtVZ18.mp4",
+      "sourceBytes": 643374,
+      "sourceDimensions": [
+        720,
+        720
+      ],
+      "sourceSeconds": 3.529433,
+      "sourceSHA256": "646b22a9d898cee78cb45f9661af2c5e73d9035b5327ac384a916dd87745d5e9",
+      "encoding": "Source h264 retained after size/quality comparison",
+      "audioTracks": 1,
+      "poster": {
+        "path": "media/lines-v1-street-concrete-bench-line-poster.jpg",
+        "bytes": 85640,
+        "sha256": "195245138590faab4f36fd20acb7bd1fcb4fbeb4ef4f78a8004424554e3622d2",
+        "dimensions": [
+          720,
+          720
+        ],
+        "priorBytes": 85640,
+        "source": "first decoded frame",
+        "priorSHA256": "195245138590faab4f36fd20acb7bd1fcb4fbeb4ef4f78a8004424554e3622d2"
+      },
+      "priorSHA256": "646b22a9d898cee78cb45f9661af2c5e73d9035b5327ac384a916dd87745d5e9"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
-  "schema_version": 15,
+  "schema_version": 18,
   "workspace_root": "/Users/chengdupengyuyan/Fun",
-  "framework": "native-ios",
-  "language": "swift",
+  "framework": "react-native",
+  "language": "typescript",
   "platforms": [
     "ios"
   ],
-  "minimum_ios": "15.0",
+  "minimum_ios": "17.6",
   "codex": {
     "register_project_folders": true,
     "create_thread_per_app": false,
@@ -17,26 +17,28 @@
     "visibility": "private",
     "default_branch": "main"
   },
-  "delivery_mode": "local-business-supabase-media",
+  "delivery_mode": "local-business-bundled-media",
   "iap_mode": "local-storekit",
   "bundle_id_prefix": "com.funchan666",
   "apps": [
     {
-      "source_mode": "new-native",
-      "ui_stack": "swiftui",
-      "ui_stack_rationale": "新建工程，采用状态驱动的 SwiftUI；媒体选择、平台相机、播放图层和协议网页通过小范围原生桥接承载。",
+      "source_mode": "react-native-existing",
+      "ui_stack": "react-native-webview-local",
+      "ui_stack_rationale": "React Native 启动后由 iOS 解包 Nina.zip。WKWebView 承载本地注册、登录与社区，板点簿、动作日志等深层页面由 React Native 承载。",
       "app_name": "Nina",
       "name_meaning_zh": "用户指定的品牌名 Nina",
       "name_theme_rationale": "用户指定名称，Nina 作为滑板刊物的短刊头。",
       "name_social_rationale": "Crew 按真实的板点与练习记录发现同场滑手。",
       "repo_name": "Nina",
-      "swift_module_name": "Nina",
       "local_path": "/Users/chengdupengyuyan/Fun/Nina",
       "ios_display_name": "Nina",
       "ios_host_project": "Nina.xcodeproj",
       "ios_target": "Nina",
       "ios_scheme": "Nina",
-      "source_root": "Nina/Sources",
+      "source_root": "src",
+      "web_root": "web/community",
+      "web_entry": "index.html",
+      "web_archive": "Nina/Resources/Nina.zip",
       "theme": "滑板运动爱好者社交",
       "audience": "Adult skateboarders building their trick repertoire and returning to familiar skate spots.",
       "product_promise": "Turn a line you spotted into a trackable goal and a reason to return to a spot.",
@@ -53,7 +55,7 @@
         "Crew"
       ],
       "home_primary_task": "Browse a curated line or photo by terrain and pull a reference into practice.",
-      "community_content_location": "Lines has the editorial photos and clips, their details and comment threads. Crew profile has private submitted work and saved lines.",
+      "community_content_location": "The bundled Skate Community opens first and displays sample Lines and on-device interactions. Lines contains full photos, clips and details. Crew profile has private submissions and saved lines.",
       "user_discovery_location": "Crew directory and spot contribution lists within Spot Book.",
       "message_location": "Crew → Messages with separate Drafts and Activity tabs.",
       "creation_entry": "Lines → Post or a profile’s Submissions. Sessions → Add spot or Log tricks.",
@@ -82,24 +84,21 @@
         "Crew: two crossed board shadows at a bench."
       ],
       "seed_data_direction": "Editorial media metadata only. Registered profiles and interaction counts come from actual user actions.",
-      "architecture_direction": "Account-isolated JSON state, Keychain session, URLSession read-only Storage images, single AVPlayer, verified StoreKit ledger.",
+      "architecture_direction": "React Native starts the bundled Nina.zip community in WKWebView. The web feed and native playback share the same extracted media directory. TypeScript owns the journal. Keychain stores the local session and password verifier. UIKit hosts the native Apple features.",
       "domain_modules": [
-        "Features/Lines",
-        "Features/SessionBook",
-        "Features/Crew",
-        "Features/Grip"
+        "community"
       ],
       "domain_model_types": [
-        "SkateSpot",
-        "TrickAttempt",
-        "LineMedia",
-        "CrewFollow",
+        "Spot",
+        "Attempt",
+        "Line",
+        "Follow",
         "GripEntry"
       ],
       "primary_flow_types": [
-        "TrickProgress",
-        "PublicationStatus",
-        "NinaRoute"
+        "Route",
+        "Attempt",
+        "Submission"
       ],
       "theme_mapping": "Terrain media suggests a spot and a trick reference. Named spot visits surface actual participating profiles.",
       "bundle_id": "com.funchan666.nina",
@@ -133,10 +132,11 @@
         "com.funchan666.nina.placeholder.grip.line": "19.99",
         "com.funchan666.nina.placeholder.grip.crew": "49.99",
         "com.funchan666.nina.placeholder.grip.tour": "99.99"
-      }
+      },
+      "rn_component_name": "Nina"
     }
   ],
-  "backend": "supabase-media-only",
+  "backend": "none",
   "login_mode": "local-email-and-apple",
   "call_mode": "waiting-only",
   "automatic_followers": false,
@@ -144,5 +144,13 @@
     "currency": "USD",
     "scope": "base-storefront",
     "maximum": "99.99"
+  },
+  "react_native_version": "0.88.1",
+  "media_delivery": "bundled",
+  "toolchain_notes": "React 19.3.0, TypeScript 6.0.3, Node 22.17.0, CocoaPods 1.16.2, iPhoneOS SDK 27.1, ZIPFoundation 0.9.20 and the iOS WKWebView host.",
+  "size_policy": {
+    "target_bytes": 50000000,
+    "mode": "quality-first-soft-target",
+    "report": "docs/SIZE_BUDGET.md"
   }
 }

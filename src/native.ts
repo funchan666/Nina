@@ -1,4 +1,4 @@
-import {NativeEventEmitter, NativeModules, requireNativeComponent} from 'react-native';
+import {DeviceEventEmitter, NativeEventEmitter, NativeModules, requireNativeComponent} from 'react-native';
 import type {NativeSyntheticEvent, ViewProps} from 'react-native';
 import type {Attachment, ID} from './state/model';
 
@@ -6,6 +6,7 @@ export type Rect = {x: number; y: number; width: number; height: number};
 export type WindowLayout = {margins: {left: number; right: number}; regions: Rect[]};
 export type Configuration = {media: string; fileBase: string; supportEmail: string; purchasesEnabled: boolean};
 export type Policy = 'terms' | 'privacy' | 'rules';
+export type WebPage = 'website' | Policy;
 export type PickSource = 'photos' | 'picture' | 'movie';
 export type Identity = {key: string; id: ID; name?: string};
 export type FilmState = {
@@ -30,14 +31,16 @@ type Bootstrap = {
   legacyNeedsCleanup: boolean;
   activeID: ID | null;
   config: Configuration;
-  layout: WindowLayout;
 };
 type PlatformMethods = {
   bootstrap: [undefined, Bootstrap];
+  windowLayout: [undefined, WindowLayout];
   writeArchive: [{json: string; removeLegacy?: boolean}, void];
   cleanLegacy: [undefined, void];
   session: [{id: ID | null}, void];
   identity: [{value: string}, Identity];
+  registerPassword: [{owner: ID; password: string}, void];
+  verifyPassword: [{owner: ID; password: string}, void];
   appleSignIn: [undefined, Identity];
   pick: [{owner: ID; source: PickSource; avatar: boolean}, Attachment | null];
   removeAttachment: [{owner: ID; attachment: Attachment}, void];
@@ -62,10 +65,13 @@ export function platform<K extends keyof PlatformMethods>(
   operation: K,
   ...args: PlatformMethods[K][0] extends undefined ? [] : [PlatformMethods[K][0]]
 ): Promise<PlatformMethods[K][1]> {
+  if (!device) {
+    return Promise.reject(new Error('The Nina iPhone bridge is unavailable.'));
+  }
   return device.perform(operation, args[0] ?? {});
 }
 
-const events = new NativeEventEmitter(device);
+const events = device ? new NativeEventEmitter(device) : DeviceEventEmitter;
 export const onLayoutChange = (event: (layout: WindowLayout) => void) => events.addListener('NinaWindowLayout', event);
 export const onFilmChange = (event: (state: FilmState) => void) => events.addListener('NinaFilmState', event);
 export const onPurchase = (event: (transaction: VerifiedPurchase) => void) => events.addListener('NinaPurchase', event);
@@ -76,24 +82,29 @@ export type SurfaceSignal =
   | {status: 'pressed'}
   | {status: 'loading' | 'loaded' | 'failed'};
 type SurfaceProps = ViewProps & {
-  kind: 'apple' | 'film' | 'camera' | 'policy';
+  kind: 'apple' | 'film' | 'camera' | 'web';
   enabled?: boolean;
-  policy?: Policy;
+  page?: WebPage;
   revision?: number;
   onSignal?: (event: NativeSyntheticEvent<SurfaceSignal>) => void;
 };
 export const NativeSurface = requireNativeComponent<SurfaceProps>('NinaSurface');
 
-export function mediaURI(config: Configuration, path?: string | null) {
-  if (!config.media || !path || !path.split('/').every(part => /^[a-z0-9][a-z0-9.-]*$/.test(part))) {
+export function mediaFilename(path?: string | null) {
+  if (!path || !/^[a-z0-9][a-z0-9.-]*$/.test(path)) {
     return undefined;
   }
-  return `${config.media.replace(/\/$/, '')}/${path}`;
+  return path;
 }
 
-export function attachmentURI(config: Configuration, owner: ID, file?: string) {
+export function mediaURI(config: Configuration, path?: string | null) {
+  const filename = mediaFilename(path);
+  return config.media && filename ? `${config.media.replace(/\/$/, '')}/${filename}` : undefined;
+}
+
+export function attachmentURI(fileBase: string, owner: ID, file?: string) {
   if (!file || !/^[\da-f-]{36}$/i.test(owner) || !/^[\da-f-]{36}\.[a-z0-9]{1,8}$/i.test(file)) {
     return undefined;
   }
-  return `${config.fileBase.replace(/\/$/, '')}/${owner}/${file}`;
+  return `${fileBase.replace(/\/$/, '')}/${owner}/${file}`;
 }

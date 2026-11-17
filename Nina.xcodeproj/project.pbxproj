@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,65 +12,138 @@
 		1C2C32B4067D8CE13EEAF31A /* PlatformPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD527D1525D2FFF842EE16C6 /* PlatformPurchases.swift */; };
 		244E840511FEF80D22760208 /* PlatformPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7462B7C613810B3DACA7DB /* PlatformPicker.swift */; };
 		295063CED270EACD7B4A3089 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 723707FFDBFBF18CC196FFB3 /* privacy.html */; };
+		31DB678EB7844E62FFBBC283 /* LocalPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771026D92BB82A9FE00C1C1 /* LocalPassword.swift */; };
 		3709D0E545E6DE9AD854C2F0 /* Barlow-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F13F60C7705842C3A41C879 /* Barlow-SemiBold.ttf */; };
+		43A1E5EFC6617667C537A70A /* OfflineArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A6364DF67DC94737BA16C3 /* OfflineArchive.swift */; };
 		489B8BF3C64C6340784AF4CD /* NinaSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC51A849E0F7D77219A128A /* NinaSurfaceView.swift */; };
-		4CA7B9F393E463B12B7FDC88 /* libPods-Nina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E74A9A89CE2272D3D59DBC /* libPods-Nina.a */; };
 		5A5276ED492AB1D8E762F87B /* Barlow-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C61BA93E5E414FC9A533A150 /* Barlow-OFL.txt */; };
 		5A7E8193870541D64D59128C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153E18C228AB46644FE526A8 /* Assets.xcassets */; };
 		661680C23F1608820901B74A /* BarlowCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24D1869DBCF6BA3DBA2A8D50 /* BarlowCondensed-Bold.ttf */; };
-		6A08BDA6C6E391DD0BFF0D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB75DBCC096CEFD7C27B5C9 /* LaunchScreen.storyboard */; };
 		7053D6E82BE0EB499B99B4EF /* Barlow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 462C4A7F84AC86E3EE8A7533 /* Barlow-Regular.ttf */; };
 		AA7F1FE8EA330954EC76A699 /* NinaHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D6ED17E399853A70190CD /* NinaHost.swift */; };
 		ACB60365F94341B885571A49 /* rules.html in Resources */ = {isa = PBXBuildFile; fileRef = DFE38566D7309D7C9E142DEF /* rules.html */; };
+		B74C72651B2734FB43567C31 /* libPods-Nina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323610AF1653D0C9900BF85 /* libPods-Nina.a */; };
 		BAC3F481EB3DC2D73E90D00C /* PlatformIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF06228D199D052A57F3B8F /* PlatformIdentity.swift */; };
 		BD58DBBEAD14E27AEB9AB7E5 /* BarlowCondensed-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D2347CE31FD1F8610327697 /* BarlowCondensed-OFL.txt */; };
+		BF6BD1C80E45CB2434168F95 /* NinaCommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F0F2E0F125CD8BE3150E3E /* NinaCommunityView.swift */; };
 		D2CCA1813470D08C8B1E23FF /* SessionVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51623DDE7AC4DED5473170E8 /* SessionVault.swift */; };
 		D7BAEBBF31408296F0007017 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E7460373376E189C24916 /* terms.html */; };
+		E61B305A24DC7C8509EBB6AE /* Nina.zip in Resources */ = {isa = PBXBuildFile; fileRef = F4A190A0F21F7434BECA0B30 /* Nina.zip */; };
 		F29E2F6628BB3A1B5F3A0530 /* SkateFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0035AEB6EB9BE991C18CD37 /* SkateFiles.swift */; };
 		F2DDA4DCF6EA4B63A0AF6D92 /* DeckPlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221F012D8265763EA3167BE /* DeckPlayback.swift */; };
 		F85FA8484D1A43E36BE94142 /* SkateCallCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1440D812CE2F34A84585E1C /* SkateCallCamera.swift */; };
 		F8FF39F6E7D74DCBEE24422F /* NinaBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8179EDDA6C183490BD03BE /* NinaBridge.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0FF60E769434B12D1A77AE4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A3CB676E2B52DDFF0329FD91BA00EFE;
+			remoteInfo = "Pods-Nina";
+		};
+		12F33AD89ADF80D46654EA2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52FCF98CEFF94C742080B6965D537AD0;
+			remoteInfo = Subproject;
+		};
+		19C2E500F921BC63DDC43B15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 48A4A6EDC08C8AC933D0DCD507E9D173;
+			remoteInfo = Subproject;
+		};
+		4642B3819E9192B9E170DC67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C07C429E887D0FBD7D457208EF1B14CD;
+			remoteInfo = Subproject;
+		};
+		520D9080C45B7173BDF87A55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 465B54D099DA907E9393A94952E2D214;
+			remoteInfo = Subproject;
+		};
+		B518CAAEE830E67B17E1D8CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E29ADDC93B6DED49A5C18F17348381B1;
+			remoteInfo = Subproject;
+		};
+		C200513E62B8875B66282DBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A1B6A764DE9F3C74B0ECDA9B592F3FDD;
+			remoteInfo = Subproject;
+		};
+		D83BCC25FEB819FA3B1112A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA4A114775B98CEA4A566C18123B145F;
+			remoteInfo = Subproject;
+		};
+		E0000A7E132D4C5FA123A3A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0CEF74A24ECE8AEEF7B1E27B305D2DDC;
+			remoteInfo = Subproject;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		013D6ED17E399853A70190CD /* NinaHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaHost.swift; sourceTree = "<group>"; };
+		06A6364DF67DC94737BA16C3 /* OfflineArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineArchive.swift; sourceTree = "<group>"; };
 		153E18C228AB46644FE526A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D2347CE31FD1F8610327697 /* BarlowCondensed-OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BarlowCondensed-OFL.txt"; sourceTree = "<group>"; };
 		24D1869DBCF6BA3DBA2A8D50 /* BarlowCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowCondensed-Bold.ttf"; sourceTree = "<group>"; };
-		2FB75DBCC096CEFD7C27B5C9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2EC1C0FF97B71AD6C04EB754 /* Pods-Nina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nina.debug.xcconfig"; path = "Target Support Files/Pods-Nina/Pods-Nina.debug.xcconfig"; sourceTree = "<group>"; };
 		2FF06228D199D052A57F3B8F /* PlatformIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformIdentity.swift; sourceTree = "<group>"; };
-		3748899FDF6B3EFAB7950CEE /* Products.storekit */ = {isa = PBXFileReference; path = Products.storekit; sourceTree = "<group>"; };
-		40011E0611441F1BE6771CC5 /* Nina.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Nina.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3748899FDF6B3EFAB7950CEE /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		40011E0611441F1BE6771CC5 /* Nina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		429C73C05909AC69F5BFD029 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		462C4A7F84AC86E3EE8A7533 /* Barlow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Regular.ttf"; sourceTree = "<group>"; };
-		47537F6ECC436577B0B75FF9 /* Pods-Nina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nina.release.xcconfig"; path = "Target Support Files/Pods-Nina/Pods-Nina.release.xcconfig"; sourceTree = "<group>"; };
 		4CF8379BBB1F685DBE8C0D36 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		4DC51A849E0F7D77219A128A /* NinaSurfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaSurfaceView.swift; sourceTree = "<group>"; };
 		4F13F60C7705842C3A41C879 /* Barlow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-SemiBold.ttf"; sourceTree = "<group>"; };
 		4F1E7460373376E189C24916 /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
 		51623DDE7AC4DED5473170E8 /* SessionVault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionVault.swift; sourceTree = "<group>"; };
-		5CA3B538D4A2B2BF531A4754 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		5323610AF1653D0C9900BF85 /* libPods-Nina.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nina.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CA3B538D4A2B2BF531A4754 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5E8179EDDA6C183490BD03BE /* NinaBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NinaBridge.m; sourceTree = "<group>"; };
 		723707FFDBFBF18CC196FFB3 /* privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
 		7AF8636D7CD7425EBC869FFD /* NinaPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaPlatform.swift; sourceTree = "<group>"; };
 		A221F012D8265763EA3167BE /* DeckPlayback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPlayback.swift; sourceTree = "<group>"; };
+		B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		BF324C181E81EBA8A032DC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C61BA93E5E414FC9A533A150 /* Barlow-OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Barlow-OFL.txt"; sourceTree = "<group>"; };
 		CC7462B7C613810B3DACA7DB /* PlatformPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPicker.swift; sourceTree = "<group>"; };
-		DE15DE81B78C5EC4E426A815 /* Pods-Nina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nina.debug.xcconfig"; path = "Target Support Files/Pods-Nina/Pods-Nina.debug.xcconfig"; sourceTree = "<group>"; };
 		DFE38566D7309D7C9E142DEF /* rules.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = rules.html; sourceTree = "<group>"; };
+		E0F0F2E0F125CD8BE3150E3E /* NinaCommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaCommunityView.swift; sourceTree = "<group>"; };
 		E1440D812CE2F34A84585E1C /* SkateCallCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateCallCamera.swift; sourceTree = "<group>"; };
-		E1E74A9A89CE2272D3D59DBC /* libPods-Nina.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nina.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E953F07714F8A6D56BB3BB7E /* Pods-Nina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nina.release.xcconfig"; path = "Target Support Files/Pods-Nina/Pods-Nina.release.xcconfig"; sourceTree = "<group>"; };
 		F0035AEB6EB9BE991C18CD37 /* SkateFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateFiles.swift; sourceTree = "<group>"; };
+		F4A190A0F21F7434BECA0B30 /* Nina.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Nina.zip; sourceTree = "<group>"; };
+		F771026D92BB82A9FE00C1C1 /* LocalPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPassword.swift; sourceTree = "<group>"; };
 		FD527D1525D2FFF842EE16C6 /* PlatformPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPurchases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A408E86248DC67D771512A33 /* Frameworks */ = {
+		7D37ADD000AF331E84370BA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CA7B9F393E463B12B7FDC88 /* libPods-Nina.a in Frameworks */,
+				B74C72651B2734FB43567C31 /* libPods-Nina.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,8 +155,9 @@
 			children = (
 				6C699FB5335828F1FED4F467 /* Nina */,
 				4534B51D7C0E156262001105 /* Products */,
-				5D7DE4FCB5A18073C428C91D /* Pods */,
-				C2E36C6DA92C6974061B746E /* Frameworks */,
+				7FEC7A4D4B45DDFE64C83199 /* Pods */,
+				2610553988FE2BFE8F266786 /* Frameworks */,
+				B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,13 +166,21 @@
 			children = (
 				153E18C228AB46644FE526A8 /* Assets.xcassets */,
 				BF324C181E81EBA8A032DC27 /* Info.plist */,
-				2FB75DBCC096CEFD7C27B5C9 /* LaunchScreen.storyboard */,
+				F4A190A0F21F7434BECA0B30 /* Nina.zip */,
 				5CA3B538D4A2B2BF531A4754 /* PrivacyInfo.xcprivacy */,
 				3748899FDF6B3EFAB7950CEE /* Products.storekit */,
 				EA270F0D06F8A78C21BA6E73 /* Fonts */,
 				65950F2EB051F85609CBF613 /* Legal */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2610553988FE2BFE8F266786 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5323610AF1653D0C9900BF85 /* libPods-Nina.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		436D19D442CCE6B595B44B0D /* Config */ = {
@@ -118,24 +200,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5D7DE4FCB5A18073C428C91D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DE15DE81B78C5EC4E426A815 /* Pods-Nina.debug.xcconfig */,
-				47537F6ECC436577B0B75FF9 /* Pods-Nina.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		60CB49914E0CD521FD43E5D0 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
 				A221F012D8265763EA3167BE /* DeckPlayback.swift */,
+				F771026D92BB82A9FE00C1C1 /* LocalPassword.swift */,
 				5E8179EDDA6C183490BD03BE /* NinaBridge.m */,
+				E0F0F2E0F125CD8BE3150E3E /* NinaCommunityView.swift */,
 				013D6ED17E399853A70190CD /* NinaHost.swift */,
 				7AF8636D7CD7425EBC869FFD /* NinaPlatform.swift */,
 				4DC51A849E0F7D77219A128A /* NinaSurfaceView.swift */,
+				06A6364DF67DC94737BA16C3 /* OfflineArchive.swift */,
 				2FF06228D199D052A57F3B8F /* PlatformIdentity.swift */,
 				CC7462B7C613810B3DACA7DB /* PlatformPicker.swift */,
 				FD527D1525D2FFF842EE16C6 /* PlatformPurchases.swift */,
@@ -166,12 +241,28 @@
 			path = Nina;
 			sourceTree = "<group>";
 		};
-		C2E36C6DA92C6974061B746E /* Frameworks */ = {
+		7FEC7A4D4B45DDFE64C83199 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1E74A9A89CE2272D3D59DBC /* libPods-Nina.a */,
+				2EC1C0FF97B71AD6C04EB754 /* Pods-Nina.debug.xcconfig */,
+				E953F07714F8A6D56BB3BB7E /* Pods-Nina.release.xcconfig */,
 			);
-			name = Frameworks;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D57EEC1FAEB1BD15FE764C39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3224C4BF89433F842F1314F /* libPods-Nina.a */,
+				4679B81E596D1940A418B348 /* React-cxxreact_privacy.bundle */,
+				E329E6CD2249DE07844C4AFA /* libreact-native-safe-area-context.a */,
+				8945B1ED1A8C30D6E3C6542F /* React-timing_privacy.bundle */,
+				0D8237800E0EF85D8F546AD5 /* libReactAppDependencyProvider.a */,
+				199FE5175FA8C9076F8D182F /* libReactCodegen.a */,
+				3C162E539337927093AF22AB /* libZIPFoundation.a */,
+				E009237C5FF8DB14B61FCE91 /* ZIPFoundation_Privacy.bundle */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		EA270F0D06F8A78C21BA6E73 /* Fonts */ = {
@@ -193,17 +284,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35AA0330E1DD4065D8895770 /* Build configuration list for PBXNativeTarget "Nina" */;
 			buildPhases = (
-				F08535F11B7B0E2D68274BAD /* [CP] Check Pods Manifest.lock */,
+				8A779916AC80FBC98D2D9451 /* [CP] Check Pods Manifest.lock */,
 				49469269837F6CEC4A9FE361 /* Sources */,
 				D5C69EA34C419FABC76F51A9 /* Resources */,
 				CB94DF7C6F87570007EAC85C /* Bundle React Native code and images */,
-				A408E86248DC67D771512A33 /* Frameworks */,
-				3E626CC3598BEDBD80A559E6 /* [CP] Embed Pods Frameworks */,
-				A15835E1F78757272728EE39 /* [CP] Copy Pods Resources */,
+				7D37ADD000AF331E84370BA7 /* Frameworks */,
+				03ECC92F2B310E4A118CB4AF /* [CP] Embed Pods Frameworks */,
+				4A4AB96EC86386DCFD9F802C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1CE6CD109E99888ECFC57C28 /* PBXTargetDependency */,
 			);
 			name = Nina;
 			productName = Nina;
@@ -217,13 +309,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-					1D5CF2F6B40666438015683C = {
-						DevelopmentTeam = "";
-						ProvisioningStyle = Automatic;
-					};
-				};
+				LastUpgradeCheck = 2710;
 			};
 			buildConfigurationList = 636D490539558E6B77ED5B6A /* Build configuration list for PBXProject "Nina" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -235,15 +321,79 @@
 			);
 			mainGroup = 1A158FCCB3423F5712F08B1B;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 4534B51D7C0E156262001105 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D57EEC1FAEB1BD15FE764C39 /* Products */;
+					ProjectRef = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D5CF2F6B40666438015683C /* Nina */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0D8237800E0EF85D8F546AD5 /* libReactAppDependencyProvider.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactAppDependencyProvider.a;
+			remoteRef = 4642B3819E9192B9E170DC67 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		199FE5175FA8C9076F8D182F /* libReactCodegen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactCodegen.a;
+			remoteRef = E0000A7E132D4C5FA123A3A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3C162E539337927093AF22AB /* libZIPFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZIPFoundation.a;
+			remoteRef = 19C2E500F921BC63DDC43B15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4679B81E596D1940A418B348 /* React-cxxreact_privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.plug-in";
+			path = "React-cxxreact_privacy.bundle";
+			remoteRef = B518CAAEE830E67B17E1D8CA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8945B1ED1A8C30D6E3C6542F /* React-timing_privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.plug-in";
+			path = "React-timing_privacy.bundle";
+			remoteRef = 520D9080C45B7173BDF87A55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E009237C5FF8DB14B61FCE91 /* ZIPFoundation_Privacy.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.plug-in";
+			path = ZIPFoundation_Privacy.bundle;
+			remoteRef = D83BCC25FEB819FA3B1112A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E3224C4BF89433F842F1314F /* libPods-Nina.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-Nina.a";
+			remoteRef = C200513E62B8875B66282DBE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E329E6CD2249DE07844C4AFA /* libreact-native-safe-area-context.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libreact-native-safe-area-context.a";
+			remoteRef = 12F33AD89ADF80D46654EA2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D5C69EA34C419FABC76F51A9 /* Resources */ = {
@@ -256,8 +406,8 @@
 				3709D0E545E6DE9AD854C2F0 /* Barlow-SemiBold.ttf in Resources */,
 				661680C23F1608820901B74A /* BarlowCondensed-Bold.ttf in Resources */,
 				BD58DBBEAD14E27AEB9AB7E5 /* BarlowCondensed-OFL.txt in Resources */,
-				6A08BDA6C6E391DD0BFF0D1B /* LaunchScreen.storyboard in Resources */,
 				15FD0C59AE029F3A6C3721D9 /* PrivacyInfo.xcprivacy in Resources */,
+				E61B305A24DC7C8509EBB6AE /* Nina.zip in Resources */,
 				295063CED270EACD7B4A3089 /* privacy.html in Resources */,
 				ACB60365F94341B885571A49 /* rules.html in Resources */,
 				D7BAEBBF31408296F0007017 /* terms.html in Resources */,
@@ -267,7 +417,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E626CC3598BEDBD80A559E6 /* [CP] Embed Pods Frameworks */ = {
+		03ECC92F2B310E4A118CB4AF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,7 +434,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nina/Pods-Nina-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A15835E1F78757272728EE39 /* [CP] Copy Pods Resources */ = {
+		4A4AB96EC86386DCFD9F802C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -301,26 +451,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nina/Pods-Nina-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CB94DF7C6F87570007EAC85C /* Bundle React Native code and images */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native code and images";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\nexport PROJECT_ROOT=\"$PROJECT_DIR\"\nRN_SCRIPTS=\"$PROJECT_DIR/node_modules/react-native/scripts\"\n/bin/bash \"$RN_SCRIPTS/xcode/with-environment.sh\" \"$RN_SCRIPTS/react-native-xcode.sh\"\n";
-		};
-		F08535F11B7B0E2D68274BAD /* [CP] Check Pods Manifest.lock */ = {
+		8A779916AC80FBC98D2D9451 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,6 +473,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CB94DF7C6F87570007EAC85C /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nexport PROJECT_ROOT=\"$PROJECT_DIR\"\nRN_SCRIPTS=\"$PROJECT_DIR/node_modules/react-native/scripts\"\n/bin/bash \"$RN_SCRIPTS/xcode/with-environment.sh\" \"$RN_SCRIPTS/react-native-xcode.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -350,10 +500,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2DDA4DCF6EA4B63A0AF6D92 /* DeckPlayback.swift in Sources */,
+				31DB678EB7844E62FFBBC283 /* LocalPassword.swift in Sources */,
 				F8FF39F6E7D74DCBEE24422F /* NinaBridge.m in Sources */,
+				BF6BD1C80E45CB2434168F95 /* NinaCommunityView.swift in Sources */,
 				AA7F1FE8EA330954EC76A699 /* NinaHost.swift in Sources */,
 				1A778877B99977D27D0BD9C7 /* NinaPlatform.swift in Sources */,
 				489B8BF3C64C6340784AF4CD /* NinaSurfaceView.swift in Sources */,
+				43A1E5EFC6617667C537A70A /* OfflineArchive.swift in Sources */,
 				BAC3F481EB3DC2D73E90D00C /* PlatformIdentity.swift in Sources */,
 				244E840511FEF80D22760208 /* PlatformPicker.swift in Sources */,
 				1C2C32B4067D8CE13EEAF31A /* PlatformPurchases.swift in Sources */,
@@ -365,6 +518,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1CE6CD109E99888ECFC57C28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Nina";
+			targetProxy = 0FF60E769434B12D1A77AE4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		14BB426D0A5CA921A93305FD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -373,12 +534,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nina/Config/Nina.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Nina/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,9 +549,12 @@
 				NINA_PURCHASES_ENABLED = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.funchan666.nina;
 				PRODUCT_NAME = Nina;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -439,7 +604,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_CFLAGS = (
@@ -454,6 +619,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../node_modules/react-native";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -512,7 +678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -528,6 +694,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../node_modules/react-native";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -542,12 +709,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nina/Config/Nina.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Nina/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,9 +724,12 @@
 				NINA_PURCHASES_ENABLED = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.funchan666.nina;
 				PRODUCT_NAME = Nina;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;

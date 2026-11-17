@@ -6,6 +6,7 @@ import {library, useSkater, visibleSkater} from '../state/library';
 import {collectionNames, findLine, isReported, lines} from '../state/model';
 import type {Collection, Line, Subject} from '../state/model';
 import {Film, MediaStage, Poster, timeText} from '../ui/media';
+import {useMutation} from '../ui/mutation';
 import {Action, Choices, colors, Copy, Empty, Field, Glyph, layout, Notice, Row, Screen} from '../ui/paper';
 
 type Filter = 'all' | Collection;
@@ -83,7 +84,7 @@ export function LineDetails({id}: {id: string}) {
   const {archive, account, config} = useSkater();
   const [comment, setComment] = useState('');
   const [editing, setEditing] = useState<string>();
-  const [submitting, setSubmitting] = useState(false);
+  const {busy: submitting, run} = useMutation();
   const item = findLine(id);
   const visible = item && !isReported(account, {kind: 'line', id});
   const liked = account.liked.includes(id);
@@ -92,21 +93,12 @@ export function LineDetails({id}: {id: string}) {
   const comments = archive.comments.filter(reply => reply.lineID === id && visibleSkater(archive, account, reply.authorID) &&
     !isReported(account, {kind: 'comment', id: reply.id})).sort((a, b) => a.date - b.date);
   const openReport = (subject: Subject) => flow.open({name: 'report', subject});
-  async function submit() {
-    if (submitting) {
-      return;
-    }
-    setSubmitting(true);
-    try {
-      await library.saveComment(id, comment, editing);
+  function submit() {
+    void run(() => library.saveComment(id, comment, editing), () => {
       setComment('');
       setEditing(undefined);
       Keyboard.dismiss();
-    } catch (error) {
-      flow.notice(errorText(error));
-    } finally {
-      setSubmitting(false);
-    }
+    });
   }
   return <Screen title={item?.title ?? 'Line'} ground="LinesGround" editing>
     {visible ? <>
@@ -157,7 +149,7 @@ export function LineDetails({id}: {id: string}) {
         <Field label={editing ? 'Edit your comment' : 'Add a comment'} value={comment} onChangeText={setComment} multiline />
         <View style={layout.row}>
           <Action title={editing ? 'Save comment' : 'Post comment'} icon="send"
-            disabled={submitting || !comment.trim()} action={() => {void submit();}} />
+            disabled={submitting || !comment.trim()} action={submit} />
           {editing && <Action title="Cancel" tone="paper" action={() => {setComment(''); setEditing(undefined);}} />}
         </View>
       </View>

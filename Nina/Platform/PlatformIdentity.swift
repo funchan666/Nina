@@ -30,7 +30,7 @@ enum PlatformJournal {
     private static let previousName = "journal-v1.json"
 
     @MainActor
-    static func open() throws -> [String: Any] {
+    static func open(mediaDirectory: URL?) throws -> [String: Any] {
         let folder = try NinaFiles.root()
         let current = folder.appendingPathComponent(currentName)
         let previous = folder.appendingPathComponent(previousName)
@@ -44,7 +44,7 @@ enum PlatformJournal {
             json = NSNull()
         }
         let config: [String: Any] = [
-            "media": PlatformConfiguration.https("NinaMediaPublicBaseURL")?.absoluteString ?? "",
+            "media": mediaDirectory?.absoluteString ?? "",
             "fileBase": folder.appendingPathComponent("Media", isDirectory: true).absoluteString,
             "supportEmail": PlatformConfiguration.value("NinaSupportEmail"),
             "purchasesEnabled": PlatformConfiguration.purchasesEnabled
@@ -57,7 +57,7 @@ enum PlatformJournal {
         }
         return [
             "json": json, "legacy": legacy, "legacyNeedsCleanup": previousExists && currentExists,
-            "activeID": activeID, "config": config, "layout": NinaScene.layout
+            "activeID": activeID, "config": config
         ]
     }
 

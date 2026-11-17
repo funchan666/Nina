@@ -1817,6 +1817,7 @@ PODS:
     - ReactNativeDependencies
   - Yoga (0.0.0):
     - React-Core-prebuilt
+  - ZIPFoundation (0.9.20)
 
 DEPENDENCIES:
   - boost (from `build/rndeps-facades/boost`)
@@ -1907,6 +1908,11 @@ DEPENDENCIES:
   - ReactNativeDependencies (from `node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec`)
   - SocketRocket (from `build/rndeps-facades/SocketRocket`)
   - Yoga (from `build/rncore-facades/Yoga`)
+  - ZIPFoundation (= 0.9.20)
+
+SPEC REPOS:
+  trunk:
+    - ZIPFoundation
 
 EXTERNAL SOURCES:
   boost:
@@ -2173,7 +2179,8 @@ SPEC CHECKSUMS:
   ReactNativeDependencies: a5164c3ebbe90d992022b5d9cbabbf770a6d7d05
   SocketRocket: 37aec555668fb852ec12e3c0de59a86ca58f0871
   Yoga: d1c536142c5ff8ec8cd856ab2a7c227a1d875c8e
+  ZIPFoundation: dfd3d681c4053ff7e2f7350bc4e53b5dba3f5351
 
-PODFILE CHECKSUM: e4764d528ac1f04486f3d04bd48870ba9f12312e
+PODFILE CHECKSUM: 47069e10a0c7af7ed1b1380636e27eb8bd2156a0
 
 COCOAPODS: 1.16.2

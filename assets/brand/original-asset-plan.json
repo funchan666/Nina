@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "generator": "imagegen/gpt-image-2",
   "required_tabs": [
     "tab_1",
@@ -7,6 +7,7 @@
     "tab_3"
   ],
   "required_screens": [
+    "community",
     "welcome",
     "email",
     "startup",
@@ -44,500 +45,640 @@
       "role": "icon_master",
       "screen": "welcome",
       "source_file": "assets/brand/app-icon-master.png",
-      "runtime_asset": "AppIcon",
+      "runtime_asset": "Nina/Resources/Assets.xcassets/AppIcon.appiconset/nina-1024.png",
       "purpose": "Two urethane wheels high-five; opaque iPhone icon.",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/brand/wheel-high-five.png"
+      "generation_sheet": "assets/brand/wheel-high-five.png",
+      "referenced_by": [
+        "Nina/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json",
+        "project.yml"
+      ]
     },
     {
       "id": "WheelMark",
       "role": "module_art",
       "screen": "startup",
       "source_file": "assets/brand/exports/wheel-mark.jpg",
-      "runtime_asset": "WheelMark",
+      "runtime_asset": "assets/brand/exports/wheel-mark.jpg",
       "purpose": "LaunchScreen and welcome mark.",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/brand/wheel-high-five.png"
-    },
-    {
-      "id": "NinaDirectionBoard",
-      "role": "direction_board",
-      "screen": "welcome",
-      "source_file": "assets/brand/nina-direction-board.png",
-      "runtime_asset": "",
-      "purpose": "Visual direction for welcome, Lines, Sessions, Messages and Crew. Stored outside target.",
-      "interactive": false,
-      "action_route": "",
-      "generated_with": "imagegen/gpt-image-2"
+      "generation_sheet": "assets/brand/wheel-high-five.png",
+      "referenced_by": [
+        "src/ui/artwork.ts",
+        "web/community/index.html",
+        "Nina/Resources/Assets.xcassets/WheelMark.imageset/Contents.json",
+        "Nina/Resources/Info.plist"
+      ],
+      "web_runtime_asset": "web/community/art/wheel-mark.jpg"
     },
     {
       "id": "LinesGround",
       "role": "tab_background",
       "screen": "tab_1",
       "source_file": "assets/brand/lines-bowl-ground.png",
-      "runtime_asset": "LinesGround",
+      "runtime_asset": "assets/brand/exports/lines-ground.jpg",
       "purpose": "Full-bleed portrait ink illustration.",
       "interactive": false,
       "action_route": "",
-      "generated_with": "imagegen/gpt-image-2"
+      "generated_with": "imagegen/gpt-image-2",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "SessionsGround",
       "role": "tab_background",
       "screen": "tab_2",
       "source_file": "assets/brand/sessions-curb-ground.png",
-      "runtime_asset": "SessionsGround",
+      "runtime_asset": "assets/brand/exports/sessions-ground.jpg",
       "purpose": "Full-bleed portrait ink illustration.",
       "interactive": false,
       "action_route": "",
-      "generated_with": "imagegen/gpt-image-2"
+      "generated_with": "imagegen/gpt-image-2",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "CrewGround",
       "role": "tab_background",
       "screen": "tab_3",
       "source_file": "assets/brand/crew-bench-ground.png",
-      "runtime_asset": "CrewGround",
+      "runtime_asset": "assets/brand/exports/crew-ground.jpg",
       "purpose": "Full-bleed portrait ink illustration.",
       "interactive": false,
       "action_route": "",
-      "generated_with": "imagegen/gpt-image-2"
+      "generated_with": "imagegen/gpt-image-2",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "WelcomeGround",
       "role": "module_art",
       "screen": "welcome",
       "source_file": "assets/brand/welcome-fist-bump.png",
-      "runtime_asset": "WelcomeGround",
+      "runtime_asset": "assets/brand/exports/welcome-ground.jpg",
       "purpose": "Full-bleed portrait ink illustration.",
       "interactive": false,
       "action_route": "",
-      "generated_with": "imagegen/gpt-image-2"
+      "generated_with": "imagegen/gpt-image-2",
+      "referenced_by": [
+        "src/ui/artwork.ts",
+        "web/community/index.html"
+      ],
+      "web_runtime_asset": "web/community/art/welcome-ground.jpg"
     },
     {
       "id": "InkLines",
       "role": "tab_icon",
       "screen": "tab_1",
       "source_file": "assets/navigation/glyphs/ink-lines.png",
-      "runtime_asset": "InkLines",
+      "runtime_asset": "assets/navigation/glyphs/ink-lines.png",
       "purpose": "Lines",
       "interactive": true,
       "action_route": "Lines",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts",
+        "web/community/index.html"
+      ],
+      "web_runtime_asset": "web/community/art/ink-lines.png"
     },
     {
       "id": "InkSessions",
       "role": "tab_icon",
       "screen": "tab_2",
       "source_file": "assets/navigation/glyphs/ink-sessions.png",
-      "runtime_asset": "InkSessions",
+      "runtime_asset": "assets/navigation/glyphs/ink-sessions.png",
       "purpose": "Sessions",
       "interactive": true,
       "action_route": "Sessions",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkCrew",
       "role": "tab_icon",
       "screen": "tab_3",
       "source_file": "assets/navigation/glyphs/ink-crew.png",
-      "runtime_asset": "InkCrew",
+      "runtime_asset": "assets/navigation/glyphs/ink-crew.png",
       "purpose": "Crew",
       "interactive": true,
       "action_route": "Crew",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts",
+        "web/community/index.html"
+      ],
+      "web_runtime_asset": "web/community/art/ink-crew.png"
     },
     {
       "id": "InkAdd",
       "role": "functional_button",
       "screen": "post_editor",
       "source_file": "assets/navigation/glyphs/ink-add.png",
-      "runtime_asset": "InkAdd",
+      "runtime_asset": "assets/navigation/glyphs/ink-add.png",
       "purpose": "Post, add spot or log tricks",
       "interactive": true,
       "action_route": "Post, add spot or log tricks",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkBack",
       "role": "functional_button",
       "screen": "line_detail",
       "source_file": "assets/navigation/glyphs/ink-back.png",
-      "runtime_asset": "InkBack",
+      "runtime_asset": "assets/navigation/glyphs/ink-back.png",
       "purpose": "Back",
       "interactive": true,
       "action_route": "Back",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkClose",
       "role": "functional_button",
       "screen": "policy",
       "source_file": "assets/navigation/glyphs/ink-close.png",
-      "runtime_asset": "InkClose",
+      "runtime_asset": "assets/navigation/glyphs/ink-close.png",
       "purpose": "Close panel",
       "interactive": true,
       "action_route": "Close panel",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkPlay",
       "role": "functional_button",
       "screen": "line_viewer",
       "source_file": "assets/navigation/glyphs/ink-play.png",
-      "runtime_asset": "InkPlay",
+      "runtime_asset": "assets/navigation/glyphs/ink-play.png",
       "purpose": "Play",
       "interactive": true,
       "action_route": "Play",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkPause",
       "role": "functional_button",
       "screen": "line_viewer",
       "source_file": "assets/navigation/glyphs/ink-pause.png",
-      "runtime_asset": "InkPause",
+      "runtime_asset": "assets/navigation/glyphs/ink-pause.png",
       "purpose": "Pause",
       "interactive": true,
       "action_route": "Pause",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkSpeaker",
       "role": "functional_button",
       "screen": "line_viewer",
       "source_file": "assets/navigation/glyphs/ink-speaker.png",
-      "runtime_asset": "InkSpeaker",
+      "runtime_asset": "assets/navigation/glyphs/ink-speaker.png",
       "purpose": "Mute",
       "interactive": true,
       "action_route": "Mute",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkMuted",
       "role": "functional_button",
       "screen": "line_viewer",
       "source_file": "assets/navigation/glyphs/ink-muted.png",
-      "runtime_asset": "InkMuted",
+      "runtime_asset": "assets/navigation/glyphs/ink-muted.png",
       "purpose": "Unmute",
       "interactive": true,
       "action_route": "Unmute",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkExpand",
       "role": "functional_button",
       "screen": "line_viewer",
       "source_file": "assets/navigation/glyphs/ink-expand.png",
-      "runtime_asset": "InkExpand",
+      "runtime_asset": "assets/navigation/glyphs/ink-expand.png",
       "purpose": "Open full screen",
       "interactive": true,
       "action_route": "Open full screen",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkLike",
       "role": "functional_button",
       "screen": "line_detail",
       "source_file": "assets/navigation/glyphs/ink-like.png",
-      "runtime_asset": "InkLike",
+      "runtime_asset": "assets/navigation/glyphs/ink-like.png",
       "purpose": "Appreciate",
       "interactive": true,
       "action_route": "Appreciate",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts",
+        "web/community/index.html"
+      ],
+      "web_runtime_asset": "web/community/art/ink-like.png"
     },
     {
       "id": "InkLiked",
       "role": "functional_button",
       "screen": "line_detail",
       "source_file": "assets/navigation/glyphs/ink-liked.png",
-      "runtime_asset": "InkLiked",
+      "runtime_asset": "assets/navigation/glyphs/ink-liked.png",
       "purpose": "Remove appreciation",
       "interactive": true,
       "action_route": "Remove appreciation",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkSave",
       "role": "functional_button",
       "screen": "line_detail",
       "source_file": "assets/navigation/glyphs/ink-save.png",
-      "runtime_asset": "InkSave",
+      "runtime_asset": "assets/navigation/glyphs/ink-save.png",
       "purpose": "Save line",
       "interactive": true,
       "action_route": "Save line",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts",
+        "web/community/index.html"
+      ],
+      "web_runtime_asset": "web/community/art/ink-save.png"
     },
     {
       "id": "InkComment",
       "role": "functional_button",
       "screen": "line_detail",
       "source_file": "assets/navigation/glyphs/ink-comment.png",
-      "runtime_asset": "InkComment",
+      "runtime_asset": "assets/navigation/glyphs/ink-comment.png",
       "purpose": "Comments and messages",
       "interactive": true,
       "action_route": "Comments and messages",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkFlag",
       "role": "functional_button",
       "screen": "report",
       "source_file": "assets/navigation/glyphs/ink-flag.png",
-      "runtime_asset": "InkFlag",
+      "runtime_asset": "assets/navigation/glyphs/ink-flag.png",
       "purpose": "Report",
       "interactive": true,
       "action_route": "Report",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkSaved",
       "role": "functional_button",
       "screen": "line_detail",
       "source_file": "assets/navigation/glyphs/ink-saved.png",
-      "runtime_asset": "InkSaved",
+      "runtime_asset": "assets/navigation/glyphs/ink-saved.png",
       "purpose": "Remove saved line",
       "interactive": true,
       "action_route": "Remove saved line",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkGrip",
       "role": "functional_button",
       "screen": "wallet",
       "source_file": "assets/navigation/glyphs/ink-grip.png",
-      "runtime_asset": "InkGrip",
+      "runtime_asset": "assets/navigation/glyphs/ink-grip.png",
       "purpose": "Wallet",
       "interactive": true,
       "action_route": "Wallet",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkMore",
       "role": "functional_button",
       "screen": "skater",
       "source_file": "assets/navigation/glyphs/ink-more.png",
-      "runtime_asset": "InkMore",
+      "runtime_asset": "assets/navigation/glyphs/ink-more.png",
       "purpose": "Profile actions",
       "interactive": true,
       "action_route": "Profile actions",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkSend",
       "role": "functional_button",
       "screen": "conversation",
       "source_file": "assets/navigation/glyphs/ink-send.png",
-      "runtime_asset": "InkSend",
+      "runtime_asset": "assets/navigation/glyphs/ink-send.png",
       "purpose": "Save message draft",
       "interactive": true,
       "action_route": "Save message draft",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkPhone",
       "role": "functional_button",
       "screen": "conversation",
       "source_file": "assets/navigation/glyphs/ink-phone.png",
-      "runtime_asset": "InkPhone",
+      "runtime_asset": "assets/navigation/glyphs/ink-phone.png",
       "purpose": "Voice call waiting",
       "interactive": true,
       "action_route": "Voice call waiting",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkVideo",
       "role": "functional_button",
       "screen": "conversation",
       "source_file": "assets/navigation/glyphs/ink-video.png",
-      "runtime_asset": "InkVideo",
+      "runtime_asset": "assets/navigation/glyphs/ink-video.png",
       "purpose": "Video call waiting",
       "interactive": true,
       "action_route": "Video call waiting",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkCheck",
       "role": "functional_button",
       "screen": "email",
       "source_file": "assets/navigation/glyphs/ink-check.png",
-      "runtime_asset": "InkCheck",
+      "runtime_asset": "assets/navigation/glyphs/ink-check.png",
       "purpose": "Accept agreements",
       "interactive": true,
       "action_route": "Accept agreements",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts",
+        "web/community/community.css"
+      ],
+      "web_runtime_asset": "web/community/art/ink-check.png"
     },
     {
       "id": "InkSettings",
       "role": "functional_button",
       "screen": "profile",
       "source_file": "assets/navigation/glyphs/ink-settings.png",
-      "runtime_asset": "InkSettings",
+      "runtime_asset": "assets/navigation/glyphs/ink-settings.png",
       "purpose": "Settings",
       "interactive": true,
       "action_route": "Settings",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkCamera",
       "role": "functional_button",
       "screen": "profile_editor",
       "source_file": "assets/navigation/glyphs/ink-camera.png",
-      "runtime_asset": "InkCamera",
+      "runtime_asset": "assets/navigation/glyphs/ink-camera.png",
       "purpose": "Open camera",
       "interactive": true,
       "action_route": "Open camera",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkLoad",
       "role": "state_illustration",
       "screen": "startup",
       "source_file": "assets/navigation/glyphs/ink-load.png",
-      "runtime_asset": "InkLoad",
+      "runtime_asset": "assets/navigation/glyphs/ink-load.png",
       "purpose": "Contextual status or artwork",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkSpot",
       "role": "functional_button",
       "screen": "spot",
       "source_file": "assets/navigation/glyphs/ink-spot.png",
-      "runtime_asset": "InkSpot",
+      "runtime_asset": "assets/navigation/glyphs/ink-spot.png",
       "purpose": "Open Spot Book",
       "interactive": true,
       "action_route": "Open Spot Book",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts",
+        "web/community/index.html"
+      ],
+      "web_runtime_asset": "web/community/art/ink-spot.png"
     },
     {
       "id": "InkEdit",
       "role": "functional_button",
       "screen": "profile_editor",
       "source_file": "assets/navigation/glyphs/ink-edit.png",
-      "runtime_asset": "InkEdit",
+      "runtime_asset": "assets/navigation/glyphs/ink-edit.png",
       "purpose": "Edit",
       "interactive": true,
       "action_route": "Edit",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkRamp",
       "role": "state_illustration",
       "screen": "tab_1",
       "source_file": "assets/navigation/glyphs/ink-ramp.png",
-      "runtime_asset": "InkRamp",
+      "runtime_asset": "assets/navigation/glyphs/ink-ramp.png",
       "purpose": "Contextual status or artwork",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkDeck",
       "role": "state_illustration",
       "screen": "tab_2",
       "source_file": "assets/navigation/glyphs/ink-deck.png",
-      "runtime_asset": "InkDeck",
+      "runtime_asset": "assets/navigation/glyphs/ink-deck.png",
       "purpose": "Contextual status or artwork",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkAvatar",
       "role": "state_illustration",
       "screen": "skater",
       "source_file": "assets/navigation/glyphs/ink-avatar.png",
-      "runtime_asset": "InkAvatar",
+      "runtime_asset": "assets/navigation/glyphs/ink-avatar.png",
       "purpose": "Contextual status or artwork",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "InkThumb",
       "role": "functional_button",
       "screen": "line_viewer",
       "source_file": "assets/navigation/glyphs/ink-thumb.png",
-      "runtime_asset": "InkThumb",
+      "runtime_asset": "assets/navigation/glyphs/ink-thumb.png",
       "purpose": "Seek",
       "interactive": true,
       "action_route": "Seek",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png"
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "CoverBowl",
       "role": "module_art",
       "screen": "covers",
       "source_file": "assets/brand/exports/cover-bowl.jpg",
-      "runtime_asset": "CoverBowl",
+      "runtime_asset": "assets/brand/exports/cover-bowl.jpg",
       "purpose": "Alternate Spot Book cover applied to the journal.",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/brand/nina-journal-cover-triptych.png"
+      "generation_sheet": "assets/brand/nina-journal-cover-triptych.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "CoverWax",
       "role": "module_art",
       "screen": "covers",
       "source_file": "assets/brand/exports/cover-wax.jpg",
-      "runtime_asset": "CoverWax",
+      "runtime_asset": "assets/brand/exports/cover-wax.jpg",
       "purpose": "Alternate Spot Book cover applied to the journal.",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/brand/nina-journal-cover-triptych.png"
+      "generation_sheet": "assets/brand/nina-journal-cover-triptych.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     },
     {
       "id": "CoverNight",
       "role": "module_art",
       "screen": "covers",
       "source_file": "assets/brand/exports/cover-night.jpg",
-      "runtime_asset": "CoverNight",
+      "runtime_asset": "assets/brand/exports/cover-night.jpg",
       "purpose": "Alternate Spot Book cover applied to the journal.",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/brand/nina-journal-cover-triptych.png"
+      "generation_sheet": "assets/brand/nina-journal-cover-triptych.png",
+      "referenced_by": [
+        "src/ui/artwork.ts"
+      ]
     }
   ],
-  "coverage_policy": "actual-screen-and-action-needs"
+  "coverage_policy": "actual-screen-and-action-needs",
+  "design_references": [
+    {
+      "id": "NinaDirectionBoard",
+      "role": "direction_board",
+      "source_file": "assets/brand/nina-direction-board.png",
+      "purpose": "Visual direction for welcome, Lines, Sessions, Messages and Crew. Stored outside target.",
+      "generated_with": "imagegen/gpt-image-2"
+    }
+  ]
 }

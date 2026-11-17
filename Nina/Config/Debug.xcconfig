@@ -1,2 +1,5 @@
 #include? "../../Pods/Target Support Files/Pods-Nina/Pods-Nina.debug.xcconfig"
 #include "Nina.xcconfig"
+
+// Include main.jsbundle for simulator launches when Metro is unavailable.
+FORCE_BUNDLING = 1

@@ -51,7 +51,10 @@ final class NinaPlatform: NSObject {
     private func handle(_ operation: String, data: [String: Any]) async throws -> Any? {
         switch operation {
         case "bootstrap":
-            return try PlatformJournal.open()
+            let mediaDirectory = try? await OfflineArchive.shared.mediaDirectory()
+            return try PlatformJournal.open(mediaDirectory: mediaDirectory)
+        case "windowLayout":
+            return NinaScene.layout
         case "writeArchive":
             try PlatformJournal.write(try string("json", in: data), removeLegacy: data["removeLegacy"] as? Bool ?? false)
         case "cleanLegacy":
@@ -63,6 +66,10 @@ final class NinaPlatform: NSObject {
             try SessionVault.write(id)
         case "identity":
             return PlatformJournal.identity(try string("value", in: data))
+        case "registerPassword":
+            try await LocalPassword.shared.register(try string("password", in: data), owner: try owner(in: data))
+        case "verifyPassword":
+            try await LocalPassword.shared.verify(try string("password", in: data), owner: try owner(in: data))
         case "appleSignIn":
             return try await authorization.request()
         case "pick":
@@ -84,7 +91,9 @@ final class NinaPlatform: NSObject {
             }
             NinaFiles.remove(try SkateAttachment(payload: media), owner: try owner(in: data))
         case "removeAccount":
-            try NinaFiles.removeAccount(try owner(in: data))
+            let id = try owner(in: data)
+            try await LocalPassword.shared.remove(id)
+            try NinaFiles.removeAccount(id)
         case "playFilm":
             try play(data)
         case "pauseFilm":
@@ -132,7 +141,7 @@ final class NinaPlatform: NSObject {
 
     private func play(_ data: [String: Any]) throws {
         let path = try string("uri", in: data)
-        guard let url = URL(string: path), url.scheme == "https" || url.isFileURL else {
+        guard let url = URL(string: path), url.isFileURL else {
             throw NinaIssue("This film is unavailable.")
         }
         NinaMedia.playback.toggle(id: try string("id", in: data), url: url)

@@ -63,13 +63,29 @@ RCT_EXPORT_METHOD(perform:(NSString *)operation
 RCT_EXPORT_MODULE(NinaSurface)
 RCT_EXPORT_VIEW_PROPERTY(kind, NSString)
 RCT_EXPORT_VIEW_PROPERTY(enabled, BOOL)
-RCT_EXPORT_VIEW_PROPERTY(policy, NSString)
+RCT_EXPORT_VIEW_PROPERTY(page, NSString)
 RCT_EXPORT_VIEW_PROPERTY(revision, NSNumber)
 RCT_EXPORT_VIEW_PROPERTY(onSignal, RCTDirectEventBlock)
 
 - (UIView *)view
 {
   return [NinaSurfaceView new];
+}
+
+@end
+
+@interface NinaCommunityManager : RCTViewManager
+@end
+
+@implementation NinaCommunityManager
+
+RCT_EXPORT_MODULE(NinaCommunity)
+RCT_EXPORT_VIEW_PROPERTY(onSignal, RCTDirectEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(reply, NSDictionary)
+
+- (UIView *)view
+{
+  return [[NinaCommunityView alloc] initWithFrame:CGRectZero];
 }
 
 @end

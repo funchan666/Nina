@@ -17,9 +17,9 @@ export function WindowLayoutProvider({children}: {children: React.ReactNode}) {
       received = true;
       setLayout(update);
     });
-    void platform('bootstrap').then(snapshot => {
+    void platform('windowLayout').then(layout => {
       if (current && !received) {
-        setLayout(snapshot.layout);
+        setLayout(layout);
       }
     }).catch(() => {});
     return () => {

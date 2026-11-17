@@ -113,9 +113,9 @@ export const terrains = ['street', 'park', 'flat'] as const;
 export const stances = ['regular', 'goofy', 'switch', 'fakie'] as const;
 export const surfaces = ['smooth', 'rough', 'waxed', 'damp'] as const;
 export const covers = {
-  bowl: {name: 'Bowl Print', image: 'CoverBowl'},
-  wax: {name: 'Curb Print', image: 'CoverWax'},
-  night: {name: 'After Hours', image: 'CoverNight'},
+  bowl: 'Bowl Print',
+  wax: 'Curb Print',
+  night: 'After Hours',
 } as const;
 export const coverPrice = 60;
 
@@ -158,6 +158,22 @@ export function progress(attempt: Attempt) {
     return 'Planned';
   }
   return attempt.landings >= attempt.goal ? 'Goal landed' : 'In progress';
+}
+
+export function attemptMetricsError({attempts, landings, goal, minutes}: Pick<Attempt, 'attempts' | 'landings' | 'goal' | 'minutes'>) {
+  if (!Number.isInteger(attempts) || attempts < 0 || attempts > 500) {
+    return 'Enter a whole number from 0 to 500 for tries.';
+  }
+  if (!Number.isInteger(landings) || landings < 0 || landings > attempts) {
+    return 'Enter a whole number for landed tricks, up to your number of tries.';
+  }
+  if (!Number.isInteger(goal) || goal < 1 || goal > 50) {
+    return 'Enter a whole number from 1 to 50 for your landing goal.';
+  }
+  if (!Number.isInteger(minutes) || minutes < 0 || minutes > 480) {
+    return 'Enter a whole number from 0 to 480 for minutes.';
+  }
+  return null;
 }
 
 export function balance(account: Account) {

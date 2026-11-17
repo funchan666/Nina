@@ -2,7 +2,7 @@ import {useSyncExternalStore} from 'react';
 import {platform} from '../native';
 import type {Configuration, Identity, VerifiedPurchase} from '../native';
 import {
-  balance, checkedText, coverPrice, decodeArchive, emptyArchive, isReported, now, packs, recordID, spotKey,
+  attemptMetricsError, balance, checkedText, coverPrice, decodeArchive, emptyArchive, isReported, now, packs, recordID, spotKey,
 } from './model';
 import type {
   Account, Archive, Attachment, Attempt, Cover, Event, ID, Profile, Spot, Subject, Submission,
@@ -135,13 +135,21 @@ class NinaLibrary {
     });
   }
 
-  private open(identity: Identity, method: Account['method']) {
+  private open(identity: Identity, method: Account['method'], access?: {password: string; register: boolean}) {
     return this.serial(async () => {
       if (this.state.activeID) {
         return;
       }
       const archive = this.clone();
       const existing = Object.values(archive.accounts).find(account => account.loginKey === identity.key);
+      const id = existing?.id ?? identity.id;
+      if (access) {
+        if (!existing && !access.register) {
+          throw new Error('The email or password is incorrect.');
+        }
+        const command = access.register ? 'registerPassword' : 'verifyPassword';
+        await platform(command, {owner: id, password: access.password});
+      }
       if (!existing) {
         const name = Array.from(identity.name?.trim() || 'Skater').slice(0, 32).join('');
         archive.accounts[identity.id] = {
@@ -153,15 +161,21 @@ class NinaLibrary {
           blocked: [], saved: [], liked: [], spots: [], attempts: [], submissions: [], drafts: [], reports: [], covers: [],
           grip: [{id: 'welcome', label: 'Welcome Grip', amount: 20, date: now()}],
         };
-        await this.save(archive);
+        try {
+          await this.save(archive);
+        } catch (error) {
+          if (access?.register) {
+            await platform('removeAccount', {owner: id}).catch(() => {});
+          }
+          throw error;
+        }
       }
-      const id = existing?.id ?? identity.id;
       await platform('session', {id});
       this.publish({activeID: id, warning: undefined});
     });
   }
 
-  async signIn(email: string, password: string) {
+  async signIn(email: string, password: string, register = false) {
     const address = email.trim().toLowerCase();
     if (address.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
       throw new Error('Enter a valid email address.');
@@ -169,7 +183,8 @@ class NinaLibrary {
     if (!password) {
       throw new Error('Enter a password to continue.');
     }
-    await this.open(await platform('identity', {value: 'email:' + address}), 'email');
+    const identity = await platform('identity', {value: 'email:' + address});
+    await this.open(identity, 'email', {password, register});
   }
 
   async signInApple() {
@@ -211,7 +226,8 @@ class NinaLibrary {
           return subject.kind === 'line' || subject.id !== id;
         });
       }
-      await this.save(next);
+      await platform('writeArchive', {json: JSON.stringify(next)});
+      this.publish({archive: next, activeID: null});
       const cleanup = await Promise.allSettled([
         platform('releaseFilm'),
         platform('session', {id: null}),
@@ -272,11 +288,9 @@ class NinaLibrary {
         trick: checkedText(attempt.trick, 'a trick', 50),
         notes: checkedText(attempt.notes, 'practice notes', 400, false),
       };
-      const {attempts, landings, goal, minutes} = clean;
-      const whole = [attempts, landings, goal, minutes].every(Number.isInteger);
-      if (!whole || attempts < 0 || attempts > 500 || landings < 0 || landings > attempts ||
-        goal < 1 || goal > 50 || minutes < 0 || minutes > 480) {
-        throw new Error('Use 0–500 tries, landings within tries, a goal of 1–50 and 0–480 minutes.');
+      const issue = attemptMetricsError(clean);
+      if (issue) {
+        throw new Error(issue);
       }
       if (!account.spots.some(spot => spot.id === clean.spotID)) {
         throw new Error('Choose a spot before saving.');

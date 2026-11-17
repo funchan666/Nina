@@ -28,8 +28,6 @@
 	<string>Nina uses the microphone to record audio with skating clips and check access before a voice or video call.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Choose a photo or film from your library to attach to your Nina profile or skate journal.</string>
-	<key>NinaMediaPublicBaseURL</key>
-	<string>$(NINA_MEDIA_PUBLIC_BASE_URL)</string>
 	<key>NinaPrivacyURL</key>
 	<string>$(NINA_PRIVACY_URL)</string>
 	<key>NinaPurchasesEnabled</key>
@@ -38,6 +36,8 @@
 	<string>$(NINA_SUPPORT_EMAIL)</string>
 	<key>NinaTermsURL</key>
 	<string>$(NINA_TERMS_URL)</string>
+	<key>NinaWebsiteURL</key>
+	<string>$(NINA_WEBSITE_URL)</string>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UIAppFonts</key>
@@ -63,8 +63,15 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+		<key>UIImageName</key>
+		<string>WheelMark</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

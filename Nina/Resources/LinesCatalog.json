@@ -591,7 +591,7 @@
     "poster": "lines-v1-street-tree-lined-roll-away-poster.jpg",
     "width": 720,
     "height": 1280,
-    "duration": 13.033008
+    "duration": 13.033333
   },
   {
     "id": "winter-curb-pop",
@@ -602,7 +602,7 @@
     "poster": "lines-v1-street-winter-curb-pop-poster.jpg",
     "width": 720,
     "height": 900,
-    "duration": 12.333008
+    "duration": 12.333333
   },
   {
     "id": "turn-and-roll-out",
@@ -613,7 +613,7 @@
     "poster": "lines-v1-flat-turn-and-roll-out-poster.jpg",
     "width": 720,
     "height": 900,
-    "duration": 9.405011
+    "duration": 9.406009
   },
   {
     "id": "deck-outside-the-shop",
@@ -624,7 +624,7 @@
     "poster": "lines-v1-offboard-deck-outside-the-shop-poster.jpg",
     "width": 720,
     "height": 1280,
-    "duration": 11.680998
+    "duration": 11.68
   },
   {
     "id": "night-sidewalk-line",
@@ -635,7 +635,7 @@
     "poster": "lines-v1-street-night-sidewalk-line-poster.jpg",
     "width": 720,
     "height": 1280,
-    "duration": 12.133008
+    "duration": 12.133333
   },
   {
     "id": "coping-run",
@@ -646,7 +646,7 @@
     "poster": "lines-v1-park-coping-run-poster.jpg",
     "width": 720,
     "height": 1280,
-    "duration": 2.666016
+    "duration": 2.666667
   },
   {
     "id": "garage-flatground",
@@ -690,7 +690,7 @@
     "poster": "lines-v1-park-indoor-turn-poster.jpg",
     "width": 720,
     "height": 1280,
-    "duration": 7.766016
+    "duration": 7.766667
   },
   {
     "id": "green-fence-flip",

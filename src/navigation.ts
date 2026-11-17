@@ -1,5 +1,5 @@
 import {createContext, useContext} from 'react';
-import type {Policy} from './native';
+import type {WebPage} from './native';
 import type {ID, Subject} from './state/model';
 
 export type Tab = 'lines' | 'sessions' | 'crew';
@@ -20,7 +20,7 @@ export type Route =
   | {name: 'call'; id: ID; video: boolean}
   | {name: 'report'; subject: Subject}
   | {name: 'block'; id: ID}
-  | {name: 'policy'; policy: Policy}
+  | {name: 'webPage'; page: WebPage}
   | {name: 'blacklist' | 'settings' | 'deleteProfile' | 'wallet' | 'covers'};
 
 type Flow = {
