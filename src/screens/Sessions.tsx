@@ -28,15 +28,15 @@ export function Sessions() {
       </> : null}
       <Copy size="heading" color={colors.paper} header>{recorded.length
         ? `${recorded.length} ${recorded.length === 1 ? 'session' : 'sessions'} logged`
-        : 'No sessions logged'}</Copy>
+        : 'No sessions logged yet'}</Copy>
       <Action title="Journal covers" icon="grip" tone="paper" action={() => flow.open({name: 'covers'})} />
     </View>
     <View style={layout.split}>
       <Copy size="heading" header>Spot book</Copy>
       {hasSpots && <Action title="Add spot" icon="spot" tone="paper" action={() => flow.open({name: 'spotEditor'})} />}
     </View>
-    {!hasSpots ? <Empty icon="ramp" title="Keep your first spot"
-      note="Record its terrain, obstacles and access notes for your next session." /> : null}
+    {!hasSpots ? <Empty icon="ramp" title="Save a spot you love"
+      note="Note the obstacles and how to get in before your next session." /> : null}
     {account.spots.map(spot => {
       const count = recorded.filter(item => item.spotID === spot.id).length;
       return <Row key={spot.id} title={spot.name}
@@ -44,8 +44,8 @@ export function Sessions() {
         icon="spot" action={() => flow.open({name: 'spot', id: spot.id})} />;
     })}
     <Copy size="heading" header>Trick log</Copy>
-    {!logs.length ? <Empty icon="deck" title="No tricks logged"
-      note="Pick a spot, set a landing goal and log your tries when you skate." /> : null}
+    {!logs.length ? <Empty icon="deck" title="No tricks logged yet"
+      note="Pick a spot and track the tricks you’re working on." /> : null}
     {logs.map(attempt => <TrickRow key={attempt.id} attempt={attempt}
       spot={account.spots.find(item => item.id === attempt.spotID)?.name} />)}
   </Screen>;

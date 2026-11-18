@@ -66,10 +66,6 @@ final class NinaPlatform: NSObject {
             try SessionVault.write(id)
         case "identity":
             return PlatformJournal.identity(try string("value", in: data))
-        case "registerPassword":
-            try await LocalPassword.shared.register(try string("password", in: data), owner: try owner(in: data))
-        case "verifyPassword":
-            try await LocalPassword.shared.verify(try string("password", in: data), owner: try owner(in: data))
         case "appleSignIn":
             return try await authorization.request()
         case "pick":

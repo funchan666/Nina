@@ -28,28 +28,28 @@ export function Lines() {
     action={<Action title="Post" icon="add" action={() => flow.open({name: 'post'})} />}>
     {!config.media ? <View style={styles.offline}>
       <Glyph name="lines" size={76} color={colors.grip} />
-      <Copy size="heading" color={colors.paper} header>Skate films and photos</Copy>
+      <Copy size="heading" color={colors.paper} header>Skate clips and photos</Copy>
       <Copy color={colors.paper}>The collection is unavailable right now.</Copy>
       <Action title="Open your skate journal" icon="sessions" action={() => flow.select('sessions')} />
     </View> : <>
       <Choices values={filters} value={filter} onChange={value => {setFilter(value); setLimit(12);}}
         label={value => value === 'all' ? 'All' : collectionNames[value]} />
       {feature ? <LineCard item={feature} kind="feature" revision={revision} /> :
-        <Empty icon="ramp" title="No lines in this collection" note="Try another terrain." />}
+        <Empty icon="ramp" title="No lines in this view" note="Choose another filter to keep browsing." />}
       {videos.length > 0 && <View style={layout.stack}>
-        <Copy size="heading" header>Skate films</Copy>
+        <Copy size="heading" header>Skate clips</Copy>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} directionalLockEnabled contentContainerStyle={styles.strip}>
           {videos.map(item => <LineCard key={item.id} item={item} kind="film" revision={revision} />)}
         </ScrollView>
       </View>}
       {photos.length > 0 && <View style={layout.stack}>
-        <Copy size="heading" header>{filter === 'offboard' ? 'Around the session' : 'Contact sheet'}</Copy>
+        <Copy size="heading" header>{filter === 'offboard' ? 'Off the board' : 'Session photos'}</Copy>
         <View style={styles.photoGrid}>
           {photos.slice(0, limit).map(item => <LineCard key={item.id} item={item} kind="photo" revision={revision} />)}
         </View>
         {photos.length > limit && <Action title="More photos" icon="add" tone="paper" action={() => setLimit(value => value + 12)} />}
       </View>}
-      <Action title="Refresh lines" icon="load" tone="paper" action={() => setRevision(value => value + 1)} />
+      <Action title="Refresh previews" icon="load" tone="paper" action={() => setRevision(value => value + 1)} />
     </>}
   </Screen>;
 }
@@ -60,7 +60,7 @@ function LineCard({item, kind, revision}: {item: Line; kind: 'feature' | 'photo'
   const feature = kind === 'feature';
   const video = item.type === 'video';
   return <Pressable
-    accessibilityRole="button" accessibilityLabel={`${item.title}, ${collectionNames[item.collection]}, ${video ? 'film' : 'photo'}`}
+    accessibilityRole="button" accessibilityLabel={`${item.title}, ${collectionNames[item.collection]}, ${video ? 'clip' : 'photo'}`}
     onPress={() => flow.open({name: 'line', id: item.id})}
     style={({pressed}) => [styles.card, kind === 'film' && styles.stripItem, kind === 'photo' && styles.gridItem,
       feature && layout.ink, {opacity: pressed ? 0.74 : 1}]}
@@ -110,7 +110,7 @@ export function LineDetails({id}: {id: string}) {
         </View>
         <Action title="View photo" icon="expand" tone="paper" action={() => flow.open({name: 'lineViewer', id})} />
       </>}
-      <Copy size="label" color={colors.muted}>{collectionNames[item.collection]} · Nina collection</Copy>
+      <Copy size="label" color={colors.muted}>{collectionNames[item.collection]}</Copy>
       <View style={layout.row}>
         <Action title={`${liked ? 'Liked' : 'Like'} (${likes})`} icon={liked ? 'liked' : 'like'} tone="paper"
           selected={liked} action={() => {void library.toggleLine(id, 'liked').catch(error => flow.notice(errorText(error)));}} />
@@ -119,14 +119,14 @@ export function LineDetails({id}: {id: string}) {
         <Action title="Report" icon="flag" tone="paper" action={() => openReport({kind: 'line', id})} />
       </View>
       {item.collection !== 'offboard' && <>
-        <Row title="Practice this line" detail="Use it as a reference in your trick log." icon="sessions"
+        <Row title="Practice this line" detail="Add this line to your next practice plan." icon="sessions"
           action={() => flow.open({name: 'trick', reference: id})} />
-        <Row title="Add a related spot" detail="Keep the terrain and reference together." icon="spot"
+        <Row title="Save a spot for this line" detail="Keep a place to try it in your spot book." icon="spot"
           action={() => flow.open({name: 'spotEditor', reference: id})} />
       </>}
       <View style={layout.stack}>
         <Copy size="heading" header>Comments</Copy>
-        {!comments.length && <Notice>Start the discussion about this line.</Notice>}
+        {!comments.length && <Notice>Add a thought about the line.</Notice>}
         {comments.map(reply => {
           const person = visibleSkater(archive, account, reply.authorID);
           return <View key={reply.id} style={layout.section}>
@@ -148,7 +148,7 @@ export function LineDetails({id}: {id: string}) {
         })}
         <Field label={editing ? 'Edit your comment' : 'Add a comment'} value={comment} onChangeText={setComment} multiline />
         <View style={layout.row}>
-          <Action title={editing ? 'Save comment' : 'Post comment'} icon="send"
+          <Action title={editing ? 'Save comment' : 'Add comment'} icon="send"
             disabled={submitting || !comment.trim()} action={submit} />
           {editing && <Action title="Cancel" tone="paper" action={() => {setComment(''); setEditing(undefined);}} />}
         </View>

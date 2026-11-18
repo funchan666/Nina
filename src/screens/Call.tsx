@@ -1,6 +1,5 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {Linking, PanResponder, StyleSheet, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {NativeSurface, onCallStopped, platform} from '../native';
 import type {Rect} from '../native';
 import {errorText, useFlow} from '../navigation';
@@ -14,7 +13,6 @@ type CallPhase = {kind: 'preparing' | 'waiting' | 'ended' | 'denied'; message: s
 
 export function CallWaiting({id, video}: {id: ID; video: boolean}) {
   const flow = useFlow();
-  const safe = useSafeAreaInsets();
   const {archive, account} = useSkater();
   const peer = visibleSkater(archive, account, id);
   const [requestID] = useState(recordID);
@@ -32,14 +30,14 @@ export function CallWaiting({id, video}: {id: ID; video: boolean}) {
     const subscription = onCallStopped(() => {
       active = false;
       if (timer) {clearTimeout(timer);}
-      setPhase({kind: 'ended', message: 'Waiting ended when Nina went into the background.'});
+      setPhase({kind: 'ended', message: 'Waiting ended when the app went into the background.'});
     });
     void platform('beginCall', {video, requestID}).then(() => {
       if (!active) {
         stop();
         return;
       }
-      setPhase({kind: 'waiting', message: 'Waiting · audio and video stay off-network'});
+      setPhase({kind: 'waiting', message: video ? 'Camera and microphone ready.' : 'Microphone ready.'});
       timer = setTimeout(() => {
         stop();
         setPhase({kind: 'ended', message: 'The waiting window ended.'});
@@ -58,8 +56,8 @@ export function CallWaiting({id, video}: {id: ID; video: boolean}) {
     };
   }, [id, requestID, video]);
 
-  return <View style={[layout.fill, layout.ink, {paddingTop: safe.top, paddingBottom: safe.bottom, paddingLeft: safe.left, paddingRight: safe.right}]}>
-    <ActionBand>
+  return <View style={[layout.fill, layout.ink]}>
+    <ActionBand edge="top">
       <View style={styles.top}>
         <IconAction title="Close call" icon="close" color={colors.paper} action={flow.back} />
         <Copy size="card" color={colors.paper} header>{video ? 'Video call' : 'Voice call'}</Copy>
@@ -75,7 +73,7 @@ export function CallWaiting({id, video}: {id: ID; video: boolean}) {
       <View style={styles.waiting}>
         <Glyph name={phase.kind === 'preparing' ? 'load' : video ? 'video' : 'phone'} size={63} color={colors.grip} />
       </View>}
-    <ActionBand>
+    <ActionBand edge="bottom">
       <View style={styles.close}>
         <Action title="Close waiting" icon="close" tone="danger" action={flow.back} />
       </View>

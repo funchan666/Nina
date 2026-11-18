@@ -9,7 +9,7 @@ const consent = byID('consent');
 const authError = byID('auth-error');
 const authSubmit = byID('auth-submit');
 const authMode = byID('auth-mode');
-const apple = byID('apple');
+const accessBack = byID('access-back');
 const feed = byID('feed');
 const filters = byID('filters');
 const clearFilter = byID('clear-filter');
@@ -23,7 +23,7 @@ let lines = [];
 function request(action, data = {}) {
   const channel = window.webkit?.messageHandlers?.nina;
   if (!channel) {
-    throw new Error('Open the community in the Nina iPhone app.');
+    throw new Error('Open this community in the iPhone app.');
   }
   return channel.postMessage({action, data});
 }
@@ -33,11 +33,24 @@ function message(node, value) {
   node.hidden = !value;
 }
 
+async function publishAuthState() {
+  try {
+    await request('authState', {
+      visible: !byID('access').hidden,
+      accepted: consent.checked,
+      busy: requestInFlight,
+    });
+  } catch (error) {
+    message(authError, error?.message || 'Sign-in options are unavailable. Try again.');
+  }
+}
+
 async function perform(control, feedback, work) {
   if (requestInFlight) return;
   requestInFlight = true;
   control.disabled = true;
   message(feedback, '');
+  publishAuthState();
   try {
     await work();
   } catch (error) {
@@ -45,6 +58,7 @@ async function perform(control, feedback, work) {
   } finally {
     requestInFlight = false;
     control.disabled = false;
+    publishAuthState();
   }
 }
 
@@ -66,9 +80,10 @@ function authIssue(control, text) {
 
 function validateAuth() {
   clearAuthError();
-  if (!email.validity.valid) return authIssue(email, 'Enter a valid email address.');
-  if (!password.value) return authIssue(password, 'Enter your password.');
-  if (signingUp && password.value.length < 8) return authIssue(password, 'Use at least eight characters.');
+  const address = email.value.trim();
+  if (address.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) return authIssue(email, 'Enter a valid email address.');
+  if (!password.value.trim()) return authIssue(password, 'Enter a password to continue.');
+  if (password.value.length > 256) return authIssue(password, 'Use a password with 256 characters or fewer.');
   if (!consent.checked) return authIssue(consent, 'Agree to the Terms and Privacy Policy to continue.');
   return true;
 }
@@ -77,18 +92,30 @@ function setMode(register) {
   signingUp = register;
   password.value = '';
   password.autocomplete = register ? 'new-password' : 'current-password';
-  if (register) {
-    password.minLength = 8;
-    password.setAttribute('aria-describedby', 'password-note');
-  } else {
-    password.removeAttribute('minlength');
-    password.removeAttribute('aria-describedby');
-  }
-  byID('password-note').hidden = !register;
-  byID('auth-title').textContent = register ? 'Create a skate profile' : 'Sign in to Nina';
-  authMode.textContent = register ? 'Sign in instead' : 'Create a local profile';
+  byID('auth-title').textContent = register ? 'Create your profile' : 'Welcome back';
+  authMode.textContent = register ? 'Already have a profile? Sign in' : 'New here? Create a profile';
   authSubmit.textContent = register ? 'Create profile' : 'Sign in';
   clearAuthError();
+}
+
+function showWelcome() {
+  byID('access').hidden = true;
+  byID('welcome').hidden = false;
+  accessBack.hidden = true;
+  document.body.dataset.screen = 'welcome';
+  publishAuthState();
+}
+
+function openAccess(register) {
+  if (requestInFlight) return;
+  setMode(register);
+  byID('welcome').hidden = true;
+  byID('access').hidden = false;
+  accessBack.hidden = false;
+  document.body.dataset.screen = 'access';
+  publishAuthState();
+  window.scrollTo(0, 0);
+  byID('auth-title').focus({preventScroll: true});
 }
 
 function updateCard(article, line) {
@@ -116,7 +143,7 @@ function makeCard(line) {
     line.label + (line.type === 'video' ? ' / Clip' : ' / Photo');
   article.querySelector('[data-item="title"]').textContent = line.title;
   const open = article.querySelector('[data-action="open"]');
-  const label = line.type === 'video' ? 'Open clip' : 'Open photo';
+  const label = line.type === 'video' ? 'Watch clip' : 'View photo';
   open.querySelector('[data-item="open-label"]').textContent = label;
   open.setAttribute('aria-label', label + ' ' + line.title);
   const frame = article.querySelector('.line-image');
@@ -146,7 +173,7 @@ function renderFeed(reset) {
   const empty = matching.length === 0;
   byID('empty-state').hidden = !empty;
   byID('empty').textContent = empty
-    ? (filter === 'saved' ? 'No saved lines yet. Save a clip or photo to find it here.' : 'No lines in this view.')
+    ? (filter === 'saved' ? 'Nothing saved yet. Save a photo or clip to find it here.' : 'No lines match this filter. Choose another filter to keep browsing.')
     : '';
   clearFilter.hidden = filter === 'all';
   byID('more').hidden = shown >= matching.length;
@@ -165,7 +192,10 @@ function selectFilter(button) {
 function show(state) {
   const signedIn = state.name !== null;
   message(byID('startup'), '');
-  byID('access').hidden = signedIn;
+  byID('access').hidden = true;
+  byID('welcome').hidden = signedIn;
+  accessBack.hidden = true;
+  document.body.dataset.screen = signedIn ? 'community' : 'welcome';
   byID('community').hidden = !signedIn;
   byID('sign-out').hidden = !signedIn;
   message(byID('notice'), state.warning);
@@ -178,6 +208,7 @@ function show(state) {
     feed.replaceChildren();
     setMode(false);
   }
+  publishAuthState();
 }
 
 async function start() {
@@ -193,12 +224,24 @@ async function start() {
 }
 
 byID('retry').addEventListener('click', start);
+document.querySelectorAll('button[data-access]').forEach(button => {
+  button.addEventListener('click', () => openAccess(button.dataset.access === 'register'));
+});
+accessBack.addEventListener('click', () => {
+  if (requestInFlight) return;
+  password.value = '';
+  clearAuthError();
+  showWelcome();
+  window.scrollTo(0, 0);
+  byID('welcome-title').focus({preventScroll: true});
+});
 authMode.addEventListener('click', () => {
   if (requestInFlight) return;
   setMode(!signingUp);
   byID('auth-title').focus();
 });
 auth.addEventListener('input', clearAuthError);
+consent.addEventListener('change', publishAuthState);
 auth.addEventListener('submit', event => {
   event.preventDefault();
   if (requestInFlight || !validateAuth()) return;
@@ -209,7 +252,7 @@ auth.addEventListener('submit', event => {
     auth.setAttribute('aria-busy', 'true');
     authFields.disabled = true;
     authMode.disabled = true;
-    apple.disabled = true;
+    accessBack.disabled = true;
     try {
       const state = await request(signingUp ? 'register' : 'signIn', credentials);
       auth.reset();
@@ -220,12 +263,9 @@ auth.addEventListener('submit', event => {
       auth.removeAttribute('aria-busy');
       authFields.disabled = false;
       authMode.disabled = false;
-      apple.disabled = false;
+      accessBack.disabled = false;
     }
   });
-});
-apple.addEventListener('click', event => {
-  void perform(event.currentTarget, authError, () => request('apple'));
 });
 byID('sign-out').addEventListener('click', event => {
   void perform(event.currentTarget, byID('notice'), async () => show(await request('signOut')));
@@ -296,7 +336,7 @@ feed.addEventListener('submit', event => {
   const text = form.querySelector('textarea');
   const feedback = form.querySelector('[data-item="comment-feedback"]');
   if (!text.value.trim()) {
-    message(feedback, 'Write a comment before saving.');
+    message(feedback, 'Write a comment first.');
     text.focus();
     return;
   }

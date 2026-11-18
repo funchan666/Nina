@@ -79,8 +79,8 @@ final class NinaSurfaceView: UIView, WKNavigationDelegate {
 
         switch kind {
         case "apple":
-            let button = ASAuthorizationAppleIDButton(type: .continue, style: .white)
-            button.cornerRadius = 0
+            let button = ASAuthorizationAppleIDButton(type: .signIn, style: .black)
+            button.cornerRadius = 10
             button.isEnabled = enabled
             button.addTarget(self, action: #selector(applePressed), for: .touchUpInside)
             apple = button
@@ -114,12 +114,23 @@ final class NinaSurfaceView: UIView, WKNavigationDelegate {
         case "web":
             let configuration = WKWebViewConfiguration()
             configuration.websiteDataStore = .nonPersistent()
+            configuration.userContentController.addUserScript(WKUserScript(source: """
+                (() => {
+                    const viewport = document.querySelector('meta[name="viewport"]') || document.createElement('meta');
+                    viewport.name = 'viewport';
+                    const settings = (viewport.content || 'width=device-width, initial-scale=1')
+                        .split(',').filter(value => !value.trim().startsWith('viewport-fit='));
+                    viewport.content = [...settings, 'viewport-fit=cover'].join(', ');
+                    if (!viewport.parentNode) document.head.append(viewport);
+                })();
+                """, injectionTime: .atDocumentEnd, forMainFrameOnly: true))
             let document = WKWebView(frame: bounds, configuration: configuration)
             document.isOpaque = false
             document.backgroundColor = UIColor(red: 0.96, green: 0.94, blue: 0.90, alpha: 1)
             document.navigationDelegate = self
             document.allowsBackForwardNavigationGestures = true
             document.scrollView.contentInsetAdjustmentBehavior = .never
+            document.scrollView.automaticallyAdjustsScrollIndicatorInsets = false
             web = document
             addSubview(document)
             loadPage()

@@ -1,24 +1,26 @@
-import React, {useState} from 'react';
-import {requireNativeComponent, StyleSheet, View} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+import {Keyboard, requireNativeComponent, StatusBar, StyleSheet, View} from 'react-native';
 import type {NativeSyntheticEvent, ViewProps} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {mediaFilename} from '../native';
+import {mediaFilename, NativeSurface} from '../native';
 import type {Policy, Rect} from '../native';
 import {errorText} from '../navigation';
 import type {Route, Tab} from '../navigation';
 import {library, visibleSkater} from '../state/library';
 import {collectionNames, findLine, isReported, lines} from '../state/model';
 import type {Line} from '../state/model';
-import {freeBand, useWindowBounds, useWindowLayout} from '../ui/geometry';
-import {Action, colors, Copy, Glyph, layout} from '../ui/paper';
+import {ActionBand, freeBand, useWindowBounds, useWindowLayout} from '../ui/geometry';
+import {Action, colors, Copy, Glyph, layout, Notice} from '../ui/paper';
 import {WebPageScreen} from '../ui/WebPage';
 
 export type JournalDestination = {tab: Tab; route?: Route};
 type Request = {status: 'request'; id: string; action: string; data: unknown};
-type Signal = Request | {status: 'loaded' | 'failed'};
+type AuthState = {visible: boolean; accepted: boolean; busy: boolean};
+type Signal = Request | {status: 'loaded' | 'failed'} | ({status: 'auth'} & AuthState);
 type Reply = {id: string; value?: unknown; error?: string};
 type CommunityProps = ViewProps & {
   reply?: Reply;
+  contentInsets: {top: number; bottom: number; left: number; right: number};
   onSignal: (event: NativeSyntheticEvent<Signal>) => void;
 };
 
@@ -61,9 +63,8 @@ function requestText(data: unknown, key: string) {
   return typeof value === 'string' ? value : '';
 }
 
-export function OfflineCommunity({onJournal, onApple}: {
+export function OfflineCommunity({onJournal}: {
   onJournal: (destination: JournalDestination) => void;
-  onApple: () => void;
 }) {
   const safe = useSafeAreaInsets();
   const viewport = useWindowBounds();
@@ -72,6 +73,16 @@ export function OfflineCommunity({onJournal, onApple}: {
   const [status, setStatus] = useState<'loading' | 'loaded' | 'failed'>('loading');
   const [reply, setReply] = useState<Reply>();
   const [policy, setPolicy] = useState<Policy>();
+  const [auth, setAuth] = useState<AuthState>({visible: false, accepted: false, busy: false});
+  const authState = useRef(auth);
+  const appleLock = useRef(false);
+  const mounted = useRef(true);
+  const [appleBusy, setAppleBusy] = useState(false);
+  const [appleIssue, setAppleIssue] = useState('');
+  useEffect(() => {
+    mounted.current = true;
+    return () => {mounted.current = false;};
+  }, []);
   let [left, right, top, bottom] = [safe.left, safe.right, safe.top, safe.bottom];
   const bounds = viewport.bounds;
   if (bounds) {
@@ -83,6 +94,9 @@ export function OfflineCommunity({onJournal, onApple}: {
   }
 
   async function handle(action: string, data: unknown) {
+    if (appleLock.current) {
+      throw new Error('Finish signing in before continuing.');
+    }
     switch (action) {
       case 'snapshot':
         return communityState();
@@ -91,14 +105,11 @@ export function OfflineCommunity({onJournal, onApple}: {
         if (requestText(data, 'consent') !== 'agreed') {
           throw new Error('Accept the Terms and Privacy Policy to continue.');
         }
-        await library.signIn(requestText(data, 'email'), requestText(data, 'password'), action === 'register');
+        await library.signIn(requestText(data, 'email'), requestText(data, 'password'));
         return communityState();
       case 'signOut':
         await library.signOut();
         return communityState();
-      case 'apple':
-        onApple();
-        return null;
       case 'policy': {
         const name = requestText(data, 'name');
         if (name !== 'terms' && name !== 'privacy' && name !== 'rules') {
@@ -139,8 +150,45 @@ export function OfflineCommunity({onJournal, onApple}: {
     }
   }
 
+  async function signInWithApple() {
+    const current = authState.current;
+    if (!current.visible || !current.accepted || current.busy || appleLock.current) {
+      return;
+    }
+    appleLock.current = true;
+    setAppleBusy(true);
+    setAppleIssue('');
+    Keyboard.dismiss();
+    try {
+      await library.signInApple();
+    } catch (error) {
+      const message = errorText(error);
+      if (mounted.current && message !== 'Apple sign-in canceled.') {
+        setAppleIssue(message);
+      }
+    } finally {
+      appleLock.current = false;
+      if (mounted.current) {
+        setAppleBusy(false);
+      }
+    }
+  }
+
   function signal({nativeEvent}: NativeSyntheticEvent<Signal>) {
+    if (nativeEvent.status === 'auth') {
+      const next = {visible: nativeEvent.visible, accepted: nativeEvent.accepted, busy: nativeEvent.busy};
+      authState.current = next;
+      setAuth(current => current.visible === next.visible && current.accepted === next.accepted &&
+        current.busy === next.busy ? current : next);
+      setAppleIssue('');
+      return;
+    }
     if (nativeEvent.status !== 'request') {
+      if (nativeEvent.status === 'failed') {
+        const closed = {visible: false, accepted: false, busy: false};
+        authState.current = closed;
+        setAuth(closed);
+      }
       setStatus(nativeEvent.status);
       return;
     }
@@ -152,18 +200,32 @@ export function OfflineCommunity({onJournal, onApple}: {
   }
 
   return <View style={[layout.fill, layout.paper]}>
+    <StatusBar barStyle={policy || status !== 'loaded' ? 'dark-content' : 'light-content'} />
     <View
       ref={viewport.ref}
       onLayout={viewport.measure}
       collapsable={false}
-      style={[layout.fill, {paddingTop: top, paddingBottom: bottom, paddingLeft: left, paddingRight: right}]}
+      style={layout.fill}
       accessibilityElementsHidden={Boolean(policy)}
     >
-      <LocalPage key={revision} style={layout.fill} onSignal={signal} reply={reply} />
+      <LocalPage key={revision} style={layout.fill} onSignal={signal} reply={reply}
+        pointerEvents={appleBusy ? 'none' : 'auto'}
+        contentInsets={{top, bottom: auth.visible ? 0 : bottom, left, right}} />
+      {auth.visible && status === 'loaded' ? <ActionBand edge="bottom" style={layout.paper}>
+        <View style={communityStyles.appleActions}>
+          {appleIssue ? <Notice error>{appleIssue}</Notice> : null}
+          {appleBusy ? <View accessibilityLiveRegion="polite"><Copy size="caption">Signing in…</Copy></View> : null}
+          <NativeSurface kind="apple" enabled={auth.accepted && !auth.busy && !appleBusy}
+            style={communityStyles.appleButton}
+            onSignal={({nativeEvent}) => {
+              if (nativeEvent.status === 'pressed') {void signInWithApple();}
+            }} />
+        </View>
+      </ActionBand> : null}
     </View>
     {status !== 'loaded' ? <View style={communityStyles.loading} accessibilityViewIsModal>
       <Glyph name={status === 'failed' ? 'ramp' : 'load'} size={44} />
-      <Copy size="heading" header>{status === 'failed' ? 'Could not open the community' : 'Opening Nina'}</Copy>
+      <Copy size="heading" header>{status === 'failed' ? 'Could not open the community' : 'Opening the community'}</Copy>
       {status === 'failed' ? <Action title="Try again" icon="load" action={() => {
         setReply(undefined);
         setStatus('loading');
@@ -177,6 +239,8 @@ export function OfflineCommunity({onJournal, onApple}: {
 }
 
 const communityStyles = StyleSheet.create({
+  appleActions: {width: '100%', maxWidth: 464, alignSelf: 'center', paddingVertical: 12, gap: 8},
+  appleButton: {height: 52, width: '100%'},
   loading: {
     ...StyleSheet.absoluteFillObject, backgroundColor: colors.paper,
     alignItems: 'center', justifyContent: 'center', padding: 20, gap: 10,

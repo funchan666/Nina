@@ -39,8 +39,6 @@ type PlatformMethods = {
   cleanLegacy: [undefined, void];
   session: [{id: ID | null}, void];
   identity: [{value: string}, Identity];
-  registerPassword: [{owner: ID; password: string}, void];
-  verifyPassword: [{owner: ID; password: string}, void];
   appleSignIn: [undefined, Identity];
   pick: [{owner: ID; source: PickSource; avatar: boolean}, Attachment | null];
   removeAttachment: [{owner: ID; attachment: Attachment}, void];

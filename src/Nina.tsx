@@ -14,7 +14,7 @@ import {Blacklist, Block, DeleteProfile, Report, Settings} from './screens/Safet
 import {Sessions, SpotDetails, SpotEditor, TrickEditor} from './screens/Sessions';
 import {PostEditor, Submissions, SubmissionViewer} from './screens/Submissions';
 import {CoverShop, Wallet} from './screens/Wallet';
-import {OpeningJournal, Welcome} from './screens/Welcome';
+import {OpeningJournal} from './screens/Welcome';
 import {library, useJournal} from './state/library';
 import {recordID} from './state/model';
 import {deliver} from './state/purchases';
@@ -34,7 +34,7 @@ export default function Nina() {
 
 function Entry() {
   const {status, config, activeID} = useJournal();
-  const [destination, setDestination] = useState<'community' | 'apple' | JournalDestination>('community');
+  const [destination, setDestination] = useState<'community' | JournalDestination>('community');
   const showCommunity = () => setDestination('community');
   useEffect(() => {
     const film = observeFilm();
@@ -64,7 +64,7 @@ function Entry() {
   }, [status, config?.purchasesEnabled]);
   useEffect(() => {
     setDestination(current => {
-      if ((current === 'apple' && activeID) || (typeof current !== 'string' && !activeID)) {
+      if (typeof current !== 'string' && !activeID) {
         return 'community';
       }
       return current;
@@ -73,13 +73,10 @@ function Entry() {
   if (status !== 'ready') {
     return <OpeningJournal />;
   }
-  if (destination === 'apple' && !activeID) {
-    return <Welcome onCommunity={showCommunity} />;
-  }
   if (typeof destination !== 'string' && activeID) {
     return <Journal key={activeID} destination={destination} onCommunity={showCommunity} />;
   }
-  return <OfflineCommunity key={activeID ?? 'guest'} onApple={() => setDestination('apple')} onJournal={setDestination} />;
+  return <OfflineCommunity key={activeID ?? 'guest'} onJournal={setDestination} />;
 }
 
 function pauseFilm() {
@@ -104,6 +101,9 @@ function Journal({destination, onCommunity}: {destination: JournalDestination; o
   }));
   const [notice, setNotice] = useState('');
   const [noticeHeight, setNoticeHeight] = useState(0);
+  const currentStack = nav.stacks[nav.tab];
+  const currentRoute = currentStack[currentStack.length - 1]?.route.name;
+  const immersive = currentRoute === 'lineViewer' || currentRoute === 'submissionViewer' || currentRoute === 'call';
 
   function activate(tab: Tab) {
     setNotice('');
@@ -186,13 +186,13 @@ function Journal({destination, onCommunity}: {destination: JournalDestination; o
         </View>
       </ActionBand>
     </View> : null}
+    <StatusBar barStyle={immersive ? 'light-content' : 'dark-content'} />
   </View>;
 }
 
 function Dock({selected, activate, onCommunity}: {selected: Tab; activate(tab: Tab): void; onCommunity: () => void}) {
-  const safe = useSafeAreaInsets();
-  return <View style={[layout.ink, {paddingBottom: safe.bottom, paddingLeft: safe.left, paddingRight: safe.right}]}>
-    <ActionBand minimumWidth={201}>
+  return <View style={layout.ink}>
+    <ActionBand edge="bottom" minimumWidth={201}>
       <View style={styles.dock}>
         <Pressable accessibilityRole="button" accessibilityLabel="Back to community" onPress={onCommunity}
           style={({pressed}) => [styles.tab, {opacity: pressed ? 0.73 : 1}]}>

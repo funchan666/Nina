@@ -171,8 +171,8 @@ export function Screen({title, ground, root = false, editing = false, action, ch
   const {margins} = useWindowLayout();
   return <View style={styles.canvas}>
     <Backdrop image={ground} />
-    <View style={[layout.fill, {paddingTop: safe.top, paddingLeft: safe.left, paddingRight: safe.right}]}>
-      {!root && <ActionBand>
+    <View style={layout.fill}>
+      {!root && <ActionBand edge="top">
         <View style={styles.navBar}>
           <IconAction title="Back" icon="back" fill={colors.paper} action={flow.back} />
           {editing && <Action title="Done typing" tone="paper" icon="check" action={Keyboard.dismiss} />}
@@ -181,12 +181,17 @@ export function Screen({title, ground, root = false, editing = false, action, ch
       <ScrollView
         style={layout.fill}
         contentInsetAdjustmentBehavior="never"
+        automaticallyAdjustContentInsets={false}
+        automaticallyAdjustsScrollIndicatorInsets={false}
         automaticallyAdjustKeyboardInsets={flow.visible && editing}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode={editing ? 'interactive' : 'none'}
-        contentContainerStyle={{paddingLeft: margins.left, paddingRight: margins.right, paddingBottom: root ? 28 : safe.bottom + 28}}
+        contentContainerStyle={{
+          paddingLeft: Math.max(margins.left, safe.left), paddingRight: Math.max(margins.right, safe.right),
+          paddingBottom: root ? 28 : Math.max(28, safe.bottom + 12),
+        }}
       >
-        <View style={styles.scrollContent}>
+        <View style={[styles.scrollContent, root && {paddingTop: safe.top + 8}]}>
           <PageHeading title={title} large={root}>{action}</PageHeading>
           {children}
         </View>

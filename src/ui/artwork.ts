@@ -37,7 +37,6 @@ export const grounds = {
   LinesGround: require('../../assets/brand/exports/lines-ground.jpg'),
   SessionsGround: require('../../assets/brand/exports/sessions-ground.jpg'),
   CrewGround: require('../../assets/brand/exports/crew-ground.jpg'),
-  WelcomeGround: require('../../assets/brand/exports/welcome-ground.jpg'),
 };
 
 export const coverArtwork = {
@@ -45,5 +44,3 @@ export const coverArtwork = {
   wax: require('../../assets/brand/exports/cover-wax.jpg'),
   night: require('../../assets/brand/exports/cover-night.jpg'),
 };
-
-export const wheelMark = require('../../assets/brand/exports/wheel-mark.jpg');

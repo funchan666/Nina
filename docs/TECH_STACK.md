@@ -8,6 +8,6 @@
 | 本地网页 | `web/community/index.html`、HTML/CSS/JavaScript、iOS SDK 的 WKWebView 及受限主框架桥接。 |
 | 资源 ZIP | ZIPFoundation 0.9.20 解压 `Nina/Resources/Nina.zip`。媒体位于 ZIP 的 `media/` 目录。 |
 | 视频 | MP4 容器。新优化片使用 HEVC `hvc1`，兼顾尺寸、帧率和画质。已足够精简的片使用 H.264。iOS 用 AVPlayer 播放本地文件。 |
-| 持久化 | iOS Keychain 保存会话和密码校验值，TypeScript 账本通过原生层原子写入独立应用目录。 |
+| 持久化 | iOS Keychain 保存会话，TypeScript 账本通过原生层原子写入独立应用目录。邮箱入口只校验输入格式，不保存或核对密码。删除档案仍清理旧版密码校验值。 |
 
 既有 WKWebView 宿主负责文件加载和真实主框架来源检查。Apple 登录、购买和相机继续使用 iOS 原生 API。[WKWebView 本地文件加载](https://developer.apple.com/documentation/webkit/wkwebview/loadfileurl(_:allowingreadaccessto:)) · [Apple 平台视频格式](https://developer.apple.com/documentation/technologyoverviews/video) · [ZIPFoundation 0.9.20](https://github.com/weichsel/ZIPFoundation/releases/tag/0.9.20)

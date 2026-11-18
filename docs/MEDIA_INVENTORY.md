@@ -17,6 +17,14 @@
 
 ## 逐项来源与包内引用
 
+2026-11-18 更新了欢迎和登录页的原创插画。内置生图工具按 Garden Image 2 Host-Native 流程生成四位成年滑板朋友围坐分享视频、聊天的场景，提示词记录在 `assets/brand/image-prompts.md`。
+
+| 素材 | 源文件 | 运行时与包内路径 | 尺寸与压缩 |
+| --- | --- | --- | --- |
+| WelcomeGround | `assets/brand/welcome-crew-hangout.png` | `assets/brand/exports/welcome-ground.jpg` → `art/welcome-ground.jpg` | 860 × 1828，PNG 2,649,814 B → JPEG 429,653 B，q88、无色度抽样、渐进编码，减少 83.8% |
+
+已查看压缩后的脸部、手部和暗部画面。原始插画源图放在品牌素材目录，运行时只归档 JPEG。原有 66 项用户内容及首帧仍按下表映射。
+
 | 原始文件 | 使用入口 | ZIP 条目 | 原始与随包尺寸／大小 | 编码或复用说明 | 首帧条目 |
 | --- | --- | --- | --- | --- | --- |
 | `photos/621455416_18115793260610083_6314209507149073934_n.jpg` | 社区／Lines / Park / Palms at the bowl | `media/lines-v1-park-palms-at-the-bowl.jpg` | 1440×1800 / 373,183 B → 960×1200 / 253,195 B (32.2% 节省) | JPEG q86, sRGB, long edge ≤ 1200px, EXIF omitted | — |

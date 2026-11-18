@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; style-src 'self' file:; img-src 'self' file:; font-src 'self' file:; base-uri 'none'; form-action 'none'">
-  <title>Nina Skate Community</title>
+  <title>Skate community</title>
   <link rel="stylesheet" href="community.css">
   <script src="community/community.js" defer></script>
 </head>
-<body>
+<body data-screen="startup">
   <header class="masthead">
     <div class="masthead-inner">
-      <div class="brand">
-        <img src="art/wheel-mark.jpg" width="42" height="42" alt="">
-        <span>Nina</span>
-      </div>
+      <button type="button" class="access-back" id="access-back" hidden aria-label="Back to welcome">
+        <img src="art/ink-back.png" width="22" height="22" alt="">
+      </button>
       <button type="button" class="masthead-action" id="sign-out" hidden>Sign out</button>
     </div>
   </header>
@@ -24,41 +23,49 @@
     <button type="button" id="retry" hidden>Try again</button>
     <p id="notice" class="feedback" role="status" hidden></p>
 
+    <section class="welcome" id="welcome" hidden aria-labelledby="welcome-title">
+      <div class="welcome-scene" aria-hidden="true">
+        <img src="art/welcome-ground.jpg" width="860" height="1828" alt="">
+      </div>
+      <div class="welcome-content">
+        <h1 id="welcome-title" tabindex="-1">See you<br>at the spot.</h1>
+        <p>For the clips you replay and the friends you skate with.</p>
+        <div class="welcome-actions">
+          <button type="button" class="primary" data-access="register">Create profile</button>
+          <button type="button" class="welcome-sign-in" data-access="signin">Sign in</button>
+        </div>
+      </div>
+    </section>
+
     <section class="access" id="access" hidden aria-labelledby="auth-title">
       <figure class="welcome-image">
-        <img src="art/welcome-ground.jpg" alt="" width="864" height="1820">
+        <img src="art/welcome-ground.jpg" alt="" width="860" height="1828">
       </figure>
       <div class="auth-panel">
-        <h1 id="auth-title" tabindex="-1">Sign in to Nina</h1>
-        <p class="support">Your profile and community activity live on this iPhone.</p>
+        <h1 id="auth-title" tabindex="-1">Welcome back</h1>
         <form id="auth-form" novalidate>
           <fieldset id="auth-fields">
             <label class="field" for="email">
               <span>Email address</span>
-              <input id="email" type="email" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="254" required>
+              <input id="email" type="email" inputmode="email" enterkeyhint="next" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="254" required>
             </label>
             <label class="field" for="password">
               <span>Password</span>
-              <input id="password" type="password" autocomplete="current-password" maxlength="256" required>
+              <input id="password" type="password" enterkeyhint="go" autocomplete="current-password" maxlength="256" required>
             </label>
-            <p id="password-note" class="field-note" hidden>Use at least eight characters.</p>
             <div class="agreement">
-              <label class="consent" for="consent">
-                <input id="consent" type="checkbox" required>
-                <span>I agree to the Terms and Privacy Policy.</span>
+              <label class="consent-control" for="consent">
+                <input id="consent" type="checkbox" aria-labelledby="consent-label" required>
               </label>
-              <div class="actions">
-                <button type="button" class="text-action" data-policy="terms">Terms</button>
-                <button type="button" class="text-action" data-policy="privacy">Privacy Policy</button>
-              </div>
+              <p id="consent-label">I agree to the <button type="button" class="text-action" data-policy="terms">Terms</button>
+                and <button type="button" class="text-action" data-policy="privacy">Privacy Policy</button>.</p>
             </div>
           </fieldset>
           <p id="auth-error" class="feedback error" role="alert" hidden></p>
           <button type="submit" class="primary" id="auth-submit">Sign in</button>
         </form>
         <div class="account-options">
-          <button type="button" class="text-action" id="auth-mode">Create a local profile</button>
-          <button type="button" class="text-action" id="apple">Apple sign-in options</button>
+          <button type="button" class="text-action" id="auth-mode">New here? Create a profile</button>
         </div>
       </div>
     </section>
@@ -67,7 +74,7 @@
       <div class="community-heading">
         <h1 id="community-title" tabindex="-1">Skate community</h1>
         <p class="profile-name" id="profile-name"></p>
-        <p class="support">Browse Nina’s skate collection. Your likes, saves and comments stay on this iPhone.</p>
+        <p class="support">Find a clip worth replaying or an idea for your next session.</p>
       </div>
       <nav class="journal" aria-label="Skate journal">
         <button type="button" data-tab="sessions"><img src="art/ink-spot.png" alt="">Spot book &amp; trick log</button>
@@ -87,7 +94,7 @@
         <button type="button" id="clear-filter" class="text-action">Show all lines</button>
       </div>
       <div id="feed" class="feed"></div>
-      <button type="button" id="more" class="more" hidden>More lines</button>
+      <button type="button" id="more" class="more" hidden>Show more lines</button>
       <footer class="community-footer">
         <button type="button" class="text-action" data-policy="rules">Crew rules</button>
       </footer>
@@ -103,7 +110,7 @@
       <button type="button" class="line-preview" data-action="open">
         <span class="line-image" hidden><img loading="lazy" decoding="async" alt=""></span>
         <span data-item="image-error" class="media-error" hidden>Preview unavailable</span>
-        <span data-item="open-label" class="preview-label">Open line</span>
+        <span data-item="open-label" class="preview-label">View line</span>
       </button>
       <div class="line-actions">
         <button type="button" data-action="like" aria-pressed="false"><img src="art/ink-like.png" alt=""><span>Like</span></button>
@@ -115,11 +122,11 @@
         <ul data-item="comments"></ul>
         <form class="comment-form" novalidate>
           <label class="comment-label">
-            <span>Add a local comment</span>
+            <span>Add a comment</span>
             <textarea rows="2" required maxlength="400"></textarea>
           </label>
           <p data-item="comment-feedback" class="feedback error" role="alert" hidden></p>
-          <button type="submit" class="primary">Save comment</button>
+          <button type="submit" class="primary">Add comment</button>
         </form>
       </details>
     </article>

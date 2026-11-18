@@ -2,6 +2,23 @@
 
 Built-in image generation, Host-Native mode.
 
+## welcome-social-crew-2026-11-18
+
+Generated with the built-in image tool using the Garden Image 2 Host-Native workflow.
+Source master is `assets/brand/welcome-crew-hangout.png`, 860 × 1828 pixels.
+The compressed runtime image is `assets/brand/exports/welcome-ground.jpg` and is copied into `Nina.zip/art/welcome-ground.jpg`.
+
+Use case: illustration-story.
+Asset type: a finished original illustration for the full-screen welcome background of Nina, a social app for adult skateboard enthusiasts. A single tall portrait canvas, approximately 9:19.5, ideally 1024 by 2176 pixels. This is artwork only, with absolutely no UI, words, lettering, logo, watermark, badges or speech bubbles.
+
+Primary request: make the first impression about friendship, meeting people and belonging to a skate crew. Paint a candid warm moment between FOUR distinct adult friends in their mid twenties at a leafy neighborhood skatepark after a session. Two women and two men with diverse skin tones and clearly individual faces, hair and relaxed contemporary streetwear. One woman sits on the smooth concrete edge and shows a clip on her phone to the others. They lean together, laugh, exchange eye contact and enjoy being together. Their bodies and expressions tell one natural shared story. Two authentic skateboards rest beside them, establishing the skate setting without dominating it. Nobody poses at the camera. Hands, arms and seated anatomy must be natural and individually readable.
+
+Visual direction: beautiful contemporary editorial illustration for an independent lifestyle publication. Warm expressive faces, elegant hand-painted color shapes, delicate pencil-like contours, restrained fine matte-paper texture. Soft daylight and a little golden late-afternoon light. Welcoming, lively, intimate and adult. Cleaner and more inviting than distressed linocut or vintage sports poster art. No scratchy all-over grit, stiff fist-bump pose, caricatured stock characters, plastic 3D, glossy render, neon or anime eyes.
+
+Palette: deep evergreen #182620, warm cream #F5F0E5, light sage #DDE4D5, small acid-yellow-green #DFF075 accents and a little warm terracotta. Keep skin tones natural and distinct. Light and color around the faces, rich green trees and soft skatepark curves behind the group.
+
+Composition for real mobile UI: the social group is the clear focal point, gathered CLOSE together around the upper-middle of the portrait. Put all four faces between 18% and 38% of the canvas height and within the central 64% of the canvas width, so they remain visible after a narrow phone crop. Their hands and shared phone are around 38% to 45% height. Body and skateboard details can continue to about 58% height. The uppermost 10% is quiet foliage for the real system status bar. Let the lower 40% resolve naturally into quiet deep-green foreground and soft shadow, because the actual editable title and two actual buttons will be laid over that area in the app. It should feel like one coherent painted scene, never a blank rectangular text box. No essential faces or interaction in the bottom 40%, no giant foreground person, no distant tiny crowd. Full-bleed, no border.
+
 ## icon
 
 Use case: logo-brand. Asset type: a 1024x1024 opaque edge-to-edge iOS app icon for NINA, an independent skateboard session journal and skate crew app. Subject: two expressive anthropomorphic skateboard wheels high-fiving as they roll past each other, one warm off-white urethane with warm rust core, one acid chartreuse urethane with midnight evergreen core. Each is a single recognizable chunky circular italic wheel, a tiny simple friendly face and one gloved hand each meeting at center. Clearly readable at 24 pixels with bold simplified silhouettes. Style: premium 1990s independent skate deck silk-screen print, art-directed two color ink shapes with minimal grain, free of plastic highlights, one confident energetic composition. Composition: on full bleed flat dark evergreen black (#172620), high contrast, centered and oversized, margin approximately 12%, no floating particles. Text: none. No preset rounded corners, no bevel, no frame, no device, no gradients, no watermark, no logos.

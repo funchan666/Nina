@@ -84,7 +84,7 @@
         "Crew: two crossed board shadows at a bench."
       ],
       "seed_data_direction": "Editorial media metadata only. Registered profiles and interaction counts come from actual user actions.",
-      "architecture_direction": "React Native starts the bundled Nina.zip community in WKWebView. The web feed and native playback share the same extracted media directory. TypeScript owns the journal. Keychain stores the local session and password verifier. UIKit hosts the native Apple features.",
+      "architecture_direction": "React Native starts the bundled Nina.zip community in WKWebView. The web feed and native playback share the same extracted media directory. TypeScript owns the journal. Email entry validates the address format and a nonempty password, then opens or creates the matching profile without saving or verifying the password. Keychain stores the local session. UIKit hosts the native Apple features.",
       "domain_modules": [
         "community"
       ],

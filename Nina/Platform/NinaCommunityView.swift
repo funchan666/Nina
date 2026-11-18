@@ -6,6 +6,9 @@ private typealias CommunityReply = @MainActor @Sendable (Any?, String?) -> Void
 @objc(NinaCommunityView)
 final class NinaCommunityView: UIView, WKNavigationDelegate {
     @objc var onSignal: (([String: Any]) -> Void)?
+    @objc var contentInsets: NSDictionary? {
+        didSet { updateContentInsets() }
+    }
     @objc var reply: NSDictionary? {
         didSet {
             guard let pending, reply?["id"] as? String == pending.id else { return }
@@ -29,7 +32,9 @@ final class NinaCommunityView: UIView, WKNavigationDelegate {
         handler.owner = self
         webView.navigationDelegate = self
         webView.isOpaque = false
+        webView.backgroundColor = UIColor(red: 24 / 255, green: 38 / 255, blue: 32 / 255, alpha: 1)
         webView.scrollView.contentInsetAdjustmentBehavior = .never
+        webView.scrollView.automaticallyAdjustsScrollIndicatorInsets = false
         webView.scrollView.keyboardDismissMode = .interactive
         addSubview(webView)
     }
@@ -67,11 +72,40 @@ final class NinaCommunityView: UIView, WKNavigationDelegate {
         return index.resolvingSymlinksInPath().path == url.resolvingSymlinksInPath().path
     }
 
+    private func updateContentInsets() {
+        guard isEntry(webView.url), let contentInsets else { return }
+        // Keep the page full-screen; only foreground controls consume the host's geometry.
+        webView.callAsyncJavaScript("""
+            for (const edge of ['top', 'right', 'bottom', 'left']) {
+                const value = insets[edge];
+                if (Number.isFinite(value) && value >= 0) {
+                    document.documentElement.style.setProperty('--content-' + edge, value + 'px');
+                }
+            }
+            """, arguments: ["insets": contentInsets], in: nil, in: .page)
+    }
+
     fileprivate func receive(_ message: WKScriptMessage, resolve: @escaping CommunityReply) {
         guard message.frameInfo.isMainFrame, isEntry(message.frameInfo.request.url),
               let body = message.body as? [String: Any], let action = body["action"] as? String,
-              let deliver = onSignal, pending == nil else {
+              let deliver = onSignal else {
             resolve(nil, "This community action is unavailable. Try again.")
+            return
+        }
+        if action == "authState" {
+            guard let data = body["data"] as? [String: Any],
+                  let visible = data["visible"] as? Bool,
+                  let accepted = data["accepted"] as? Bool,
+                  let busy = data["busy"] as? Bool else {
+                resolve(nil, "The sign-in form is unavailable. Open it again.")
+                return
+            }
+            deliver(["status": "auth", "visible": visible, "accepted": accepted, "busy": busy])
+            resolve(nil, nil)
+            return
+        }
+        guard pending == nil else {
+            resolve(nil, "Finish the current action and try again.")
             return
         }
         let id = UUID().uuidString
@@ -86,6 +120,7 @@ final class NinaCommunityView: UIView, WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        updateContentInsets()
         onSignal?(["status": "loaded"])
     }
 

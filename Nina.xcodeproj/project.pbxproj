@@ -43,62 +43,6 @@
 			remoteGlobalIDString = 5A3CB676E2B52DDFF0329FD91BA00EFE;
 			remoteInfo = "Pods-Nina";
 		};
-		12F33AD89ADF80D46654EA2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 52FCF98CEFF94C742080B6965D537AD0;
-			remoteInfo = Subproject;
-		};
-		19C2E500F921BC63DDC43B15 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 48A4A6EDC08C8AC933D0DCD507E9D173;
-			remoteInfo = Subproject;
-		};
-		4642B3819E9192B9E170DC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C07C429E887D0FBD7D457208EF1B14CD;
-			remoteInfo = Subproject;
-		};
-		520D9080C45B7173BDF87A55 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 465B54D099DA907E9393A94952E2D214;
-			remoteInfo = Subproject;
-		};
-		B518CAAEE830E67B17E1D8CA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E29ADDC93B6DED49A5C18F17348381B1;
-			remoteInfo = Subproject;
-		};
-		C200513E62B8875B66282DBE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A1B6A764DE9F3C74B0ECDA9B592F3FDD;
-			remoteInfo = Subproject;
-		};
-		D83BCC25FEB819FA3B1112A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CA4A114775B98CEA4A566C18123B145F;
-			remoteInfo = Subproject;
-		};
-		E0000A7E132D4C5FA123A3A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F98E2892F35EF53E0145E2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0CEF74A24ECE8AEEF7B1E27B305D2DDC;
-			remoteInfo = Subproject;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -253,14 +197,6 @@
 		D57EEC1FAEB1BD15FE764C39 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3224C4BF89433F842F1314F /* libPods-Nina.a */,
-				4679B81E596D1940A418B348 /* React-cxxreact_privacy.bundle */,
-				E329E6CD2249DE07844C4AFA /* libreact-native-safe-area-context.a */,
-				8945B1ED1A8C30D6E3C6542F /* React-timing_privacy.bundle */,
-				0D8237800E0EF85D8F546AD5 /* libReactAppDependencyProvider.a */,
-				199FE5175FA8C9076F8D182F /* libReactCodegen.a */,
-				3C162E539337927093AF22AB /* libZIPFoundation.a */,
-				E009237C5FF8DB14B61FCE91 /* ZIPFoundation_Privacy.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,65 +271,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0D8237800E0EF85D8F546AD5 /* libReactAppDependencyProvider.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libReactAppDependencyProvider.a;
-			remoteRef = 4642B3819E9192B9E170DC67 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		199FE5175FA8C9076F8D182F /* libReactCodegen.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libReactCodegen.a;
-			remoteRef = E0000A7E132D4C5FA123A3A4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3C162E539337927093AF22AB /* libZIPFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libZIPFoundation.a;
-			remoteRef = 19C2E500F921BC63DDC43B15 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4679B81E596D1940A418B348 /* React-cxxreact_privacy.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = "wrapper.plug-in";
-			path = "React-cxxreact_privacy.bundle";
-			remoteRef = B518CAAEE830E67B17E1D8CA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8945B1ED1A8C30D6E3C6542F /* React-timing_privacy.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = "wrapper.plug-in";
-			path = "React-timing_privacy.bundle";
-			remoteRef = 520D9080C45B7173BDF87A55 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E009237C5FF8DB14B61FCE91 /* ZIPFoundation_Privacy.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = "wrapper.plug-in";
-			path = ZIPFoundation_Privacy.bundle;
-			remoteRef = D83BCC25FEB819FA3B1112A3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E3224C4BF89433F842F1314F /* libPods-Nina.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libPods-Nina.a";
-			remoteRef = C200513E62B8875B66282DBE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E329E6CD2249DE07844C4AFA /* libreact-native-safe-area-context.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libreact-native-safe-area-context.a";
-			remoteRef = 12F33AD89ADF80D46654EA2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D5C69EA34C419FABC76F51A9 /* Resources */ = {

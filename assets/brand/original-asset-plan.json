@@ -59,21 +59,19 @@
     {
       "id": "WheelMark",
       "role": "module_art",
-      "screen": "startup",
+      "screen": "website",
       "source_file": "assets/brand/exports/wheel-mark.jpg",
-      "runtime_asset": "assets/brand/exports/wheel-mark.jpg",
-      "purpose": "LaunchScreen and welcome mark.",
+      "runtime_asset": "website/dist/assets/wheel-mark.jpg",
+      "purpose": "Original wheel artwork used on the public website.",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/brand/wheel-high-five.png",
       "referenced_by": [
-        "src/ui/artwork.ts",
-        "web/community/index.html",
-        "Nina/Resources/Assets.xcassets/WheelMark.imageset/Contents.json",
-        "Nina/Resources/Info.plist"
-      ],
-      "web_runtime_asset": "web/community/art/wheel-mark.jpg"
+        "website/dist/index.html",
+        "website/dist/terms.html",
+        "website/dist/privacy.html"
+      ]
     },
     {
       "id": "LinesGround",
@@ -121,14 +119,13 @@
       "id": "WelcomeGround",
       "role": "module_art",
       "screen": "welcome",
-      "source_file": "assets/brand/welcome-fist-bump.png",
+      "source_file": "assets/brand/welcome-crew-hangout.png",
       "runtime_asset": "assets/brand/exports/welcome-ground.jpg",
-      "purpose": "Full-bleed portrait ink illustration.",
+      "purpose": "Four adult skate friends sharing a clip and laughing; full-bleed social welcome and sign-in illustration.",
       "interactive": false,
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
       "referenced_by": [
-        "src/ui/artwork.ts",
         "web/community/index.html"
       ],
       "web_runtime_asset": "web/community/art/welcome-ground.jpg"
@@ -209,8 +206,10 @@
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
       "referenced_by": [
-        "src/ui/artwork.ts"
-      ]
+        "src/ui/artwork.ts",
+        "web/community/index.html"
+      ],
+      "web_runtime_asset": "web/community/art/ink-back.png"
     },
     {
       "id": "InkClose",

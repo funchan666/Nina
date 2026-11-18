@@ -87,26 +87,32 @@ export function freeBand(bounds: Rect, slots: Rect[], start: number, end: number
   return best ? [best[0] - bounds.x, bounds.x + bounds.width - best[1]] : [start, end];
 }
 
-export function ActionBand({children, minimumWidth = 152, style}: {
+export function ActionBand({children, minimumWidth = 152, edge, style}: {
   children: React.ReactNode;
   minimumWidth?: number;
+  edge?: 'top' | 'bottom';
   style?: ViewStyle;
 }) {
   const {ref, bounds, measure} = useWindowBounds();
+  const safe = useSafeAreaInsets();
+  const {width: windowWidth} = useWindowDimensions();
   const layout = useWindowLayout();
   const center = bounds ? Math.max(0, (bounds.width - 760) / 2) : 0;
-  const left = Math.max(layout.margins.left, center);
-  const right = Math.max(layout.margins.right, center);
+  const left = Math.max(layout.margins.left, center, safe.left - (bounds?.x ?? 0));
+  const right = Math.max(layout.margins.right, center,
+    bounds ? bounds.x + bounds.width - windowWidth + safe.right : safe.right);
   const padding = bounds ? freeBand(bounds, layout.regions, left, right) : [left, right];
   const narrow = Boolean(bounds && bounds.width - padding[0] - padding[1] < minimumWidth);
   return (
-    <View ref={ref} collapsable={false} onLayout={measure} style={style}>
-      <View style={{paddingLeft: padding[0], paddingRight: padding[1]}}>
-        {narrow ? (
-          <ScrollView horizontal keyboardShouldPersistTaps="handled" directionalLockEnabled>
-            <View style={{width: minimumWidth}}>{children}</View>
-          </ScrollView>
-        ) : children}
+    <View style={[style, edge === 'top' && {paddingTop: safe.top}, edge === 'bottom' && {paddingBottom: safe.bottom}]}>
+      <View ref={ref} collapsable={false} onLayout={measure}>
+        <View style={{paddingLeft: padding[0], paddingRight: padding[1]}}>
+          {narrow ? (
+            <ScrollView horizontal keyboardShouldPersistTaps="handled" directionalLockEnabled>
+              <View style={{width: minimumWidth}}>{children}</View>
+            </ScrollView>
+          ) : children}
+        </View>
       </View>
     </View>
   );

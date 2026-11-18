@@ -30,9 +30,9 @@ export function Crew({spotKey, title}: {spotKey?: string; title?: string}) {
         action={() => flow.open({name: 'profile', id: account.id})} />
       <Copy size="heading" header>Find skaters</Copy>
     </> : <Copy color={colors.muted}>Skaters with shared sessions here.</Copy>}
-    {crew.length ? <Field label="Find by name" value={query} onChangeText={setQuery} /> : null}
-    {!matching.length ? <Empty title={spotKey ? 'No shared sessions here' : 'No other skaters here yet'} icon="crew"
-      note={query.trim() ? 'Try a different name.' : 'Shared sessions connect skaters through a spot.'} /> : null}
+    {crew.length ? <Field label="Search by name" value={query} onChangeText={setQuery} /> : null}
+    {!matching.length ? <Empty title={query.trim() ? 'No skaters found' : spotKey ? 'No shared sessions here yet' : 'No other skaters here yet'} icon="crew"
+      note={query.trim() ? 'Try another name or clear your search.' : spotKey ? 'Session summaries shared at this spot will appear here.' : 'You can keep adding spots and logging your own sessions.'} /> : null}
     {matching.map(member => {
       const sessions = sharedAttempts(member, spotKey);
       return <Person key={member.id} person={member} detail={sessions.length

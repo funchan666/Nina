@@ -1,6 +1,5 @@
 import React, {useEffect, useState, useSyncExternalStore} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {NativeSurface, onFilmChange, platform} from '../native';
 import type {FilmState} from '../native';
 import {errorText, useFlow} from '../navigation';
@@ -115,7 +114,7 @@ export function Film({id, uri, poster, title, fullscreen, expand, report}: {
           <IconAction title={'Play ' + title} icon="play" fill={colors.grip} action={play} />}
       </View> : null}
     </View>
-    <ActionBand minimumWidth={190} style={{backgroundColor: colors.ink}}>
+    <ActionBand edge={fullscreen ? 'bottom' : undefined} minimumWidth={190} style={{backgroundColor: colors.ink}}>
       <View style={styles.controls}>
         {uri ? <IconAction title={playing ? 'Pause' : 'Play'} icon={playing ? 'pause' : 'play'}
           color={colors.paper} action={play} /> : null}
@@ -132,16 +131,17 @@ export function Film({id, uri, poster, title, fullscreen, expand, report}: {
 }
 
 export function MediaStage({title, children}: {title: string; children: React.ReactNode}) {
-  const safe = useSafeAreaInsets();
   const flow = useFlow();
-  return <View style={[layout.fill, layout.ink, {paddingTop: safe.top, paddingBottom: safe.bottom, paddingLeft: safe.left, paddingRight: safe.right}]}>
-    <ActionBand>
-      <View style={styles.mediaBar}>
-        <IconAction title="Close media" icon="close" color={colors.paper} action={flow.back} />
-        <Copy size="label" color={colors.paper} limit={2} style={layout.fill}>{title}</Copy>
-      </View>
-    </ActionBand>
+  return <View style={[layout.fill, layout.ink]}>
     <View style={layout.fill}>{children}</View>
+    <View style={styles.mediaHeader}>
+      <ActionBand edge="top">
+        <View style={styles.mediaBar}>
+          <IconAction title="Close media" icon="close" color={colors.paper} action={flow.back} />
+          <Copy size="label" color={colors.paper} limit={2} style={layout.fill}>{title}</Copy>
+        </View>
+      </ActionBand>
+    </View>
   </View>;
 }
 
@@ -155,4 +155,5 @@ const styles = StyleSheet.create({
   scrubber: {flex: 1, minWidth: 30, minHeight: 44, justifyContent: 'center'},
   track: {height: 3, backgroundColor: '#647169'},
   mediaBar: {minHeight: 54, alignItems: 'center', flexDirection: 'row', gap: 8},
+  mediaHeader: {position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: 'rgba(24,38,32,0.92)'},
 });

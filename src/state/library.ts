@@ -135,7 +135,7 @@ class NinaLibrary {
     });
   }
 
-  private open(identity: Identity, method: Account['method'], access?: {password: string; register: boolean}) {
+  private open(identity: Identity, method: Account['method']) {
     return this.serial(async () => {
       if (this.state.activeID) {
         return;
@@ -143,13 +143,6 @@ class NinaLibrary {
       const archive = this.clone();
       const existing = Object.values(archive.accounts).find(account => account.loginKey === identity.key);
       const id = existing?.id ?? identity.id;
-      if (access) {
-        if (!existing && !access.register) {
-          throw new Error('The email or password is incorrect.');
-        }
-        const command = access.register ? 'registerPassword' : 'verifyPassword';
-        await platform(command, {owner: id, password: access.password});
-      }
       if (!existing) {
         const name = Array.from(identity.name?.trim() || 'Skater').slice(0, 32).join('');
         archive.accounts[identity.id] = {
@@ -161,30 +154,26 @@ class NinaLibrary {
           blocked: [], saved: [], liked: [], spots: [], attempts: [], submissions: [], drafts: [], reports: [], covers: [],
           grip: [{id: 'welcome', label: 'Welcome Grip', amount: 20, date: now()}],
         };
-        try {
-          await this.save(archive);
-        } catch (error) {
-          if (access?.register) {
-            await platform('removeAccount', {owner: id}).catch(() => {});
-          }
-          throw error;
-        }
+        await this.save(archive);
       }
       await platform('session', {id});
       this.publish({activeID: id, warning: undefined});
     });
   }
 
-  async signIn(email: string, password: string, register = false) {
+  async signIn(email: string, password: string) {
     const address = email.trim().toLowerCase();
     if (address.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
       throw new Error('Enter a valid email address.');
     }
-    if (!password) {
+    if (!password.trim()) {
       throw new Error('Enter a password to continue.');
     }
+    if (password.length > 256) {
+      throw new Error('Use a password with 256 characters or fewer.');
+    }
     const identity = await platform('identity', {value: 'email:' + address});
-    await this.open(identity, 'email', {password, register});
+    await this.open(identity, 'email');
   }
 
   async signInApple() {
@@ -236,7 +225,7 @@ class NinaLibrary {
       this.publish({
         activeID: null,
         warning: cleanup.some(result => result.status === 'rejected')
-          ? 'Your profile was removed. Nina will retry clearing remaining data the next time it opens.'
+          ? 'Your profile was removed. The app will retry clearing remaining data the next time it opens.'
           : undefined,
       });
     });

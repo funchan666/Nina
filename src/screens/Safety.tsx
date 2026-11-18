@@ -62,7 +62,7 @@ export function Settings() {
   const {busy, run} = useMutation();
   const pages = ['website', 'terms', 'privacy'] as const;
   return <Screen title="Settings" ground="CrewGround">
-    <SettingsGroup title="About Nina">
+    <SettingsGroup title="App information">
       {pages.map(page => <Row key={page} title={webPageTitles[page]}
         action={() => flow.open({name: 'webPage', page})} />)}
       {config.supportEmail ? <Row title="Contact support" icon="comment" action={() => {
@@ -92,7 +92,7 @@ export function DeleteProfile() {
   const {busy, run} = useMutation();
   return <Screen title="Delete profile" ground="CrewGround">
     <Empty icon="avatar" title="Remove your skate profile"
-      note="This erases your spots, trick logs, media, drafts, connections and Grip from Nina on this iPhone." />
+      note="This erases your spots, trick logs, media, drafts, connections and Grip." />
     <Check title="Delete this profile and its records" value={confirmed} toggle={() => check(value => !value)} />
     <Action title={busy ? 'Deleting profile…' : 'Delete profile'} icon="close" tone="danger" disabled={!confirmed || busy}
       action={() => {void run(() => library.deleteAccount());}} />

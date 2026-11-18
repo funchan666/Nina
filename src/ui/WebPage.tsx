@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {NativeSurface} from '../native';
 import type {WebPage} from '../native';
 import {ActionBand} from './geometry';
@@ -15,11 +14,10 @@ export const webPageTitles: Record<WebPage, string> = {
 
 export function WebPageScreen({page, close}: {page: WebPage; close(): void}) {
   const title = webPageTitles[page];
-  const safe = useSafeAreaInsets();
   const [status, setStatus] = useState<'loading' | 'loaded' | 'failed'>('loading');
   const [revision, setRevision] = useState(0);
-  return <View style={[layout.fill, layout.paper, {paddingTop: safe.top, paddingBottom: safe.bottom, paddingLeft: safe.left, paddingRight: safe.right}]}>
-    <ActionBand>
+  return <View style={[layout.fill, layout.paper]}>
+    <ActionBand edge="top">
       <View style={styles.bar}>
         <IconAction title={`Close ${title}`} icon="close" action={close} />
         <Copy size="card" header style={layout.fill}>{title}</Copy>
