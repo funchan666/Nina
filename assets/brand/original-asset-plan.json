@@ -4,7 +4,9 @@
   "required_tabs": [
     "tab_1",
     "tab_2",
-    "tab_3"
+    "tab_3",
+    "tab_4",
+    "tab_5"
   ],
   "required_screens": [
     "community",
@@ -37,7 +39,9 @@
     "delete_profile",
     "wallet",
     "purchase_quote",
-    "covers"
+    "covers",
+    "tab_4",
+    "tab_5"
   ],
   "assets": [
     {
@@ -54,23 +58,6 @@
       "referenced_by": [
         "Nina/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json",
         "project.yml"
-      ]
-    },
-    {
-      "id": "WheelMark",
-      "role": "module_art",
-      "screen": "website",
-      "source_file": "assets/brand/exports/wheel-mark.jpg",
-      "runtime_asset": "website/dist/assets/wheel-mark.jpg",
-      "purpose": "Original wheel artwork used on the public website.",
-      "interactive": false,
-      "action_route": "",
-      "generated_with": "imagegen/gpt-image-2",
-      "generation_sheet": "assets/brand/wheel-high-five.png",
-      "referenced_by": [
-        "website/dist/index.html",
-        "website/dist/terms.html",
-        "website/dist/privacy.html"
       ]
     },
     {
@@ -136,9 +123,9 @@
       "screen": "tab_1",
       "source_file": "assets/navigation/glyphs/ink-lines.png",
       "runtime_asset": "assets/navigation/glyphs/ink-lines.png",
-      "purpose": "Lines",
+      "purpose": "Discover",
       "interactive": true,
-      "action_route": "Lines",
+      "action_route": "Discover",
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
       "referenced_by": [
@@ -667,6 +654,54 @@
       "generation_sheet": "assets/brand/nina-journal-cover-triptych.png",
       "referenced_by": [
         "src/ui/artwork.ts"
+      ]
+    },
+    {
+      "id": "InboxTabIcon",
+      "role": "tab_icon",
+      "screen": "tab_4",
+      "source_file": "assets/navigation/glyphs/ink-comment.png",
+      "runtime_asset": "assets/navigation/glyphs/ink-comment.png",
+      "purpose": "Inbox",
+      "interactive": true,
+      "action_route": "Inbox",
+      "generated_with": "imagegen/gpt-image-2",
+      "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
+      "referenced_by": [
+        "src/Nina.tsx",
+        "src/ui/artwork.ts"
+      ]
+    },
+    {
+      "id": "ProfileTabIcon",
+      "role": "tab_icon",
+      "screen": "tab_5",
+      "source_file": "assets/navigation/glyphs/ink-avatar.png",
+      "runtime_asset": "assets/navigation/glyphs/ink-avatar.png",
+      "purpose": "You",
+      "interactive": true,
+      "action_route": "You",
+      "generated_with": "imagegen/gpt-image-2",
+      "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
+      "referenced_by": [
+        "src/Nina.tsx",
+        "src/ui/artwork.ts"
+      ]
+    },
+    {
+      "id": "DiscoverSessionHero",
+      "role": "module_art",
+      "screen": "community",
+      "source_file": "assets/brand/website-crew-session.png",
+      "runtime_asset": "assets/brand/exports/website-crew-session.jpg",
+      "web_runtime_asset": "web/community/art/crew-session.jpg",
+      "purpose": "Original skate friends campaign reused as Discover’s session entry.",
+      "interactive": true,
+      "action_route": "Sessions",
+      "generated_with": "imagegen/gpt-image-2",
+      "referenced_by": [
+        "web/community/index.html",
+        "scripts/package-community.py"
       ]
     }
   ],

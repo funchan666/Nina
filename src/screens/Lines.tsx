@@ -12,19 +12,19 @@ import {Action, Choices, colors, Copy, Empty, Field, Glyph, layout, Notice, Row,
 type Filter = 'all' | Collection;
 const filters: Filter[] = ['all', 'street', 'park', 'flat', 'offboard'];
 
-export function Lines() {
+export function Lines({root = true, savedOnly = false}: {root?: boolean; savedOnly?: boolean}) {
   const flow = useFlow();
   const {account, config} = useSkater();
   const [filter, setFilter] = useState<Filter>('all');
   const [revision, setRevision] = useState(0);
   const [limit, setLimit] = useState(12);
   const visible = lines.filter(item => (filter === 'all' || item.collection === filter) &&
-    !isReported(account, {kind: 'line', id: item.id}));
+    (!savedOnly || account.saved.includes(item.id)) && !isReported(account, {kind: 'line', id: item.id}));
   const feature = visible[0];
   const others = visible.slice(1);
   const videos = others.filter(item => item.type === 'video');
   const photos = others.filter(item => item.type === 'photo');
-  return <Screen title="Lines" ground="LinesGround" root
+  return <Screen title={savedOnly ? 'Saved lines' : 'The collection'} ground="LinesGround" root={root}
     action={<Action title="Post" icon="add" action={() => flow.open({name: 'post'})} />}>
     {!config.media ? <View style={styles.offline}>
       <Glyph name="lines" size={76} color={colors.grip} />
@@ -35,7 +35,11 @@ export function Lines() {
       <Choices values={filters} value={filter} onChange={value => {setFilter(value); setLimit(12);}}
         label={value => value === 'all' ? 'All' : collectionNames[value]} />
       {feature ? <LineCard item={feature} kind="feature" revision={revision} /> :
-        <Empty icon="ramp" title="No lines in this view" note="Choose another filter to keep browsing." />}
+        <>
+          <Empty icon="ramp" title={savedOnly ? 'Your saved collection starts here' : 'No lines in this view'}
+            note={savedOnly ? 'Save a photo or clip to come back to it.' : 'Choose another filter to keep browsing.'} />
+          {savedOnly ? <Action title="Browse the collection" icon="lines" action={() => flow.open({name: 'collection'})} /> : null}
+        </>}
       {videos.length > 0 && <View style={layout.stack}>
         <Copy size="heading" header>Skate clips</Copy>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} directionalLockEnabled contentContainerStyle={styles.strip}>

@@ -6,48 +6,59 @@ import {
   attemptMetricsError, collectionNames, dateOf, findLine, now, progress, recordID, spotKey, stances, surfaces, terrains, titleCase,
 } from '../state/model';
 import type {Attempt, ID, Spot, Stance, Surface, Terrain} from '../state/model';
-import {coverArtwork} from '../ui/artwork';
+import {coverArtwork, grounds} from '../ui/artwork';
 import {useMutation} from '../ui/mutation';
 import {Action, Check, Choices, colors, Copy, Empty, Field, layout, Notice, Row, Screen} from '../ui/paper';
 
 export function Sessions() {
   const flow = useFlow();
   const {account} = useSkater();
-  const recorded = account.attempts.filter(item => item.attempts > 0);
-  const logs = [...account.attempts].sort((a, b) => b.date - a.date);
+  const [section, select] = useState<'Sessions' | 'Plans' | 'Spots'>('Sessions');
+  const recorded = account.attempts.filter(item => item.attempts > 0).sort((a, b) => b.date - a.date);
+  const plans = account.attempts.filter(item => item.attempts === 0).sort((a, b) => b.date - a.date);
   const cover = account.selectedCover;
   const hasSpots = account.spots.length > 0;
+  const entries = section === 'Plans' ? plans : recorded;
   return <Screen title="Sessions" ground="SessionsGround" root
     action={hasSpots
       ? <Action title="Log tricks" icon="add" action={() => flow.open({name: 'trick'})} />
-      : <Action title="Save a spot" icon="spot" action={() => flow.open({name: 'spotEditor'})} />}>
+      : <Action title="Add spot" icon="spot" action={() => flow.open({name: 'spotEditor'})} />}>
     <View style={styles.journal}>
-      {cover ? <>
-        <Image source={coverArtwork[cover]} style={styles.cover} accessible={false} resizeMode="cover" />
-        <View style={styles.shade} pointerEvents="none" />
-      </> : null}
+      <Image source={cover ? coverArtwork[cover] : grounds.SessionsGround} style={styles.cover} accessible={false} resizeMode="cover" />
+      <View style={styles.shade} pointerEvents="none" />
       <Copy size="heading" color={colors.paper} header>{recorded.length
         ? `${recorded.length} ${recorded.length === 1 ? 'session' : 'sessions'} logged`
-        : 'No sessions logged yet'}</Copy>
-      <Action title="Journal covers" icon="grip" tone="paper" action={() => flow.open({name: 'covers'})} />
+        : 'Your next session starts here'}</Copy>
+      <Copy color={colors.paper}>{account.spots.length} saved {account.spots.length === 1 ? 'spot' : 'spots'} · {plans.length} practice {plans.length === 1 ? 'plan' : 'plans'}</Copy>
+      <Action title="Change cover" icon="grip" tone="paper" action={() => flow.open({name: 'covers'})} />
     </View>
+    <Choices values={['Sessions', 'Plans', 'Spots'] as const} value={section} onChange={select}
+      label={value => value === 'Plans' ? 'Practice plans' : value === 'Spots' ? 'Spot book' : 'Session log'} />
     <View style={layout.split}>
-      <Copy size="heading" header>Spot book</Copy>
-      {hasSpots && <Action title="Add spot" icon="spot" tone="paper" action={() => flow.open({name: 'spotEditor'})} />}
+      <Copy size="heading" header>{section === 'Spots' ? 'Your spot book' : section === 'Plans' ? 'Up next' : 'Your sessions'}</Copy>
+      {section === 'Spots' && hasSpots ? <Action title="Add spot" icon="add" tone="paper" action={() => flow.open({name: 'spotEditor'})} /> : null}
     </View>
-    {!hasSpots ? <Empty icon="ramp" title="Save a spot you love"
-      note="Note the obstacles and how to get in before your next session." /> : null}
-    {account.spots.map(spot => {
-      const count = recorded.filter(item => item.spotID === spot.id).length;
-      return <Row key={spot.id} title={spot.name}
-        detail={`${collectionNames[spot.terrain]} · ${spot.obstacle} · ${count} ${count === 1 ? 'visit' : 'visits'}`}
-        icon="spot" action={() => flow.open({name: 'spot', id: spot.id})} />;
-    })}
-    <Copy size="heading" header>Trick log</Copy>
-    {!logs.length ? <Empty icon="deck" title="No tricks logged yet"
-      note="Pick a spot and track the tricks you’re working on." /> : null}
-    {logs.map(attempt => <TrickRow key={attempt.id} attempt={attempt}
-      spot={account.spots.find(item => item.id === attempt.spotID)?.name} />)}
+    {section === 'Spots' ? <>
+      {!hasSpots ? <>
+        <Empty icon="ramp" title="Save a spot you love" note="Keep the obstacles and access details ready for your next visit." />
+        <Action title="Save your first spot" icon="spot" action={() => flow.open({name: 'spotEditor'})} />
+      </> : null}
+      {account.spots.map(spot => {
+        const visits = recorded.filter(item => item.spotID === spot.id).length;
+        return <Row key={spot.id} title={spot.name}
+          detail={`${collectionNames[spot.terrain]} · ${spot.obstacle} · ${visits} ${visits === 1 ? 'visit' : 'visits'}`}
+          icon="spot" action={() => flow.open({name: 'spot', id: spot.id})} />;
+      })}
+    </> : <>
+      {!entries.length ? <>
+        <Empty icon="deck" title={section === 'Plans' ? 'Plan your next trick' : 'Keep the session going'}
+          note={section === 'Plans' ? 'Choose a trick and save it with zero tries to make a practice plan.' : 'Log your tries and the tricks you landed. Small wins count.'} />
+        <Action title={hasSpots ? section === 'Plans' ? 'Make a practice plan' : 'Log your first session' : 'Start with a spot'}
+          icon={hasSpots ? 'sessions' : 'spot'} action={() => flow.open(hasSpots ? {name: 'trick'} : {name: 'spotEditor'})} />
+      </> : null}
+      {entries.map(attempt => <TrickRow key={attempt.id} attempt={attempt}
+        spot={account.spots.find(item => item.id === attempt.spotID)?.name} />)}
+    </>}
   </Screen>;
 }
 

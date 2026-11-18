@@ -48,6 +48,7 @@ export type Attempt = {
 export type Profile = {name: string; stance: Stance; bio: string; avatar?: Attachment};
 export type Follow = {follower: ID; skater: ID};
 export type Draft = {id: ID; peer: ID; body: string; savedAt: number};
+export type ChatMessage = {id: ID; sender: ID; recipient: ID; body: string; date: number};
 export type LineComment = {id: ID; lineID: ID; authorID: ID; body: string; date: number};
 export type Submission = {
   id: ID;
@@ -61,7 +62,8 @@ export type Event = {
   id: ID;
   owner: ID;
   actor?: ID;
-  kind: 'follow' | 'submission' | 'report';
+  kind: 'follow' | 'submission' | 'report' | 'message';
+  messageID?: ID;
   detail: string;
   date: number;
   read: boolean;
@@ -89,10 +91,11 @@ export type Account = {
   selectedCover?: Cover;
 };
 export type Archive = {
-  version: 2;
+  version: 3;
   accounts: Record<ID, Account>;
   follows: Follow[];
   comments: LineComment[];
+  messages: ChatMessage[];
   activity: Event[];
   receipts: Record<ID, GripReceipt>;
   retiredAccounts: ID[];
@@ -139,7 +142,7 @@ export const reasons = [
   'Spam or dangerous activity',
 ] as const;
 
-// Version 1 uses Foundation Date's reference epoch. Version 2 keeps it.
+// All journal versions keep Foundation Date's reference epoch.
 const referenceEpoch = 978307200;
 export const now = () => Date.now() / 1000 - referenceEpoch;
 export const dateOf = (value: number) => new Date((value + referenceEpoch) * 1000);
@@ -196,7 +199,7 @@ export function isReported(account: Account, subject: Subject) {
 }
 
 export function emptyArchive(): Archive {
-  return {version: 2, accounts: {}, follows: [], comments: [], activity: [], receipts: {}, retiredAccounts: []};
+  return {version: 3, accounts: {}, follows: [], comments: [], messages: [], activity: [], receipts: {}, retiredAccounts: []};
 }
 
 type LegacySubject = Partial<Record<Subject['kind'], {_0: ID}>>;
@@ -227,11 +230,18 @@ export function decodeArchive(json: string | null, legacy: boolean): Archive {
     return emptyArchive();
   }
   if (!legacy) {
-    const saved = JSON.parse(json) as Archive;
-    if (saved.version !== 2 || !saved.accounts || Array.isArray(saved.accounts)) {
+    const saved = JSON.parse(json) as Omit<Archive, 'version'> & {version: 2 | 3};
+    if ((saved.version !== 2 && saved.version !== 3) || !saved.accounts || Array.isArray(saved.accounts)) {
       throw new Error('This version cannot open the saved journal.');
     }
-    return saved;
+    // Earlier version-2 journals had drafts but no conversation history.
+    if (saved.version === 2 && saved.messages === undefined) saved.messages = [];
+    if (!Array.isArray(saved.messages) || saved.messages.some(message => !message ||
+      typeof message.id !== 'string' || typeof message.sender !== 'string' || typeof message.recipient !== 'string' ||
+      typeof message.body !== 'string' || !Number.isFinite(message.date))) {
+      throw new Error('A saved conversation could not be opened.');
+    }
+    return {...saved, version: 3};
   }
   const old = JSON.parse(json) as Omit<Archive, 'version' | 'accounts'> & {
     version?: number;

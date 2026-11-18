@@ -15,7 +15,7 @@ import {Sessions, SpotDetails, SpotEditor, TrickEditor} from './screens/Sessions
 import {PostEditor, Submissions, SubmissionViewer} from './screens/Submissions';
 import {CoverShop, Wallet} from './screens/Wallet';
 import {OpeningJournal} from './screens/Welcome';
-import {library, useJournal} from './state/library';
+import {library, useJournal, useSkater, visibleActivity} from './state/library';
 import {recordID} from './state/model';
 import {deliver} from './state/purchases';
 import {ActionBand, WindowLayoutProvider} from './ui/geometry';
@@ -34,8 +34,6 @@ export default function Nina() {
 
 function Entry() {
   const {status, config, activeID} = useJournal();
-  const [destination, setDestination] = useState<'community' | JournalDestination>('community');
-  const showCommunity = () => setDestination('community');
   useEffect(() => {
     const film = observeFilm();
     const revocation = onAppleRevocation(() => {void library.signOut(true).catch(() => {});});
@@ -62,21 +60,10 @@ function Entry() {
     }).catch(() => {});
     return () => subscription.remove();
   }, [status, config?.purchasesEnabled]);
-  useEffect(() => {
-    setDestination(current => {
-      if (typeof current !== 'string' && !activeID) {
-        return 'community';
-      }
-      return current;
-    });
-  }, [activeID]);
   if (status !== 'ready') {
     return <OpeningJournal />;
   }
-  if (typeof destination !== 'string' && activeID) {
-    return <Journal key={activeID} destination={destination} onCommunity={showCommunity} />;
-  }
-  return <OfflineCommunity key={activeID ?? 'guest'} onJournal={setDestination} />;
+  return activeID ? <Journal key={activeID} /> : <OfflineCommunity key="guest" />;
 }
 
 function pauseFilm() {
@@ -86,18 +73,19 @@ function pauseFilm() {
 type RouteEntry = {key: string; route: Route};
 type NavigationState = {tab: Tab; stacks: Record<Tab, RouteEntry[]>};
 const tabs = [
-  {id: 'lines', name: 'Lines'}, {id: 'sessions', name: 'Sessions'}, {id: 'crew', name: 'Crew'},
+  {id: 'lines', name: 'Discover', icon: 'lines'},
+  {id: 'sessions', name: 'Sessions', icon: 'sessions'},
+  {id: 'crew', name: 'Crew', icon: 'crew'},
+  {id: 'messages', name: 'Inbox', icon: 'comment'},
+  {id: 'profile', name: 'You', icon: 'avatar'},
 ] as const;
-const emptyStacks = () => ({lines: [], sessions: [], crew: []});
+const emptyStacks = () => ({lines: [], sessions: [], crew: [], messages: [], profile: []});
 
-function Journal({destination, onCommunity}: {destination: JournalDestination; onCommunity: () => void}) {
+function Journal() {
   const safe = useSafeAreaInsets();
   const [nav, setNav] = useState<NavigationState>(() => ({
-    tab: destination.tab,
-    stacks: {
-      ...emptyStacks(),
-      [destination.tab]: destination.route ? [{key: recordID(), route: destination.route}] : [],
-    },
+    tab: 'lines',
+    stacks: emptyStacks(),
   }));
   const [notice, setNotice] = useState('');
   const [noticeHeight, setNoticeHeight] = useState(0);
@@ -110,6 +98,15 @@ function Journal({destination, onCommunity}: {destination: JournalDestination; o
     pauseFilm();
     Keyboard.dismiss();
     setNav(current => current.tab === tab ? current : {...current, tab});
+  }
+
+  function navigate({tab, route}: JournalDestination) {
+    pauseFilm();
+    Keyboard.dismiss();
+    setNotice('');
+    setNav(current => ({...current, tab, stacks: route
+      ? {...current.stacks, [tab]: [...current.stacks[tab], {key: recordID(), route}]}
+      : current.stacks}));
   }
 
   function open(tab: Tab, routeKey: string | undefined, route: Route) {
@@ -163,18 +160,13 @@ function Journal({destination, onCommunity}: {destination: JournalDestination; o
         const stack = nav.stacks[id];
         const last = stack[stack.length - 1];
         return <React.Fragment key={id}>
-          {element(id, undefined, nav.tab === id && !last, <>
-            <View style={layout.fill}>{tabScreen(id)}</View>
-            <Dock selected={nav.tab} activate={activate} onCommunity={() => {
-              pauseFilm();
-              Keyboard.dismiss();
-              onCommunity();
-            }} />
-          </>)}
+          {element(id, undefined, nav.tab === id && !last,
+            tabScreen(id, nav.tab === id && !last, navigate))}
           {stack.map(entry => element(id, entry.key, nav.tab === id && last?.key === entry.key, routeScreen(entry.route, () => back(id, entry.key))))}
         </React.Fragment>;
       })}
     </View>
+    {!currentStack.length && <Dock selected={nav.tab} activate={activate} />}
     {notice ? <View
       onLayout={event => setNoticeHeight(event.nativeEvent.layout.height)}
       style={[styles.noticeBar, {top: safe.top, left: safe.left, right: safe.right}]}
@@ -190,25 +182,28 @@ function Journal({destination, onCommunity}: {destination: JournalDestination; o
   </View>;
 }
 
-function Dock({selected, activate, onCommunity}: {selected: Tab; activate(tab: Tab): void; onCommunity: () => void}) {
-  return <View style={layout.ink}>
-    <ActionBand edge="bottom" minimumWidth={201}>
-      <View style={styles.dock}>
-        <Pressable accessibilityRole="button" accessibilityLabel="Back to community" onPress={onCommunity}
-          style={({pressed}) => [styles.tab, {opacity: pressed ? 0.73 : 1}]}>
-          <Glyph name="back" size={21} color={colors.paper} />
-          <Copy size="caption" color={colors.paper} limit={1}>Community</Copy>
-        </Pressable>
+function Dock({selected, activate}: {selected: Tab; activate(tab: Tab): void}) {
+  const {archive, account} = useSkater();
+  const unread = visibleActivity(archive, account).filter(item => !item.read).length;
+  return <View style={layout.paper}>
+    <ActionBand edge="bottom" minimumWidth={260}>
+      <View style={styles.dock} accessibilityRole="tablist" accessibilityLabel="Main navigation">
         {tabs.map(item => {
           const active = selected === item.id;
-          const tint = active ? colors.ink : colors.paper;
+          const tint = active ? colors.ink : colors.muted;
           return <Pressable key={item.id} accessibilityRole="tab" accessibilityState={{selected: active}}
+            accessibilityLabel={item.id === 'messages' && unread ? `Inbox, ${unread} unread updates` : item.name}
             onPress={() => activate(item.id)}
             style={({pressed}) => [styles.tab, {
-              backgroundColor: active ? colors.grip : colors.ink, opacity: pressed ? 0.73 : 1,
+              opacity: pressed ? 0.73 : 1,
             }]}>
-            <Glyph name={item.id} size={21} color={tint} />
-            <Copy size="caption" color={tint} limit={1}>{item.name}</Copy>
+            <View style={[styles.tabIcon, active && {backgroundColor: colors.grip}]}>
+              <Glyph name={item.icon} size={23} color={tint} />
+              {item.id === 'messages' && unread > 0 ? <View style={styles.badge}>
+                <Copy size="caption" color={colors.paper} style={{fontSize: 10}}>{unread > 99 ? '99+' : unread}</Copy>
+              </View> : null}
+            </View>
+            <Copy size="caption" color={tint} style={{fontSize: 12}} limit={1}>{item.name}</Copy>
           </Pressable>;
         })}
       </View>
@@ -216,16 +211,25 @@ function Dock({selected, activate, onCommunity}: {selected: Tab; activate(tab: T
   </View>;
 }
 
-function tabScreen(tab: Tab) {
+function tabScreen(tab: Tab, visible: boolean, navigate: (destination: JournalDestination) => void) {
   switch (tab) {
-    case 'lines': return <Lines />;
+    case 'lines': return <OfflineCommunity active={visible} onJournal={navigate} />;
     case 'sessions': return <Sessions />;
     case 'crew': return <Crew />;
+    case 'messages': return <Messages root />;
+    case 'profile': return <ProfileHome />;
   }
+}
+
+function ProfileHome() {
+  const {account} = useSkater();
+  return <ProfileDetails id={account.id} root />;
 }
 
 function routeScreen(route: Route, close: () => void) {
   switch (route.name) {
+    case 'collection': return <Lines root={false} />;
+    case 'savedLines': return <Lines root={false} savedOnly />;
     case 'line': return <LineDetails id={route.id} />;
     case 'lineViewer': return <LineViewer id={route.id} />;
     case 'post': return <PostEditor id={route.id} />;
@@ -256,6 +260,8 @@ const styles = StyleSheet.create({
   hidden: {opacity: 0},
   noticeBar: {position: 'absolute', backgroundColor: colors.paper},
   noticeContent: {flexDirection: 'row', alignItems: 'center', gap: 9, minHeight: 47},
-  dock: {minHeight: 61, flexDirection: 'row', alignItems: 'center', gap: 3},
-  tab: {minWidth: 44, minHeight: 46, flexGrow: 1, flexBasis: 0, paddingVertical: 4, justifyContent: 'center', alignItems: 'center', gap: 2},
+  dock: {minHeight: 72, flexDirection: 'row', alignItems: 'center', gap: 3, paddingVertical: 5},
+  tab: {minWidth: 44, minHeight: 60, flexGrow: 1, flexBasis: 0, justifyContent: 'center', alignItems: 'center', gap: 3},
+  tabIcon: {minWidth: 47, paddingHorizontal: 12, paddingVertical: 5, borderRadius: 12, alignItems: 'center'},
+  badge: {position: 'absolute', right: -1, top: -3, minWidth: 17, paddingHorizontal: 4, borderRadius: 8, backgroundColor: colors.oxide, alignItems: 'center'},
 });

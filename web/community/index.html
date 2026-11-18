@@ -14,7 +14,11 @@
       <button type="button" class="access-back" id="access-back" hidden aria-label="Back to welcome">
         <img src="art/ink-back.png" width="22" height="22" alt="">
       </button>
-      <button type="button" class="masthead-action" id="sign-out" hidden>Sign out</button>
+      <div class="community-bar" id="community-bar" hidden>
+        <div class="community-title"><p id="profile-name" class="profile-name"></p><h1 id="community-title" tabindex="-1">Discover</h1></div>
+        <button type="button" class="compose" data-tab="lines" data-page="post"><img src="art/ink-add.png" alt=""><span>Post</span></button>
+        <button type="button" class="profile-shortcut" data-tab="profile" aria-label="Open your profile"><img src="art/ink-avatar.png" alt=""></button>
+      </div>
     </div>
   </header>
 
@@ -71,18 +75,14 @@
     </section>
 
     <section id="community" hidden aria-labelledby="community-title">
-      <div class="community-heading">
-        <h1 id="community-title" tabindex="-1">Skate community</h1>
-        <p class="profile-name" id="profile-name"></p>
-        <p class="support">Find a clip worth replaying or an idea for your next session.</p>
-      </div>
-      <nav class="journal" aria-label="Skate journal">
-        <button type="button" data-tab="sessions"><img src="art/ink-spot.png" alt="">Spot book &amp; trick log</button>
-        <button type="button" data-tab="crew"><img src="art/ink-crew.png" alt="">Crew</button>
-        <button type="button" data-tab="lines"><img src="art/ink-lines.png" alt="">Lines</button>
-      </nav>
+      <button type="button" class="session-banner" data-tab="sessions" aria-label="Open your sessions">
+        <img src="art/crew-session.jpg" width="1817" height="866" alt="">
+        <span class="session-banner-copy"><strong>Make it a<br>skate day.</strong><span>Open your sessions</span></span>
+      </button>
+      <div class="collection-tools"><h2>Find your next line</h2><button type="button" class="gallery-link" data-tab="lines" data-page="collection">View gallery</button></div>
+      <label class="collection-search" for="collection-search"><span>Search the collection</span><input id="collection-search" type="search" placeholder="Search photos and clips" enterkeyhint="search" autocomplete="off" maxlength="100"></label>
       <div class="filters" id="filters" role="group" aria-label="Filter lines">
-        <button type="button" data-filter="all" aria-pressed="true">All lines</button>
+        <button type="button" data-filter="all" aria-pressed="true">For you</button>
         <button type="button" data-filter="street" aria-pressed="false">Street</button>
         <button type="button" data-filter="park" aria-pressed="false">Park</button>
         <button type="button" data-filter="flat" aria-pressed="false">Flatground</button>
@@ -95,36 +95,32 @@
       </div>
       <div id="feed" class="feed"></div>
       <button type="button" id="more" class="more" hidden>Show more lines</button>
-      <footer class="community-footer">
-        <button type="button" class="text-action" data-policy="rules">Crew rules</button>
-      </footer>
+      <footer class="community-footer"><button type="button" class="text-action" data-policy="rules">Crew rules</button></footer>
     </section>
   </main>
 
   <template id="line-template">
     <article class="line">
       <div class="line-caption">
-        <h2 data-item="title"></h2>
-        <p class="line-meta" data-item="collection"></p>
+        <div><p class="line-meta" data-item="collection"></p><h3 data-item="title"></h3></div>
+        <button type="button" class="report-line" data-action="report"><img src="art/ink-flag.png" alt=""></button>
       </div>
       <button type="button" class="line-preview" data-action="open">
         <span class="line-image" hidden><img loading="lazy" decoding="async" alt=""></span>
         <span data-item="image-error" class="media-error" hidden>Preview unavailable</span>
-        <span data-item="open-label" class="preview-label">View line</span>
+        <span class="preview-label"><img src="art/ink-play.png" alt="" data-item="play" hidden><span data-item="open-label">View line</span></span>
       </button>
       <div class="line-actions">
         <button type="button" data-action="like" aria-pressed="false"><img src="art/ink-like.png" alt=""><span>Like</span></button>
+        <button type="button" data-action="discussion" aria-expanded="false"><img src="art/ink-comment.png" alt=""><span>Comment</span></button>
         <button type="button" data-action="save" aria-pressed="false"><img src="art/ink-save.png" alt=""><span>Save</span></button>
       </div>
       <p data-item="feedback" class="feedback error" role="alert" hidden></p>
       <details class="discussion">
-        <summary>Comments</summary>
+        <summary class="sr-only" tabindex="-1">Comments</summary>
         <ul data-item="comments"></ul>
         <form class="comment-form" novalidate>
-          <label class="comment-label">
-            <span>Add a comment</span>
-            <textarea rows="2" required maxlength="400"></textarea>
-          </label>
+          <label class="comment-label"><span>Add a comment</span><textarea rows="2" required maxlength="400"></textarea></label>
           <p data-item="comment-feedback" class="feedback error" role="alert" hidden></p>
           <button type="submit" class="primary">Add comment</button>
         </form>

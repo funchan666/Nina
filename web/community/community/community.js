@@ -13,12 +13,15 @@ const accessBack = byID('access-back');
 const feed = byID('feed');
 const filters = byID('filters');
 const clearFilter = byID('clear-filter');
+const collectionSearch = byID('collection-search');
+const cardCache = new Map();
 const pageSize = 10;
 let signingUp = false;
 let requestInFlight = false;
 let filter = 'all';
 let shown = pageSize;
 let lines = [];
+let refreshPending = false;
 
 function request(action, data = {}) {
   const channel = window.webkit?.messageHandlers?.nina;
@@ -59,8 +62,28 @@ async function perform(control, feedback, work) {
     requestInFlight = false;
     control.disabled = false;
     publishAuthState();
+    if (refreshPending) void refreshState();
   }
 }
+
+async function refreshState() {
+  if (!refreshPending || requestInFlight) return;
+  refreshPending = false;
+  requestInFlight = true;
+  try {
+    show(await request('snapshot'));
+  } catch (error) {
+    message(byID('notice'), error?.message || 'Could not refresh the collection. Open this tab again.');
+  } finally {
+    requestInFlight = false;
+    if (refreshPending) void refreshState();
+  }
+}
+
+window.ninaRefresh = () => {
+  refreshPending = true;
+  void refreshState();
+};
 
 function clearAuthError() {
   for (const control of [email, password, consent]) {
@@ -123,9 +146,10 @@ function updateCard(article, line) {
   const save = article.querySelector('[data-action="save"]');
   like.setAttribute('aria-pressed', String(line.liked));
   save.setAttribute('aria-pressed', String(line.saved));
-  like.querySelector('span').textContent = line.liked ? 'Liked' : 'Like';
+  like.querySelector('span').textContent = (line.liked ? 'Liked' : 'Like') + (line.likes > 0 ? ' ' + line.likes : '');
   save.querySelector('span').textContent = line.saved ? 'Saved' : 'Save';
   article.querySelector('summary').textContent = 'Comments (' + line.comments.length + ')';
+  article.querySelector('[data-action="discussion"] span').textContent = 'Comment' + (line.comments.length ? ' ' + line.comments.length : '');
   const comments = line.comments.map(comment => {
     const item = document.createElement('li');
     const name = document.createElement('strong');
@@ -138,11 +162,21 @@ function updateCard(article, line) {
 
 function makeCard(line) {
   const article = byID('line-template').content.firstElementChild.cloneNode(true);
+  cardCache.set(line.id, article);
   article.dataset.line = line.id;
   article.querySelector('[data-item="collection"]').textContent =
     line.label + (line.type === 'video' ? ' / Clip' : ' / Photo');
   article.querySelector('[data-item="title"]').textContent = line.title;
   const open = article.querySelector('[data-action="open"]');
+  const ratio = Number(line.width) / Math.max(1, Number(line.height));
+  if (Number.isFinite(ratio)) open.style.setProperty('--line-ratio', String(Math.max(.8, Math.min(1.5, ratio))));
+  article.querySelector('[data-item="play"]').hidden = line.type !== 'video';
+  article.querySelector('[data-action="report"]').setAttribute('aria-label', 'Report ' + line.title);
+  const discussion = article.querySelector('.discussion');
+  discussion.id = 'discussion-' + line.id;
+  const discussionButton = article.querySelector('[data-action="discussion"]');
+  discussionButton.setAttribute('aria-controls', discussion.id);
+  discussion.addEventListener('toggle', () => discussionButton.setAttribute('aria-expanded', String(discussion.open)));
   const label = line.type === 'video' ? 'Watch clip' : 'View photo';
   open.querySelector('[data-item="open-label"]').textContent = label;
   open.setAttribute('aria-label', label + ' ' + line.title);
@@ -163,19 +197,30 @@ function makeCard(line) {
   return article;
 }
 
-function renderFeed(reset) {
-  const matching = lines.filter(line => filter === 'all' || (filter === 'saved' ? line.saved : line.collection === filter));
-  if (reset) {
-    feed.replaceChildren();
+function renderFeed() {
+  const query = collectionSearch.value.trim().toLocaleLowerCase();
+  const matching = lines.filter(line => (filter === 'all' || (filter === 'saved' ? line.saved : line.collection === filter)) &&
+    (!query || (line.title + ' ' + line.label).toLocaleLowerCase().includes(query)));
+  const cards = matching.slice(0, shown).map(line => {
+    const article = cardCache.get(line.id) || makeCard(line);
+    updateCard(article, line);
+    return article;
+  });
+  for (const child of [...feed.children]) {
+    if (!cards.includes(child)) child.remove();
   }
-  const cards = matching.slice(feed.childElementCount, shown);
-  feed.append(...cards.map(makeCard));
+  cards.forEach((article, index) => {
+    if (feed.children[index] !== article) feed.insertBefore(article, feed.children[index] || null);
+  });
   const empty = matching.length === 0;
   byID('empty-state').hidden = !empty;
   byID('empty').textContent = empty
-    ? (filter === 'saved' ? 'Nothing saved yet. Save a photo or clip to find it here.' : 'No lines match this filter. Choose another filter to keep browsing.')
+    ? (query ? 'No matching lines. Try another title or terrain.' : filter === 'saved' ? 'Nothing saved yet. Save a photo or clip to find it here.' : 'No lines match this filter. Choose another filter to keep browsing.')
     : '';
-  clearFilter.hidden = filter === 'all';
+  clearFilter.hidden = filter === 'all' && !query;
+  const saved = filters.querySelector('[data-filter="saved"]');
+  const savedCount = lines.filter(line => line.saved).length;
+  saved.textContent = 'Saved' + (savedCount ? ' ' + savedCount : '');
   byID('more').hidden = shown >= matching.length;
 }
 
@@ -186,7 +231,7 @@ function selectFilter(button) {
   filters.querySelectorAll('button[data-filter]').forEach(choice => {
     choice.setAttribute('aria-pressed', String(choice === button));
   });
-  renderFeed(true);
+  renderFeed();
 }
 
 function show(state) {
@@ -197,14 +242,15 @@ function show(state) {
   accessBack.hidden = true;
   document.body.dataset.screen = signedIn ? 'community' : 'welcome';
   byID('community').hidden = !signedIn;
-  byID('sign-out').hidden = !signedIn;
+  byID('community-bar').hidden = !signedIn;
   message(byID('notice'), state.warning);
   if (signedIn) {
-    byID('profile-name').textContent = state.name;
+    byID('profile-name').textContent = 'Hi, ' + state.name;
     lines = state.lines;
-    renderFeed(true);
+    renderFeed();
   } else {
     lines = [];
+    cardCache.clear();
     feed.replaceChildren();
     setMode(false);
   }
@@ -212,6 +258,8 @@ function show(state) {
 }
 
 async function start() {
+  if (requestInFlight) return;
+  requestInFlight = true;
   const retry = byID('retry');
   retry.hidden = true;
   message(byID('startup'), 'Opening your community…');
@@ -220,6 +268,9 @@ async function start() {
   } catch (error) {
     message(byID('startup'), error.message);
     retry.hidden = false;
+  } finally {
+    requestInFlight = false;
+    if (refreshPending) void refreshState();
   }
 }
 
@@ -267,9 +318,6 @@ auth.addEventListener('submit', event => {
     }
   });
 });
-byID('sign-out').addEventListener('click', event => {
-  void perform(event.currentTarget, byID('notice'), async () => show(await request('signOut')));
-});
 
 document.querySelectorAll('button[data-policy]').forEach(button => {
   button.addEventListener('click', () => {
@@ -278,7 +326,7 @@ document.querySelectorAll('button[data-policy]').forEach(button => {
 });
 document.querySelectorAll('button[data-tab]').forEach(button => {
   button.addEventListener('click', () => {
-    void perform(button, byID('notice'), () => request('journal', {tab: button.dataset.tab}));
+    void perform(button, byID('notice'), () => request('journal', {tab: button.dataset.tab, page: button.dataset.page || ''}));
   });
 });
 
@@ -288,15 +336,21 @@ filters.addEventListener('click', event => {
 });
 clearFilter.addEventListener('click', () => {
   if (requestInFlight) return;
+  collectionSearch.value = '';
+  filter = '';
   const all = filters.querySelector('[data-filter="all"]');
   selectFilter(all);
   all.focus();
+});
+collectionSearch.addEventListener('input', () => {
+  shown = pageSize;
+  renderFeed();
 });
 byID('more').addEventListener('click', () => {
   if (requestInFlight) return;
   const firstNew = feed.childElementCount;
   shown += pageSize;
-  renderFeed(false);
+  renderFeed();
   feed.children[firstNew]?.querySelector('[data-action="open"]')?.focus();
 });
 
@@ -305,12 +359,12 @@ function acceptChange(article, updated) {
   if (filter === 'saved' && !updated.saved) {
     const neighbor = article.nextElementSibling ?? article.previousElementSibling;
     article.remove();
-    renderFeed(false);
+    renderFeed();
     const nextCard = neighbor ?? feed.firstElementChild;
     const nextControl = nextCard?.querySelector('[data-action="save"]') ?? byID('empty');
     nextControl.focus();
   } else {
-    updateCard(article, updated);
+    renderFeed();
   }
 }
 
@@ -320,8 +374,17 @@ feed.addEventListener('click', event => {
   const article = button.closest('article');
   const id = article.dataset.line;
   const action = button.dataset.action;
+  if (action === 'discussion') {
+    const discussion = article.querySelector('.discussion');
+    discussion.open = !discussion.open;
+    if (discussion.open) discussion.querySelector('textarea').focus();
+    return;
+  }
+  if (!['open', 'report', 'like', 'save'].includes(action)) return;
   void perform(button, article.querySelector('[data-item="feedback"]'), async () => {
-    if (action === 'open') {
+    if (action === 'report') {
+      await request('journal', {tab: 'lines', page: 'report', id});
+    } else if (action === 'open') {
       await request('journal', {tab: 'lines', id});
     } else {
       acceptChange(article, await request(action, {id}));

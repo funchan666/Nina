@@ -2,91 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Nina is a skate journal for iPhone. Save spots, track your tricks and revisit your favorite skate videos offline.">
-  <meta name="theme-color" content="#182620">
-  <title>Nina | Skate Journal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Nina is an iPhone journal for skate days. Keep the spots you ride, the tricks you’re working on and the lines worth another look.">
+  <meta name="theme-color" content="#14221b">
+  <title>Nina | See you at the spot</title>
   <link rel="icon" href="assets/nina.png" type="image/png">
+  <link rel="preload" href="assets/BarlowCondensed-Bold.woff" as="font" type="font/woff" crossorigin>
   <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="masthead">
+  <header class="masthead" id="top">
     <div class="frame masthead-inner">
-      <a class="wordmark" href="./" aria-label="Nina home"><img src="assets/wheel-mark.jpg" alt="" width="48" height="48">Nina</a>
+      <a class="wordmark" href="./" aria-label="Nina home">Nina</a>
       <nav aria-label="Main navigation">
-        <a href="#journal">The app</a>
-        <a href="terms.html">Terms</a>
-        <a href="privacy.html">Privacy</a>
+        <a href="#journal">The journal</a>
+        <a href="#collection">The collection</a>
+        <a href="#questions">Questions</a>
       </nav>
     </div>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="frame hero-grid">
-        <div class="hero-copy">
-          <h1 id="hero-title">Keep a<br>skate journal</h1>
-          <p>Save the spots you ride, track the tricks you’re working on and keep your favorite lines close.</p>
-          <a class="action" href="#journal">Explore Nina</a>
+      <div class="frame">
+        <div class="hero-top">
+          <h1 id="hero-title">See you<br>at the spot.</h1>
+          <div class="hero-copy">
+            <p>An iPhone journal for skate days. Keep the spots you ride and the lines you want to try again.</p>
+            <a class="action" href="#journal">Explore the journal</a>
+          </div>
         </div>
-        <img class="hero-art" src="assets/first-session.jpg" alt="Two skaters bump fists beside a concrete skate bowl." width="864" height="1820" fetchpriority="high">
+        <figure class="hero-scene">
+          <div class="hero-image"><img src="assets/crew-session.jpg" width="1817" height="866" alt="Four friends laughing over a skate clip beside a concrete bowl, their boards close by." fetchpriority="high" decoding="async"></div>
+          <figcaption><span>Good company. One more try.</span><span>Original Nina artwork</span></figcaption>
+        </figure>
       </div>
     </section>
     <section class="journal" id="journal" aria-labelledby="journal-title">
       <div class="frame journal-grid">
-        <div class="journal-copy">
-          <h2 id="journal-title">Back to the spot</h2>
-          <p>Keep a Spot Book with terrain, obstacles and access notes. Log your tries, landings and goals at each spot so you know where to pick up next time.</p>
+        <div class="journal-copy reveal">
+          <h2 id="journal-title">Know where<br>to pick up.</h2>
+          <p>Save terrain and access notes in your Spot Book. Log your tries and landings so the next visit starts with a plan.</p>
+          <a class="text-link" href="privacy.html#on-device">How your journal stays yours</a>
         </div>
-        <figure class="session">
-          <img class="session-art" src="assets/bowl-print.jpg" alt="" width="512" height="1024" loading="lazy">
+        <figure class="session reveal" data-ui>
+          <img class="session-art" src="assets/bowl-print.jpg" alt="" width="512" height="1024" loading="lazy" decoding="async">
           <figcaption class="session-entry">
-            <p class="caption">Example trick log</p>
             <h3>Frontside 180</h3>
-            <p>West bowl · Smooth concrete</p>
+            <p class="session-place">West bowl<br>Smooth concrete</p>
             <dl>
               <div><dt>Tries</dt><dd>12</dd></div>
               <div><dt>Landed</dt><dd>4</dd></div>
               <div><dt>Goal</dt><dd>6</dd></div>
             </dl>
+            <p class="example-note">An example trick log. Make your own in Nina.</p>
           </figcaption>
         </figure>
       </div>
     </section>
-    <section class="library" aria-labelledby="library-title">
-      <div class="frame library-grid">
-        <h2 id="library-title">A line worth<br>rewatching</h2>
-        <div>
-          <p>Browse street, bowl and park skate clips included with Nina. Save a line as a reference for your next session. The collection and your journal are available offline.</p>
-          <a class="text-link" href="privacy.html#on-device">How Nina stores your journal</a>
+    <section class="collection" id="collection" aria-labelledby="collection-title">
+      <div class="frame">
+        <div class="section-top reveal">
+          <h2 id="collection-title">Keep the<br>good stuff.</h2>
+          <p>Photos and clips from the Nina collection. Save the ones that make you want to skate again.</p>
         </div>
+        <div class="filter" id="scene-filter" role="group" aria-label="Browse the collection" hidden>
+          <button type="button" data-filter="all" aria-pressed="true">Everything</button>
+          <button type="button" data-filter="park" aria-pressed="false">Park</button>
+          <button type="button" data-filter="street" aria-pressed="false">Street</button>
+          <button type="button" data-filter="offboard" aria-pressed="false">Off the board</button>
+        </div>
+        <p class="sr-only" id="gallery-status" role="status"></p>
+        <div class="scene-grid" id="scene-grid" data-view="all">
+          <figure class="scene reveal" data-collection="park">
+            <img src="assets/blue-pool.jpg" alt="A skater carving high along the wall of a bright blue concrete pool." width="960" height="1200" loading="lazy" decoding="async">
+            <figcaption><h3>Blue pool carve</h3><p>Park</p></figcaption>
+          </figure>
+          <figure class="scene reveal" data-collection="offboard">
+            <img src="assets/crew-walk.jpg" alt="Three skaters walking together with their boards along a leafy park path." width="825" height="1100" loading="lazy" decoding="async">
+            <figcaption><h3>Along for the session</h3><p>Off the board</p></figcaption>
+          </figure>
+          <figure class="scene reveal" data-collection="street">
+            <img src="assets/street-deck.jpg" alt="A skater holding a board on stone steps beside a handrail." width="960" height="1200" loading="lazy" decoding="async">
+            <figcaption><h3>Boards at the steps</h3><p>Street</p></figcaption>
+          </figure>
+        </div>
+        <p class="collection-note">A few frames from the collection included with Nina.</p>
       </div>
     </section>
-    <section class="help frame" aria-labelledby="help-title">
-      <h2 id="help-title">Using Nina</h2>
-      <div>
+    <section class="help frame" id="questions" aria-labelledby="help-title">
+      <div class="reveal">
+        <h2 id="help-title">Before<br>you roll.</h2>
+        <p>The useful details, all in one place.</p>
+      </div>
+      <div class="questions reveal">
         <details>
-          <summary>Can I practice offline?</summary>
-          <p>Yes. You can sign in with a local email profile and browse the included media, save spots and log tricks offline. Sign in with Apple and in-app purchases use Apple’s services.</p>
+          <summary>Can I use Nina offline?<span aria-hidden="true" class="read-state"></span></summary>
+          <p>Your journal and the included photos and clips work offline. Apple sign-in and in-app purchases use Apple’s services.</p>
         </details>
         <details>
-          <summary>Do Crew actions reach other skaters?</summary>
-          <p>Crew is a community simulation on your iPhone. Follows, comments, reports and message drafts stay on the device. The skate call screen shows a local waiting preview.</p>
+          <summary>What does Crew share?<span aria-hidden="true" class="read-state"></span></summary>
+          <p>Crew keeps conversations and follow, comment and report actions in the journal on this iPhone. Profiles stored in the same app can exchange messages after both follow each other. Nina does not sync or deliver messages to other devices. The call screen is a waiting preview.</p>
         </details>
         <details>
-          <summary>How do I delete my profile?</summary>
+          <summary>How do I delete my profile?<span aria-hidden="true" class="read-state"></span></summary>
           <p>In Nina, open Crew, then Settings. Choose Delete profile and confirm. This clears your profile and its saved content from Nina on that iPhone.</p>
         </details>
       </div>
     </section>
   </main>
   <footer class="site-footer">
-    <div class="frame footer-inner">
-      <a class="footer-brand" href="./">Nina</a>
-      <nav aria-label="Legal">
-        <a href="terms.html">Terms of Use</a>
-        <a href="privacy.html">Privacy Policy</a>
-      </nav>
+    <div class="frame">
+      <div class="footer-top"><p>Made for your skate days.</p><a href="#top">Back to top</a></div>
+      <p class="footer-wordmark" aria-hidden="true">Nina</p>
+      <div class="footer-bottom"><p>The Nina skate journal</p><nav aria-label="Legal"><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a></nav></div>
     </div>
   </footer>
 </body>

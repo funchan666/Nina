@@ -65,7 +65,8 @@ enum PlatformJournal {
         let folder = try NinaFiles.root()
         let file = folder.appendingPathComponent(currentName)
         let bytes = Data(text.utf8)
-        guard let state = try JSONSerialization.jsonObject(with: bytes) as? [String: Any], state["version"] as? Int == 2 else {
+        guard let state = try JSONSerialization.jsonObject(with: bytes) as? [String: Any],
+              let version = state["version"] as? Int, version == 2 || version == 3 else {
             throw NinaIssue("This journal could not be saved.")
         }
         do {

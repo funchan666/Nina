@@ -2,7 +2,7 @@ import React from 'react';
 import {
   I18nManager, Image, Keyboard, Pressable, ScrollView, StyleSheet, Text, TextInput, View,
 } from 'react-native';
-import type {StyleProp, TextInputProps, TextStyle, ViewStyle} from 'react-native';
+import type {ScrollViewProps, StyleProp, TextInputProps, TextStyle, ViewStyle} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useFlow} from '../navigation';
 import {glyphs, grounds} from './artwork';
@@ -28,7 +28,7 @@ export const layout = StyleSheet.create({
   stack: {gap: 8},
   row: {flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap'},
   split: {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10},
-  section: {backgroundColor: colors.paper, padding: 12, gap: 5},
+  section: {backgroundColor: colors.paper, padding: 16, gap: 8, borderRadius: 16},
   paper: {backgroundColor: colors.paper},
   ink: {backgroundColor: colors.ink},
 });
@@ -158,13 +158,15 @@ export function PageHeading({title, large, children}: {title: string; large?: bo
   </View>;
 }
 
-export function Screen({title, ground, root = false, editing = false, action, children}: {
+export function Screen({title, ground, root = false, editing = false, action, children, scrollRef, onContentSizeChange}: {
   title: string;
   ground: Ground;
   root?: boolean;
   editing?: boolean;
   action?: React.ReactNode;
   children: React.ReactNode;
+  scrollRef?: React.RefObject<ScrollView | null>;
+  onContentSizeChange?: ScrollViewProps['onContentSizeChange'];
 }) {
   const flow = useFlow();
   const safe = useSafeAreaInsets();
@@ -179,6 +181,8 @@ export function Screen({title, ground, root = false, editing = false, action, ch
         </View>
       </ActionBand>}
       <ScrollView
+        ref={scrollRef}
+        onContentSizeChange={onContentSizeChange}
         style={layout.fill}
         contentInsetAdjustmentBehavior="never"
         automaticallyAdjustContentInsets={false}
@@ -201,25 +205,25 @@ export function Screen({title, ground, root = false, editing = false, action, ch
 }
 
 const styles = StyleSheet.create({
-  title: {fontFamily: heading, fontSize: 54},
+  title: {fontFamily: heading, fontSize: 44},
   heading: {fontFamily: heading, fontSize: 32},
   card: {fontFamily: heading, fontSize: 26},
   body: {fontFamily: body, fontSize: 17},
   label: {fontFamily: bold, fontSize: 16},
   caption: {fontFamily: bold, fontSize: 14},
   canvas: {flex: 1, backgroundColor: colors.sage},
-  background: {width: '100%', height: '100%'},
-  button: {minHeight: 44, minWidth: 44, paddingHorizontal: 13, paddingVertical: 8, flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', gap: 7, maxWidth: '100%'},
+  background: {width: '100%', height: '100%', opacity: 0.24},
+  button: {minHeight: 48, minWidth: 44, paddingHorizontal: 15, paddingVertical: 10, borderRadius: 12, flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', gap: 8, maxWidth: '100%'},
   buttonText: {flexShrink: 1},
-  rowButton: {minHeight: 52, alignSelf: 'stretch', flexDirection: 'row', alignItems: 'center', backgroundColor: colors.paper, gap: 10, padding: 10},
-  iconButton: {width: 46, height: 46, alignItems: 'center', justifyContent: 'center'},
-  empty: {alignSelf: 'stretch', backgroundColor: colors.paper, gap: 8, padding: 16},
-  notice: {padding: 12, backgroundColor: colors.paper},
+  rowButton: {minHeight: 64, alignSelf: 'stretch', flexDirection: 'row', alignItems: 'center', backgroundColor: colors.paper, gap: 12, padding: 15, borderRadius: 16},
+  iconButton: {width: 46, height: 46, borderRadius: 12, alignItems: 'center', justifyContent: 'center'},
+  empty: {alignSelf: 'stretch', backgroundColor: colors.paper, gap: 10, padding: 20, borderRadius: 18},
+  notice: {padding: 14, backgroundColor: colors.paper, borderRadius: 12},
   choices: {flexDirection: 'row', gap: 5},
   check: {minHeight: 44, flexDirection: 'row', alignItems: 'center', gap: 9},
   checkbox: {width: 32, height: 32, alignItems: 'center', justifyContent: 'center'},
   field: {gap: 5, minWidth: 0},
-  input: {minHeight: 46, paddingVertical: 8, paddingHorizontal: 12, backgroundColor: colors.paper, fontFamily: body, fontSize: 17, color: colors.ink},
+  input: {minHeight: 50, paddingVertical: 12, paddingHorizontal: 14, borderRadius: 12, backgroundColor: colors.paper, fontFamily: body, fontSize: 17, color: colors.ink},
   multiline: {minHeight: 90, textAlignVertical: 'top'},
   navBar: {minHeight: 54, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 5},
   headingRow: {flexWrap: 'wrap'},

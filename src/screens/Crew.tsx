@@ -16,23 +16,32 @@ export function Crew({spotKey, title}: {spotKey?: string; title?: string}) {
   const flow = useFlow();
   const {archive, account} = useSkater();
   const [query, setQuery] = useState('');
+  const [scope, setScope] = useState<'All skaters' | 'Following'>('All skaters');
   const unread = visibleActivity(archive, account).filter(item => !item.read).length;
   const crew = Object.values(archive.accounts).filter(member => member.id !== account.id &&
     visibleSkater(archive, account, member.id) &&
     (!spotKey || sharedAttempts(member, spotKey).length > 0));
-  const matching = crew.filter(member => member.profile.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()))
+  const matching = crew.filter(member => member.profile.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()) &&
+    (scope !== 'Following' || follows(archive, account, member.id)))
     .sort((a, b) => a.profile.name.localeCompare(b.profile.name));
   return <Screen title={title ?? 'Crew'} ground="CrewGround" root={!spotKey} editing
     action={!spotKey ? <Action title={unread ? `Messages (${unread})` : 'Messages'} icon="comment"
-      action={() => flow.open({name: 'messages'})} /> : undefined}>
+      action={() => flow.select('messages')} /> : undefined}>
     {!spotKey ? <>
       <Row title="Your skate profile" detail={account.profile.name} icon="avatar"
-        action={() => flow.open({name: 'profile', id: account.id})} />
+        action={() => flow.select('profile')} />
+      <Copy>Find familiar faces through the spots and sessions you share.</Copy>
       <Copy size="heading" header>Find skaters</Copy>
     </> : <Copy color={colors.muted}>Skaters with shared sessions here.</Copy>}
+    <Choices values={['All skaters', 'Following'] as const} value={scope} onChange={setScope} label={value => value} />
     {crew.length ? <Field label="Search by name" value={query} onChangeText={setQuery} /> : null}
-    {!matching.length ? <Empty title={query.trim() ? 'No skaters found' : spotKey ? 'No shared sessions here yet' : 'No other skaters here yet'} icon="crew"
-      note={query.trim() ? 'Try another name or clear your search.' : spotKey ? 'Session summaries shared at this spot will appear here.' : 'You can keep adding spots and logging your own sessions.'} /> : null}
+    {!matching.length ? <>
+      <Empty title={query.trim() ? 'No skaters found' : scope === 'Following' ? 'Keep your crew close' : spotKey ? 'No shared sessions here yet' : 'Your crew starts with you'} icon="crew"
+        note={query.trim() ? 'Try another name or clear your search.' : scope === 'Following' ? 'Follow a skater to find them in this list.' : spotKey ? 'Session summaries shared at this spot will appear here.' : 'Build your skate profile and keep a record of the spots you ride.'} />
+      {scope === 'Following' || query ? <Action title="Show all skaters" icon="crew" action={() => {setScope('All skaters'); setQuery('');}} /> :
+        <View style={layout.row}><Action title="Your profile" icon="avatar" action={() => flow.select('profile')} />
+          <Action title="Open sessions" icon="sessions" tone="paper" action={() => flow.select('sessions')} /></View>}
+    </> : null}
     {matching.map(member => {
       const sessions = sharedAttempts(member, spotKey);
       return <Person key={member.id} person={member} detail={sessions.length
@@ -42,7 +51,7 @@ export function Crew({spotKey, title}: {spotKey?: string; title?: string}) {
   </Screen>;
 }
 
-function Avatar({person, size}: {person: Account; size: number}) {
+export function Avatar({person, size}: {person: Account; size: number}) {
   const {config} = useSkater();
   const uri = attachmentURI(config.fileBase, person.id, person.profile.avatar?.file);
   return <View accessible={false} accessibilityElementsHidden style={[styles.avatar, {width: size, height: size}]}>
@@ -59,7 +68,7 @@ export function Person({person, detail}: {person: Account; detail?: string}) {
   </Row>;
 }
 
-export function ProfileDetails({id}: {id: ID}) {
+export function ProfileDetails({id, root = false}: {id: ID; root?: boolean}) {
   const flow = useFlow();
   const {archive, account} = useSkater();
   const {busy, run} = useMutation();
@@ -68,17 +77,20 @@ export function ProfileDetails({id}: {id: ID}) {
   const own = id === account.id;
   const outgoing = relationships(archive, account, id, false);
   const incoming = relationships(archive, account, id, true);
-  return <Screen title={profile?.profile.name ?? 'Skater'} ground="CrewGround"
-    action={own ? <Action title="Edit" icon="edit" action={() => flow.open({name: 'profileEditor'})} /> : undefined}>
+  return <Screen title={root ? 'Your space' : profile?.profile.name ?? 'Skater'} ground="CrewGround" root={root}
+    action={own ? <IconAction title={root ? 'Settings' : 'Edit profile'} icon={root ? 'settings' : 'edit'} fill={colors.paper}
+      action={() => flow.open(root ? {name: 'settings'} : {name: 'profileEditor'})} /> : undefined}>
     {profile ? <>
-      <View style={layout.section}>
+      <View style={[layout.section, root && styles.profileCard]}>
         <View style={styles.profile}>
           <Avatar person={profile} size={80} />
           <View style={layout.fill}>
-            <Copy size="card">{titleCase(profile.profile.stance)} stance</Copy>
-            {profile.profile.bio ? <Copy>{profile.profile.bio}</Copy> : null}
+            {root && <Copy size="heading" color={colors.paper} header>{profile.profile.name}</Copy>}
+            <Copy size="card" color={root ? colors.paper : colors.ink}>{titleCase(profile.profile.stance)} stance</Copy>
+            {profile.profile.bio ? <Copy color={root ? colors.sage : colors.ink}>{profile.profile.bio}</Copy> : null}
           </View>
         </View>
+        {own && root ? <Action title="Edit profile" icon="edit" action={() => flow.open({name: 'profileEditor'})} /> : null}
         <View style={layout.row}>
           <Action title={`Followers (${incoming.length})`} icon="crew" tone="paper"
             action={() => flow.open({name: 'relationships', id, incoming: true})} />
@@ -111,13 +123,15 @@ function SkateRecord({person}: {person: Account}) {
     <Copy size="heading" header>Skate record</Copy>
     <Notice>{person.spots.length} saved {person.spots.length === 1 ? 'spot' : 'spots'} · {visits} logged {visits === 1 ? 'session' : 'sessions'}</Notice>
     <Row title="Open your sessions" icon="sessions" action={() => flow.select('sessions')} />
+    <Row title="Post a line" detail="Choose a photo or clip for your review queue." icon="add" action={() => flow.open({name: 'post'})} />
     <Row title="Your submissions" detail={`${person.submissions.length} awaiting review`} icon="deck"
       action={() => flow.open({name: 'submissions'})} />
     <Row title="Wallet" detail={`${balance(person)} Grip`} icon="grip" action={() => flow.open({name: 'wallet'})} />
     <Row title="Settings" icon="settings" action={() => flow.open({name: 'settings'})} />
     <Copy size="heading" header>Saved lines</Copy>
+    <Action title="Open saved collection" icon="saved" tone="paper" action={() => flow.open({name: 'savedLines'})} />
     {!saved.length ? <Notice>Save a line to return to it later.</Notice> : null}
-    {saved.map(line => <Row key={line.id} title={line.title} icon="saved" action={() => flow.open({name: 'line', id: line.id})} />)}
+    {saved.slice(0, 3).map(line => <Row key={line.id} title={line.title} icon="saved" action={() => flow.open({name: 'line', id: line.id})} />)}
   </>;
 }
 
@@ -195,4 +209,5 @@ const styles = StyleSheet.create({
   avatar: {backgroundColor: colors.grip, overflow: 'hidden'},
   defaultAvatar: {flex: 1, alignItems: 'center', justifyContent: 'center'},
   profile: {flexDirection: 'row', alignItems: 'flex-start', gap: 12},
+  profileCard: {backgroundColor: colors.ink, borderRadius: 20, padding: 20, gap: 15},
 });

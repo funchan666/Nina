@@ -2,6 +2,21 @@
 
 Built-in image generation, Host-Native mode.
 
+## website-crew-session-2026-11-18
+
+Built-in image generation, Garden Image 2 Host-Native workflow. Original campaign artwork for the website. Master `assets/brand/website-crew-session.png`; runtime `assets/brand/exports/website-crew-session.jpg` and `website/dist/assets/crew-session.jpg`. The JPEG q88 copy keeps the original 1817 × 866 dimensions and was visually inspected. It is 387,799 bytes; the PNG master is 2,564,654 bytes. The compressed campaign image is also reused by the authenticated Discover session entry in Nina.zip.
+
+```text
+Use case: photorealistic-natural.
+Asset type: original wide campaign photograph-style artwork for Nina, an iPhone skate journal and skateboard culture website. This is an image asset, not a website screenshot.
+Primary request: a very cool, warm, social skate crew moment with the energy of an independent skate magazine. Four fictional adult friends in their mid-twenties, two women and two men of varied skin tones, hang out beside a concrete urban skate bowl at late-afternoon golden hour. They are close together, naturally laughing as one woman shows a skate clip on a small phone. One friend rests a scuffed skateboard against a leg, another casually sits on the coping with their board next to them. Candid connection and expressive faces are the subject.
+Style: premium 35mm documentary fashion editorial, believable photographic skin and fabric, fine natural film grain, tactile worn concrete and grip tape. Confident artistic crop, a little spontaneous, emotionally warm, never glossy corporate stock photography.
+Composition: extra-wide panoramic 21:9 landscape. Frame the four friends as a loose, cohesive group across the central two-thirds, their faces around the upper middle. Include boards and hands in the frame, with breathing room above heads. Camera is near their eye level, mildly wide-angle, natural anatomy. The whole frame should be useful as a dramatic full-width website image and crop gracefully to a centered mobile view. No one is looking at the viewer.
+Palette: deep evergreen shadows, off-white and charcoal clothing, a single acid yellow-green overshirt or board detail. Soft sun-warmed skin, muted green trees beyond the bowl, concrete grey. Avoid a large bright white sky. Strong photographic shadow-light contrast without crushing faces.
+Text: absolutely no text, letters, logotypes, brands, UI, badges, signatures or watermarks. No app icon. No collage frames or ornamental shapes. No floating interface elements. No duplicated limbs, no extra fingers, no melted wheels, no hazardous stunt or injury. Adult clothing is casual, comfortable and fully clothed.
+```
+
+
 ## welcome-social-crew-2026-11-18
 
 Generated with the built-in image tool using the Garden Image 2 Host-Native workflow.

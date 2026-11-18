@@ -2,8 +2,9 @@ import {createContext, useContext} from 'react';
 import type {WebPage} from './native';
 import type {ID, Subject} from './state/model';
 
-export type Tab = 'lines' | 'sessions' | 'crew';
+export type Tab = 'lines' | 'sessions' | 'crew' | 'messages' | 'profile';
 export type Route =
+  | {name: 'collection' | 'savedLines'}
   | {name: 'line' | 'lineViewer'; id: ID}
   | {name: 'post'; id?: ID}
   | {name: 'submissions'}

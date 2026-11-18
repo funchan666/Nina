@@ -11,3 +11,5 @@
 | 持久化 | iOS Keychain 保存会话，TypeScript 账本通过原生层原子写入独立应用目录。邮箱入口只校验输入格式，不保存或核对密码。删除档案仍清理旧版密码校验值。 |
 
 既有 WKWebView 宿主负责文件加载和真实主框架来源检查。Apple 登录、购买和相机继续使用 iOS 原生 API。[WKWebView 本地文件加载](https://developer.apple.com/documentation/webkit/wkwebview/loadfileurl(_:allowingreadaccessto:)) · [Apple 平台视频格式](https://developer.apple.com/documentation/technologyoverviews/video) · [ZIPFoundation 0.9.20](https://github.com/weichsel/ZIPFoundation/releases/tag/0.9.20)
+
+登录后由同一 Journal 承载 Discover、Sessions、Crew、Inbox、You 五个 Tab，各自保留路由栈。会话消息及收件人未读事件使用现有原子 JSON 账本，Archive version 3 保存会话，兼容读取 version 2 并补空 messages；继续使用 journal-rn-v2.json 的稳定位置，后续写入 version 3。没有跨设备消息服务器或 RTC。

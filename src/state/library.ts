@@ -60,7 +60,8 @@ export function sharedAttempts(account: Account, key?: string) {
 
 export function visibleActivity(archive: Archive, viewer: Account) {
   return archive.activity.filter(event => event.owner === viewer.id &&
-    (!event.actor || visibleSkater(archive, viewer, event.actor)));
+    (!event.actor || (visibleSkater(archive, viewer, event.actor) &&
+      (event.kind !== 'message' || !isReported(viewer, {kind: 'conversation', id: event.actor})))));
 }
 
 function appendEvent(archive: Archive, fields: Omit<Event, 'id' | 'date' | 'read'>) {
@@ -205,6 +206,7 @@ class NinaLibrary {
       next.follows = next.follows.filter(edge => edge.follower !== id && edge.skater !== id);
       next.activity = next.activity.filter(event => event.owner !== id && event.actor !== id);
       next.comments = next.comments.filter(comment => comment.authorID !== id);
+      next.messages = next.messages.filter(message => message.sender !== id && message.recipient !== id);
       for (const account of Object.values(next.accounts)) {
         account.blocked = account.blocked.filter(member => member !== id);
         account.drafts = account.drafts.filter(draft => draft.peer !== id);
@@ -416,6 +418,39 @@ class NinaLibrary {
         {id: existing?.id ?? recordID(), peer, body, savedAt: now()},
         ...account.drafts.filter(item => item.peer !== peer),
       ];
+    });
+  }
+
+  sendMessage(peer: ID, value: string) {
+    return this.edit((archive, account) => {
+      if (!canContact(archive, account, peer)) {
+        throw new Error('Both skaters must follow each other before sending messages.');
+      }
+      const body = checkedText(value, 'a message', 600);
+      const message = {id: recordID(), sender: account.id, recipient: peer, body, date: now()};
+      archive.messages.push(message);
+      account.drafts = account.drafts.filter(draft => draft.peer !== peer);
+      appendEvent(archive, {owner: peer, actor: account.id, kind: 'message', messageID: message.id, detail: body});
+    });
+  }
+
+  removeMessage(id: ID) {
+    return this.edit((archive, account) => {
+      const message = archive.messages.find(item => item.id === id && item.sender === account.id);
+      if (!message) throw new Error('This message is unavailable.');
+      archive.messages = archive.messages.filter(item => item.id !== id);
+      archive.activity = archive.activity.filter(event => event.messageID !== id);
+    });
+  }
+
+  markConversationRead(peer: ID) {
+    const owner = this.state.activeID;
+    if (!this.state.archive.activity.some(event => event.owner === owner && event.actor === peer && event.kind === 'message' && !event.read)) {
+      return Promise.resolve();
+    }
+    return this.edit((archive, account) => {
+      archive.activity.filter(event => event.owner === account.id && event.actor === peer && event.kind === 'message')
+        .forEach(event => {event.read = true;});
     });
   }
 

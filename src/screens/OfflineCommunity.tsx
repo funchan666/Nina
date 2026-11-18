@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Keyboard, requireNativeComponent, StatusBar, StyleSheet, View} from 'react-native';
+import {Keyboard, requireNativeComponent, StatusBar, StyleSheet, useWindowDimensions, View} from 'react-native';
 import type {NativeSyntheticEvent, ViewProps} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {mediaFilename, NativeSurface} from '../native';
@@ -19,6 +19,7 @@ type AuthState = {visible: boolean; accepted: boolean; busy: boolean};
 type Signal = Request | {status: 'loaded' | 'failed'} | ({status: 'auth'} & AuthState);
 type Reply = {id: string; value?: unknown; error?: string};
 type CommunityProps = ViewProps & {
+  active: boolean;
   reply?: Reply;
   contentInsets: {top: number; bottom: number; left: number; right: number};
   onSignal: (event: NativeSyntheticEvent<Signal>) => void;
@@ -45,6 +46,8 @@ function lineCard(item: Line) {
     label: collectionNames[item.collection],
     image: filename ? `media/${filename}` : null,
     liked: account.liked.includes(item.id), saved: account.saved.includes(item.id), comments,
+    likes: Object.values(archive.accounts).filter(person => visibleSkater(archive, account, person.id) && person.liked.includes(item.id)).length,
+    width: item.width, height: item.height,
   };
 }
 
@@ -63,10 +66,12 @@ function requestText(data: unknown, key: string) {
   return typeof value === 'string' ? value : '';
 }
 
-export function OfflineCommunity({onJournal}: {
-  onJournal: (destination: JournalDestination) => void;
+export function OfflineCommunity({onJournal, active = true}: {
+  onJournal?: (destination: JournalDestination) => void;
+  active?: boolean;
 }) {
   const safe = useSafeAreaInsets();
+  const windowSize = useWindowDimensions();
   const viewport = useWindowBounds();
   const {regions} = useWindowLayout();
   const [revision, reload] = useState(0);
@@ -86,6 +91,10 @@ export function OfflineCommunity({onJournal}: {
   let [left, right, top, bottom] = [safe.left, safe.right, safe.top, safe.bottom];
   const bounds = viewport.bounds;
   if (bounds) {
+    left = Math.max(0, safe.left - bounds.x);
+    right = Math.max(0, bounds.x + bounds.width - windowSize.width + safe.right);
+    top = Math.max(0, safe.top - bounds.y);
+    bottom = Math.max(0, bounds.y + bounds.height - windowSize.height + safe.bottom);
     const columns = regions.filter(region => region.height >= bounds.height * 0.7);
     const rows = regions.filter(region => region.width >= bounds.width * 0.7);
     const transpose = ({x, y, width, height}: Rect) => ({x: y, y: x, width: height, height: width});
@@ -115,19 +124,41 @@ export function OfflineCommunity({onJournal}: {
         if (name !== 'terms' && name !== 'privacy' && name !== 'rules') {
           throw new Error('This document is unavailable.');
         }
-        setPolicy(name);
+        if (onJournal) {
+          onJournal({tab: 'lines', route: {name: 'webPage', page: name}});
+        } else {
+          setPolicy(name);
+        }
         return null;
       }
       case 'journal': {
-        if (!library.snapshot().activeID) {
+        if (!library.snapshot().activeID || !onJournal) {
           throw new Error('Sign in to open your journal.');
         }
         const tab = requestText(data, 'tab');
-        if (tab !== 'lines' && tab !== 'sessions' && tab !== 'crew') {
+        if (tab !== 'lines' && tab !== 'sessions' && tab !== 'crew' && tab !== 'messages' && tab !== 'profile') {
           throw new Error('This journal page is unavailable.');
         }
-        const line = findLine(requestText(data, 'id'));
-        const route: Route | undefined = line && lineCard(line) ? {name: 'line', id: line.id} : undefined;
+        const page = requestText(data, 'page');
+        const id = requestText(data, 'id');
+        let route: Route | undefined;
+        if (page) {
+          if (page === 'post') {
+            route = {name: 'post'};
+          } else if (page === 'collection' || page === 'savedLines') {
+            route = {name: page};
+          } else if (page === 'report') {
+            const line = findLine(id);
+            if (!line || !lineCard(line)) throw new Error('This line is unavailable.');
+            route = {name: 'report', subject: {kind: 'line', id}};
+          } else {
+            throw new Error('This journal page is unavailable.');
+          }
+        } else if (id) {
+          const line = findLine(id);
+          if (!line || !lineCard(line)) throw new Error('This line is unavailable.');
+          route = {name: 'line', id: line.id};
+        }
         onJournal({tab, route});
         return null;
       }
@@ -194,8 +225,8 @@ export function OfflineCommunity({onJournal}: {
     }
     const {id, action, data} = nativeEvent;
     void handle(action, data).then(
-      value => setReply({id, value}),
-      error => setReply({id, error: errorText(error)}),
+      value => {if (mounted.current) setReply({id, value});},
+      error => {if (mounted.current) setReply({id, error: errorText(error)});},
     );
   }
 
@@ -208,7 +239,7 @@ export function OfflineCommunity({onJournal}: {
       style={layout.fill}
       accessibilityElementsHidden={Boolean(policy)}
     >
-      <LocalPage key={revision} style={layout.fill} onSignal={signal} reply={reply}
+      <LocalPage key={revision} style={layout.fill} onSignal={signal} reply={reply} active={active}
         pointerEvents={appleBusy ? 'none' : 'auto'}
         contentInsets={{top, bottom: auth.visible ? 0 : bottom, left, right}} />
       {auth.visible && status === 'loaded' ? <ActionBand edge="bottom" style={layout.paper}>

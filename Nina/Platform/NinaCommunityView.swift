@@ -6,6 +6,16 @@ private typealias CommunityReply = @MainActor @Sendable (Any?, String?) -> Void
 @objc(NinaCommunityView)
 final class NinaCommunityView: UIView, WKNavigationDelegate {
     @objc var onSignal: (([String: Any]) -> Void)?
+    @objc var active = true {
+        didSet {
+            if !active {
+                webView.endEditing(true)
+                return
+            }
+            guard active, !oldValue, isEntry(webView.url) else { return }
+            webView.callAsyncJavaScript("window.ninaRefresh?.()", arguments: [:], in: nil, in: .page)
+        }
+    }
     @objc var contentInsets: NSDictionary? {
         didSet { updateContentInsets() }
     }

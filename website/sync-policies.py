@@ -1,18 +1,15 @@
 from pathlib import Path
+from base64 import b64encode
 
 
 website = Path(__file__).resolve().parent
 app_legal = website.parent / "Nina" / "Resources" / "Legal"
-style = """
-:root { background: #f5f0e5; color: #182620; }
-body { margin: 0 auto; max-width: 42rem; padding: 1.2rem; font: -apple-system-body; line-height: 1.55; }
-header { margin-bottom: 1.7rem; }
-.caption { color: #516254; font: -apple-system-subheadline; }
-h1 { font: -apple-system-title1; font-weight: 700; margin: .5rem 0 .75rem; }
-section { border-top: 1px solid #b6bca9; padding-top: 1rem; }
-h2 { font: -apple-system-headline; margin: 0 0 .4rem; }
-p { margin: 0 0 1rem; }
-""".strip()
+assets = website / "dist" / "assets"
+style = (assets / "site.css").read_text(encoding="utf-8")
+# The fallback is granted read access to its HTML file only, so fonts stay inline.
+for name in ("Barlow-Regular.woff", "Barlow-SemiBold.woff", "BarlowCondensed-Bold.woff"):
+    encoded = b64encode((assets / name).read_bytes()).decode("ascii")
+    style = style.replace(f'url("{name}")', f'url("data:font/woff;base64,{encoded}")')
 
 for name, title in (("terms", "Terms of Use"), ("privacy", "Privacy Policy")):
     path = website / "dist" / f"{name}.html"
@@ -25,13 +22,13 @@ for name, title in (("terms", "Terms of Use"), ("privacy", "Privacy Policy")):
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{title}</title>
 <style>
 {style}
 </style>
 </head>
-<body>
+<body class="policy-offline">
 {article}
 </body>
 </html>

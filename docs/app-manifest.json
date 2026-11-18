@@ -50,23 +50,25 @@
         "Trick Log records stance, attempt and landing totals, progression and an optional Lines reference."
       ],
       "tab_labels": [
-        "Lines",
+        "Discover",
         "Sessions",
-        "Crew"
+        "Crew",
+        "Inbox",
+        "You"
       ],
-      "home_primary_task": "Browse a curated line or photo by terrain and pull a reference into practice.",
-      "community_content_location": "The bundled Skate Community opens first and displays sample Lines and on-device interactions. Lines contains full photos, clips and details. Crew profile has private submissions and saved lines.",
+      "home_primary_task": "Browse a searchable terrain feed, save or comment on a line, report content, post media and open practice from the persistent five-tab shell.",
+      "community_content_location": "Discover is the first authenticated Tab. The bundled WebView feed opens native media details and a collection gallery without leaving the Tab shell.",
       "user_discovery_location": "Crew directory and spot contribution lists within Spot Book.",
-      "message_location": "Crew → Messages with separate Drafts and Activity tabs.",
-      "creation_entry": "Lines → Post or a profile’s Submissions. Sessions → Add spot or Log tricks.",
-      "profile_structure": "Crew → Your profile includes skate stance and bio, visits, saved lines, works, relationships, Wallet and Settings.",
-      "showcase_tab": "Lines",
+      "message_location": "Inbox Tab contains Chats, Drafts and Activity. Mutual follows enable persisted messages between profiles stored in this app, with unread events and sender-owned deletion. No cross-device delivery or RTC is connected.",
+      "creation_entry": "Discover → Post; You → Post a line / Your submissions. Sessions → Add spot / Log tricks / Practice plans.",
+      "profile_structure": "You Tab contains editable name, bio, stance and avatar, follow relationships, sessions, submissions, saved collection, Wallet and Settings.",
+      "showcase_tab": "Discover",
       "showcase_media_direction": "Locally supplied skate films and photo essays, with travel and style in Off the Board.",
-      "showcase_page_composition": "Condensed masthead, terrain filters, large editorial cover, horizontal clips strip and still-photo grid.",
+      "showcase_page_composition": "Compact personal header, original social session banner, collection search, horizontal terrain filters, media cards with inline comments, saves and reports; persistent five-item native Dock.",
       "showcase_supporting_sections": [
-        "Skate films",
-        "Contact sheet",
-        "Off the Board"
+        "Session entry",
+        "Search and saved filters",
+        "Native collection gallery"
       ],
       "visual_style": "Independent skate zine with printed concrete rubbings, pine ink and a grip-yellow action accent.",
       "cyberpunk_intensity": 0,
@@ -79,9 +81,11 @@
       ],
       "asset_direction": "Host-native Image 2 wheel mascot, original tab grounds and transparent ink icons.",
       "tab_background_directions": [
-        "Lines: bowl coping rubbing and deck edge.",
-        "Sessions: wax block and curb.",
-        "Crew: two crossed board shadows at a bench."
+        "Discover: original skate friends campaign and photographic media.",
+        "Sessions: curb print, session log, plans and spot book.",
+        "Crew: bench ground and actual profile portraits.",
+        "Inbox: Crew ground, conversation bubbles and unread activity.",
+        "You: Crew ground, evergreen profile card and personal records."
       ],
       "seed_data_direction": "Editorial media metadata only. Registered profiles and interaction counts come from actual user actions.",
       "architecture_direction": "React Native starts the bundled Nina.zip community in WKWebView. The web feed and native playback share the same extracted media directory. TypeScript owns the journal. Email entry validates the address format and a nonempty password, then opens or creates the matching profile without saving or verifying the password. Keychain stores the local session. UIKit hosts the native Apple features.",
@@ -93,7 +97,8 @@
         "Attempt",
         "Line",
         "Follow",
-        "GripEntry"
+        "GripEntry",
+        "ChatMessage"
       ],
       "primary_flow_types": [
         "Route",

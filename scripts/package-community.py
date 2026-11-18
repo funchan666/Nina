@@ -15,8 +15,8 @@ glyphs = root / "assets/navigation/glyphs"
 with (resources / "Info.plist").open("rb") as plist:
     app_name = load(plist)["CFBundleDisplayName"]
 
-art_sources = {"art/welcome-ground.jpg": art / "welcome-ground.jpg"}
-for name in ("back", "check", "spot", "crew", "lines", "like", "save"):
+art_sources = {"art/welcome-ground.jpg": art / "welcome-ground.jpg", "art/crew-session.jpg": art / "website-crew-session.jpg"}
+for name in ("back", "check", "spot", "crew", "lines", "like", "save", "add", "avatar", "flag", "play", "comment"):
     art_sources[f"art/ink-{name}.png"] = glyphs / f"ink-{name}.png"
 for name in ("Barlow-Regular.ttf", "Barlow-SemiBold.ttf", "BarlowCondensed-Bold.ttf",
              "Barlow-OFL.txt", "BarlowCondensed-OFL.txt"):

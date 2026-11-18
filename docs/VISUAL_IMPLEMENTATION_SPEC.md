@@ -5,21 +5,21 @@
 | 页面或弹层 | 原创位图 | 布局与动作 |
 | --- | --- | --- |
 | 启动、欢迎、邮箱 | WelcomeGround、InkLoad、InkCheck、InkBack | 四位成年朋友在滑板场分享视频、聊天的整屏插画配 See you at the spot. 标题，Create profile 与 Sign in 入口进入邮箱表单。脸部与共同活动集中在上半部，深绿前景承接标题和按钮。启动加载使用功能图标及状态文案，应用内去除重复应用图标和名称。单一主提交按钮配紧凑协议区域，显示提交状态并关联字段错误。登录区直接承载官方原生 Apple 按钮，协议勾选后发起系统授权。 |
-| Lines | LinesGround、InkLines、InkAdd、InkRamp | 刊头、四类筛选、主图、横向影片和接触印样式的图集。Post 与刷新有明确状态。 |
+| Discover、图库 | LinesGround、InkLines、InkAdd、InkRamp | 刊头、四类筛选、主图、横向影片和接触印样式的图集。Post 与刷新有明确状态。 |
 | Line、媒体全屏 | InkPlay、InkPause、InkThumb、InkExpand、InkSpeaker、InkMuted、InkLike、InkSave、InkFlag | 同一 AVPlayer。原生拖拽和 VoiceOver 可调进度。照片保持比例，影片首帧对应源片。 |
 | 编辑、提交、附件 | LinesGround、InkDeck、InkCamera、InkVideo、InkCheck | 触控选取、捕获、编辑、保存审核队列、删除和全屏查看。 |
 | Sessions | SessionsGround、InkSessions、InkSpot、InkDeck | 班次日记、板点与实记的落地进度、封面入口。 |
 | 板点、Spot 编辑、Trick Log | SessionsGround、InkSpot、InkEdit、InkAdd、InkCheck | 空白日志先引导新建板点，训练表单区分计划与实记，数字校验提示对应字段。 |
 | Crew、他人档案、关系列表 | CrewGround、InkCrew、InkAvatar、InkMore、InkComment | 查找、板点来源、跟随、聊天入口与互动安全操作。 |
 | 自己的档案、编辑 | CrewGround、InkAvatar、InkCamera、InkEdit、InkSettings、InkGrip | 图片选择、站姿、练习进度、关系、提交、收藏和钱包。 |
-| Messages、Chat | CrewGround、InkComment、InkSend、InkPhone、InkVideo | 分开的草稿与动态。真实动作形成未读计数。 |
+| Messages、Chat | CrewGround、InkComment、InkSend、InkPhone、InkVideo | 会话、草稿与动态。真实消息持久化、收件人未读、打开会话标记已读，发送者可删除自己的消息。 |
 | 等待通话 | InkPhone、InkVideo、InkClose、InkSettings | 等待、权限失败和结束。视频仅显示前置自拍。 |
 | Report、Block、黑名单、删档、设置 | CrewGround、InkFlag、InkCheck、InkClose、InkSettings | 设置按应用信息、Crew 安全和个人档案分组。删除确认使用独立页面和明确的危险操作样式。 |
 | 条款与规则 | InkClose、InkLoad | WKWebView 负责文档正文，原生壳负责关闭与错误恢复。 |
-| 本机社区 | WelcomeGround、原创 Ink 图标 | WebView 铺满宿主，通过 CSS 变量将遮挡信息交给前景内容。顶部保留退出操作。预览图直接打开线路，空收藏提供返回全量列表的入口。较宽容器切换双列。 |
+| 本机社区 | WelcomeGround、原创 Ink 图标 | WebView 铺满宿主，通过 CSS 变量将遮挡信息交给前景内容。顶部为 Discover、发布和个人资料入口。会话横幅打开 Sessions，支持搜索、收藏、评论、举报和图库。预览图直接打开线路，空收藏提供返回全量列表的入口。较宽容器切换双列。 |
 | 钱包、购买确认、封面 | InkGrip、InkCheck、CoverBowl、CoverWax、CoverNight | 余额和 Apple 报价由真实状态驱动。消费后所选原画应用在 Sessions 账簿。 |
 
-底部三个入口只在根页面展示。返回与关闭使用独立位图和 VoiceOver 名称。滚动区域按容器宽度限宽，宿主以 UIKit 场景读取内容边距，并在 iOS 27.1 及以上提供活动保留区。React Native 动作栏和自拍视频框按自身窗口坐标避让交叠的区域。键盘由可见的编辑滚动区处理。真实内外屏、RTL、大字、分屏和折叠姿态未运行验证。
+登录后各根页面统一显示 Discover、Sessions、Crew、Inbox、You 五个 Tab。返回与关闭使用独立位图和 VoiceOver 名称。滚动区域按容器宽度限宽，宿主以 UIKit 场景读取内容边距，并在 iOS 27.1 及以上提供活动保留区。React Native 动作栏和自拍视频框按自身窗口坐标避让交叠的区域。键盘由可见的编辑滚动区处理。真实内外屏、RTL、大字、分屏和折叠姿态未运行验证。
 
 2026-11-18 调整了全应用的屏幕边缘策略。社区、通用详情、官网与协议、通话和媒体页的根容器取消整页安全区 padding。背景延伸至窗口四边，导航栏与底部动作单独处理遮挡。媒体页的关闭栏叠在内容上方。欢迎页使用完整竖图与底部双入口。后续按用户要求去除了应用内重复图标、名称和相关占位，清理了表单、社区和评论控件中的本地实现文案。Apple 登录使用黑色官方原生按钮，直接进入授权流程。此次更新仅进行了源码、资源与 ZIP 静态核对。
 

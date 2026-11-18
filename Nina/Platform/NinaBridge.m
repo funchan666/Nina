@@ -80,6 +80,7 @@ RCT_EXPORT_VIEW_PROPERTY(onSignal, RCTDirectEventBlock)
 @implementation NinaCommunityManager
 
 RCT_EXPORT_MODULE(NinaCommunity)
+RCT_EXPORT_VIEW_PROPERTY(active, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(onSignal, RCTDirectEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(reply, NSDictionary)
 RCT_EXPORT_VIEW_PROPERTY(contentInsets, NSDictionary)
