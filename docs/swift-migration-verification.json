@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-20",
+  "scope": "Swift native restoration",
+  "verification_kind": "source-configuration-resource-diff-only",
+  "language": "Swift",
+  "ui_framework": "SwiftUI",
+  "minimum_ios": "17.6",
+  "sdk_declarations_checked": "iPhoneOS27.1.sdk",
+  "source_files_in_target": 36,
+  "tab_labels": [
+    "Discover",
+    "Sessions",
+    "Crew",
+    "Inbox",
+    "You"
+  ],
+  "typed_routes_with_renderers": 25,
+  "existing_original_rasters_copied_without_reencoding": 40,
+  "archive": {
+    "path": "Nina/Resources/Nina.zip",
+    "bytes": 37385101,
+    "sha256": "a5db5dacb08bd37b12efb14b11a1d3c9cf55468e971fe9f63d5126277937fa5e",
+    "unchanged_from_previous_version": true,
+    "crc_checked": true,
+    "media_count": 66,
+    "posters": 16
+  },
+  "swift_package": {
+    "name": "ZIPFoundation",
+    "version": "0.9.20",
+    "revision": "22787ffb59de99e5dc1fbfe80b19c97a904ad48d"
+  },
+  "data_migration": {
+    "target_version": 4,
+    "target_filename": "journal-swift-v4.json",
+    "source_versions": [
+      1,
+      2,
+      3
+    ],
+    "account_uuid_and_purchase_ownership_preserved_in_source": true,
+    "opaque_record_ids_and_references": "deterministic namespace SHA-256 to UUID",
+    "execution_verified": false
+  },
+  "removed": [
+    "React Native implementation",
+    "TypeScript implementation",
+    "RN native bridge",
+    "Metro bundling phase",
+    "Node/npm configuration and dependencies",
+    "CocoaPods configuration and dependencies"
+  ],
+  "not_run": [
+    "Swift parser or typecheck",
+    "compilation",
+    "tests",
+    "Xcode opening",
+    "simulator or app launch",
+    "device layout",
+    "live Apple authorization or purchases",
+    "runtime migration"
+  ]
+}

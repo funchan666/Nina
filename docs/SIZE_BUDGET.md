@@ -24,10 +24,12 @@
 
 ## 资源包含与验收
 
-- Copy Bundle Resources 包含整份 Nina.zip。可维护的 `web/community/` 目录由打包脚本读取，App 只分发生成的 ZIP。原片、转码比较帧和方向板不进入 iOS 资源阶段。Nina/Resources 除 ZIP 外的源码文件共 1,750,161 B，这个数包含只由 Metro 引用的目录数据、配置和 StoreKit 调试文件。
+- Copy Bundle Resources 包含整份 Nina.zip。可维护的 `web/community/` 目录由打包脚本读取，App 只分发生成的 ZIP。原片、转码比较帧和方向板不进入 iOS 资源阶段。2026-11-20 迁回 Swift 后，Nina/Resources 除 ZIP 外的资源输入共 4,551,707 B；包含原生 Asset Catalog、字体、目录数据、离线协议和 StoreKit 调试文件。该数不是编译后 Assets.car 或 IPA 体积。
 - ZIP 与解压目录分别占用安装空间。解压目录按资源摘要复用，放在 Application Support 的独立可重建子目录。应用自有档案及用户内容与该目录分开保存。
-- 社区与 React Native 页面共用少量 Barlow 字体和原创图标。两套界面各自加载这些小份资源。66 项内容及首帧共用 ZIP 中的唯一分发副本。
+- SwiftUI 通过原生资源加载 Barlow 字体和原创图标。ZIP 中旧网页的小型资源仅为分发兼容保留，不执行旧界面。66 项内容及首帧共用 ZIP 中的唯一分发副本。
 - 逐项比对 ZIP 条目与本地输入，检查 16 条影片的解码结果及重编码的代表帧。实际 IPA、真机视频兼容性和断网端到端交互尚未测量。 [资源字节和校验值](media-package-verification.json)
 - 欢迎页使用既有原创返回图标，应用内重复品牌展示使用的网页标志副本已移出归档。66 项内容的原有摘要保持一致，ZIP 的全部 104 个条目与网页输入逐字节一致。本次未编译或运行 App。
 
 2026-11-18 官网主体图片在 `website/dist` 分发，原创朋友互动横幅的压缩副本也复用于 Discover 的 Sessions 入口。App 内两份协议备用页面同步网站样式，并内联压缩后的 WOFF 字体，以保持单文件读取权限和离线排版。资源字节数包含这些备用页面；本轮没有构建 App。
+
+2026-11-20：Nina.zip 保持原有字节；没有重新压缩 66 项媒体。当前 Swift 工程没有 Hermes、React Native 或 JS bundle 的构建输入。最终安装和 IPA 大小仍需构建测量。

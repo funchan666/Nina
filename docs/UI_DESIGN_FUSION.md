@@ -1,50 +1,33 @@
-# Nina UI design
+# Nina 原生 UI
 
-Nina is an iPhone app for adult skaters to browse lines, remember spots and compare practice between visits. The bundled HTML community presents registration, email login and the skate feed. Its Lines, Sessions and Crew destinations open the React Native gallery, practice notebook and spot-based skater directory. Both surfaces follow the same TypeScript journal state and read the same bundled collection. The iOS host provides Apple sign-in, camera, media layers and WKWebView.
+2026-11-20 将既有五 Tab 产品迁回 SwiftUI，保留原有滑板刊物风格、原创朋友插画、功能图标、媒体和业务范围。这次是技术栈迁移，不另做网页原型。
 
-The design uses skate-zine print, bone paper, evergreen ink and acid grip. The repeated visual from skateboarding is the line itself. A selected clip can become the reference for a trick plan and the same park can be reopened through the journal and Crew. No simulated social activity is used for composition.
+Discover 是浏览型界面：原创朋友互动横幅、搜索、地形与收藏筛选、图文和短片、图库入口、点赞收藏以及原生评论详情。Sessions 是操作型界面：日志、计划、板点分区。Crew 是真实已有档案的查找与关系界面。Inbox 展示会话、草稿和活动。You 汇集资料、关系、训练、发布审核队列、收藏、钱包和设置。
 
-| Decision | Value | Application |
-| --- | ---: | --- |
-| Visual variance | 7 | Full-width Lines feature, practice notebook and dense Crew directory use different rhythms. |
-| Motion intensity | 2 | Presses and progress respond immediately. There are no decorative transitions or auto-playing videos. |
-| Information density | 5 | Feature content is followed by a clip strip and a compact image index. Forms reveal relevant fields by action. |
-| Asset dependence | 8 | Real content is distinct from generated page grounds and functional sprites. |
-| Brand fidelity | 2 | New identity follows the material culture of decks, bowls and paper session logs. |
+## 视觉语言
 
-Paper #F5F0E5, ink #182620, grip #DFF075, sage #DDE4D5 and oxide #A44731. Cyberpunk intensity 0/50. Barlow Condensed Bold carries headings, Barlow carries body and actions. Horizontal padding adapts with the window. Text stays dynamic. Full-bleed art is hit-test disabled. Elevation comes from ink/paper tone, with solid high-contrast form surfaces.
+- 骨白纸面 #F5F0E5、墨绿 #182620、亮黄绿 #DFF075、鼠尾草 #DDE4D5；亮色用于主要动作和选中状态。
+- 标题采用 Barlow Condensed Bold；正文和控件采用 Barlow，字体和 OFL 许可随包。
+- 按钮至少 50 pt 高，图标动作保持 46 pt 触控区；输入和反馈使用统一圆角与清晰文字。主操作可以铺满行，整块可点击。
+- 背景延伸至窗口四边。前景文字、导航和底部动作只处理所需局部遮挡，不给整页套安全区色带。
+- 原创图片来自现有 Image 2 输出；本次将 40 份压缩位图逐字节拷入原生 Asset Catalog，没有重绘或替换为系统图标。
 
-- ui-design-reference and ui-taste apply to composition, iOS controls, states and readable typography.
-- design-taste-frontend informs hierarchy and avoiding repeated feature tiles. claude-design supplies the Explore/Operate distinction and the visual contract. Garden web-design-engineer supplies the five dials and asset prioritization. The media and journal screens use native React Native views.
-- Garden gpt-image-2 and imagegen use the built-in Host-Native tool. Exact prompts and selected originals are in assets/brand and assets/navigation. The direction board is a visual reference.
-- Duo uses the installed iPhoneOS 27.1 SDK, iOS 17.6 deployment, safe-area updates and active UIKit reserved regions for custom action bands. Safe-area and window-size updates provide the layout on earlier iOS releases. Layout follows container geometry and keeps navigation, edit and playback state outside geometry. Physical posture, keyboard, larger text and camera transitions remain to be exercised on device.
+## 欢迎与登录
 
-See [the visual implementation map](VISUAL_IMPLEMENTATION_SPEC.md) and [the asset plan](../assets/brand/original-asset-plan.json).
+沿用四位成年朋友在滑板场分享视频的 WelcomeGround。欢迎标题为 See you at the spot.，副文案为 For the clips you replay and the friends you skate with.，Create profile 和 Sign in 两个明确入口。应用内不重复显示 App Icon 或应用名称。
 
-## Welcome and full-screen layout · 2026-11-18
+表单有可见邮箱和密码标签、协议勾选、独立 Terms / Privacy Policy 链接、提交状态和错误恢复。没有 local profile 或 this iPhone 等实现文案。苹果登录使用官方黑色 SignInWithAppleButton，不用自绘的替代图形。
 
-The welcome screen uses the original full-height WelcomeGround illustration and Barlow Condensed lettering. Its current illustration shows four adult friends gathered at a skatepark, sharing a clip and laughing together. Warm expressions, close body language, a shared phone and resting boards establish a social scene. Faces occupy the upper-middle of the image, with quiet evergreen foreground behind the live title and actions. The headline reads “See you at the spot.” Supporting copy reads “For the clips you replay and the friends you skate with.” Create profile and Sign in describe the two entry actions. Registration and email login share a separate compact form with visible field labels, a single primary submit action and inline policy links. Implementation descriptions about local storage and the current device have been removed from these controls and supporting paragraphs.
+## 状态与适配
 
-Impeccable Clarify and Humanizer guide the copy refinement. Email login says Welcome back, registration says Create your profile, and the switch between them names the destination. Clips, photos, spots and sessions retain consistent terms across the web and React Native screens. Media controls say Watch clip or View photo, and comments use Add comment when creating and Save comment when editing. Empty states distinguish an unused journal, an empty saved collection, a filter with no lines and a name search with no matches. Copy offers the available next action without claiming online matching, message delivery or a connected multiuser service.
+五个根页面和每个 Tab 的路由保持稳定身份，切换和容器变化不重建业务会话。仅根页面显示同一底栏，详情使用原创返回动作。输入保留在对应页面；异步媒体保存记录发起位置，完成后不会弹出另一个 Tab 的页面。共享 AVPlayer 在离开或后台时暂停。
 
-Email entry now uses the same input validation for both access modes. A valid email and a nonempty password open the matching profile or create it on first use. Passwords are not checked against a stored credential or persisted. The former registration-only minimum-length hint is removed. Agreement, inline errors, submission locking and the genuine native Apple flow remain in place. This change does not alter container measurements, the mounted WebView or input continuity during resizing. Verification is static only.
+Duo 使用容器 GeometryProxy、动态内容边距与活动 division / occlusion，仅避让实际与动作栏交叠的区域；视频小窗在同坐标系避让。iOS 27.1 新 API 已对照官方文档和本机 SDK 声明，旧系统保留普通边距。键盘由 SwiftUI 编辑滚动区处理，不另加全局键盘高度。
 
-The design preserves Nina's ink, paper and grip palette. Impeccable's local text workflow, UI Design Reference, UI Taste, Claude Design and Garden Web Design Engineer guide the composition and form hierarchy. Taste was evaluated for applicability. Its current marketing-page workflow excludes app screens, so it supplies no additional gates. Existing original artwork and functional glyphs are reused.
+## 技能选择与证据
 
-Every screen's outer container extends to the window edges. Community content receives host geometry through CSS variables while its WebView remains full-size. Headers, bottom actions and form text consume only the local protection they need. Media extends underneath its overlaid close control. The website and policy WebViews use the full-screen viewport setting inside the app.
+应用 ui-design-reference、ui-taste 的 iOS / Operate / Craft、Impeccable 的文本工作流与 craft floor、Duo，并结合 Claude Design / Design 的既有品牌与页面目的判断。Taste 的营销页工作流与 Garden 的浏览器产物流程不强套到本次原生迁移；沿用 Garden / Image 2 已生成的原创素材，不调用新图像生成服务。
 
-Duo's window measurements and active reserved regions remain connected. Resizing updates layout values without reloading the community or rebuilding its account state. Responsive welcome and form layouts support a wider container, with scrollable content on short screens. Verification for this revision covers source syntax, resource references, archive contents and diffs. No app build, browser execution, simulator, keyboard interaction or physical Duo posture was run.
+已查看当前欢迎和朋友互动横幅原图；该观察只证明素材内容。源码、配置、资源和差异静态核对不等于界面渲染验收。本轮未编译、运行 App、浏览器或模拟器，未实测键盘、大字、RTL、开合和相机行为。
 
-The in-app welcome, login, community, settings and loading surfaces use functional headings and controls. Repeated app icons and app-name labels have been removed, including the launch image. The welcome header disappears, the email form retains its back action, and the community toolbar retains sign out. The old logo's reserved space and bundled web copy are removed. Original brand artwork remains in the source asset collection.
-
-Welcome actions use 56 CSS-pixel minimum heights, 18 CSS-pixel semibold labels and a 12 CSS-pixel gap. The primary action explicitly sets ink text on grip so it cannot inherit the welcome screen's paper text. Sign in uses a solid ink surface with a 2 CSS-pixel paper outline, and reverses to paper with ink text while pressed. Labels, hit areas and focus outlines remain independent of the background illustration. Contrast is checked from the declared color values. This refinement has no new runtime capture.
-
-The login view includes Apple's native `ASAuthorizationAppleIDButton`, using its Sign in label and black style with a 10-point corner radius. It sits in the native action region immediately below the scrollable web form. Its size follows the current container, with a 52-point height and the existing action-band occlusion handling. Agreement state and web submission state control availability. Pressing it starts the existing system authorization flow directly. The web form remains mounted during authorization and cancellation. Static checks cover the state messages and references. Official documentation was checked for the native button, and real-device authorization remains unverified.
-
-The updated welcome artwork was generated with the built-in image tool in the Garden Image 2 Host-Native workflow. The 860 × 1828 PNG master lives in `assets/brand/welcome-crew-hangout.png`. Its JPEG q88 runtime copy is 429,653 bytes, with the same dimensions. The exact prompt is recorded in `assets/brand/image-prompts.md`. The compressed image was visually inspected. Banner and wide-screen image positions use a 14% vertical focus to keep the friends' faces in view. App rendering and physical device cropping were not run.
-
-## Authenticated five-tab app · 2026-11-18
-
-The authenticated Journal now owns Discover, Sessions, Crew, Inbox and You. Discover stays inside the native Dock instead of living outside navigation. A compact personal header, original friends image, session entry, search, terrain filters and complete media actions replace the portal buttons. Native roots use the same typography, rounded action surfaces and original glyphs. Sessions separates logs, plans and spots; Crew supports name search and following; Inbox shows real stored conversations, drafts and activity; You exposes profile, publishing, saved media, Wallet and Settings.
-
-Per-tab navigation, native form state and the WebView stay mounted. Only root pages show the single Dock. A navigation visibility change requests a serialized snapshot and reconciles stable media nodes, preserving draft comments. Window geometry only updates foreground insets. This preserves the full-bleed outer backgrounds without reloading business state. Device, keyboard and interaction verification is still unperformed.
+[页面映射](VISUAL_IMPLEMENTATION_SPEC.md) · [素材映射](../assets/brand/original-asset-plan.json)

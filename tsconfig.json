@@ -1,9 +1,0 @@
-{
-  "extends": "@react-native/typescript-config",
-  "compilerOptions": {
-    "resolveJsonModule": true,
-    "strict": true,
-    "noEmit": true
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
-}

@@ -1,8 +1,8 @@
 {
   "schema_version": 18,
   "workspace_root": "/Users/chengdupengyuyan/Fun",
-  "framework": "react-native",
-  "language": "typescript",
+  "framework": "swiftui",
+  "language": "swift",
   "platforms": [
     "ios"
   ],
@@ -22,9 +22,9 @@
   "bundle_id_prefix": "com.funchan666",
   "apps": [
     {
-      "source_mode": "react-native-existing",
-      "ui_stack": "react-native-webview-local",
-      "ui_stack_rationale": "React Native 启动后由 iOS 解包 Nina.zip。WKWebView 承载本地注册、登录与社区，板点簿、动作日志等深层页面由 React Native 承载。",
+      "source_mode": "native-swift-restored",
+      "ui_stack": "swiftui",
+      "ui_stack_rationale": "按用户要求恢复 Swift 原生应用。SwiftUI 承载欢迎、登录、五个 Tab 和全部业务页面；UIKit 提供系统媒体、Apple 授权和 WebKit 文档。",
       "app_name": "Nina",
       "name_meaning_zh": "用户指定的品牌名 Nina",
       "name_theme_rationale": "用户指定名称，Nina 作为滑板刊物的短刊头。",
@@ -35,9 +35,8 @@
       "ios_host_project": "Nina.xcodeproj",
       "ios_target": "Nina",
       "ios_scheme": "Nina",
-      "source_root": "src",
+      "source_root": "Nina/Sources",
       "web_root": "web/community",
-      "web_entry": "index.html",
       "web_archive": "Nina/Resources/Nina.zip",
       "theme": "滑板运动爱好者社交",
       "audience": "Adult skateboarders building their trick repertoire and returning to familiar skate spots.",
@@ -57,14 +56,14 @@
         "You"
       ],
       "home_primary_task": "Browse a searchable terrain feed, save or comment on a line, report content, post media and open practice from the persistent five-tab shell.",
-      "community_content_location": "Discover is the first authenticated Tab. The bundled WebView feed opens native media details and a collection gallery without leaving the Tab shell.",
+      "community_content_location": "Discover is a native SwiftUI feed inside the persistent five-tab shell. The gallery, line details, interactions and playback are native views.",
       "user_discovery_location": "Crew directory and spot contribution lists within Spot Book.",
       "message_location": "Inbox Tab contains Chats, Drafts and Activity. Mutual follows enable persisted messages between profiles stored in this app, with unread events and sender-owned deletion. No cross-device delivery or RTC is connected.",
       "creation_entry": "Discover → Post; You → Post a line / Your submissions. Sessions → Add spot / Log tricks / Practice plans.",
       "profile_structure": "You Tab contains editable name, bio, stance and avatar, follow relationships, sessions, submissions, saved collection, Wallet and Settings.",
       "showcase_tab": "Discover",
       "showcase_media_direction": "Locally supplied skate films and photo essays, with travel and style in Off the Board.",
-      "showcase_page_composition": "Compact personal header, original social session banner, collection search, horizontal terrain filters, media cards with inline comments, saves and reports; persistent five-item native Dock.",
+      "showcase_page_composition": "Compact personal header, original social session banner, collection search, horizontal terrain filters and media cards with native comment details, saves and reports; one shared five-item SwiftUI Dock.",
       "showcase_supporting_sections": [
         "Session entry",
         "Search and saved filters",
@@ -88,22 +87,22 @@
         "You: Crew ground, evergreen profile card and personal records."
       ],
       "seed_data_direction": "Editorial media metadata only. Registered profiles and interaction counts come from actual user actions.",
-      "architecture_direction": "React Native starts the bundled Nina.zip community in WKWebView. The web feed and native playback share the same extracted media directory. TypeScript owns the journal. Email entry validates the address format and a nonempty password, then opens or creates the matching profile without saving or verifying the password. Keychain stores the local session. UIKit hosts the native Apple features.",
+      "architecture_direction": "SwiftUI owns all screens, typed per-tab routes and the Codable journal. ZIPFoundation installs the existing Nina.zip resource pack; native stills and AVPlayer use its local media directory. Email entry validates the address and a nonempty password without saving or verifying the password. AuthenticationServices and StoreKit provide genuine Apple flows. Keychain identity, account UUIDs, receipt ownership and imported media paths are preserved. Version 1/2/3 archives migrate atomically into journal-swift-v4.json; opaque RN record IDs are deterministically mapped to UUIDs with matching references.",
       "domain_modules": [
         "community"
       ],
       "domain_model_types": [
-        "Spot",
-        "Attempt",
-        "Line",
-        "Follow",
+        "SkateSpot",
+        "TrickAttempt",
+        "LineMedia",
+        "CrewFollow",
         "GripEntry",
-        "ChatMessage"
+        "CrewMessage"
       ],
       "primary_flow_types": [
-        "Route",
-        "Attempt",
-        "Submission"
+        "NinaRoute",
+        "NinaFlow",
+        "LineSubmission"
       ],
       "theme_mapping": "Terrain media suggests a spot and a trick reference. Named spot visits surface actual participating profiles.",
       "bundle_id": "com.funchan666.nina",
@@ -137,8 +136,7 @@
         "com.funchan666.nina.placeholder.grip.line": "19.99",
         "com.funchan666.nina.placeholder.grip.crew": "49.99",
         "com.funchan666.nina.placeholder.grip.tour": "99.99"
-      },
-      "rn_component_name": "Nina"
+      }
     }
   ],
   "backend": "none",
@@ -150,9 +148,8 @@
     "scope": "base-storefront",
     "maximum": "99.99"
   },
-  "react_native_version": "0.88.1",
   "media_delivery": "bundled",
-  "toolchain_notes": "React 19.3.0, TypeScript 6.0.3, Node 22.17.0, CocoaPods 1.16.2, iPhoneOS SDK 27.1, ZIPFoundation 0.9.20 and the iOS WKWebView host.",
+  "toolchain_notes": "Swift 5 language mode, SwiftUI with UIKit system integrations, iPhoneOS SDK 27.1, iOS 17.6 deployment, ZIPFoundation 0.9.20 via Swift Package Manager.",
   "size_policy": {
     "target_bytes": 50000000,
     "mode": "quality-first-soft-target",
