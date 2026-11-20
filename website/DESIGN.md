@@ -17,12 +17,12 @@ Policies retain their existing wording, dates, section anchors and URLs. A dark 
 | Website asset | Source | Treatment |
 | --- | --- | --- |
 | `assets/crew-session.jpg` | `assets/brand/website-crew-session.png` | Built-in image generation with the Garden Image 2 Host-Native workflow, JPEG q88, original dimensions, compressed image visually inspected. |
-| `assets/blue-pool.jpg` | `web/community/media/lines-v1-park-blue-pool-carve.jpg` | Previously optimized, authorized project media, copied byte for byte. |
-| `assets/crew-walk.jpg` | `web/community/media/lines-v1-offboard-park-path-crew.jpg` | Previously optimized, authorized project media, copied byte for byte. |
-| `assets/street-deck.jpg` | `web/community/media/lines-v1-street-boards-at-the-steps.jpg` | Previously optimized, authorized project media, copied byte for byte. |
+| `assets/blue-pool.jpg` | `Nina/Resources/Nina.zip → media/lines-v1-park-blue-pool-carve.jpg` | Previously optimized, authorized project media, copied byte for byte. |
+| `assets/crew-walk.jpg` | `Nina/Resources/Nina.zip → media/lines-v1-offboard-park-path-crew.jpg` | Previously optimized, authorized project media, copied byte for byte. |
+| `assets/street-deck.jpg` | `Nina/Resources/Nina.zip → media/lines-v1-street-boards-at-the-steps.jpg` | Previously optimized, authorized project media, copied byte for byte. |
 | `assets/bowl-print.jpg` | Existing original website artwork | Reused in the journal example. |
 
-The campaign image prompt is in `assets/brand/image-prompts.md`, under `website-crew-session-2026-11-18`. Its master stays outside the app resources. The compressed campaign image is also reused by the authenticated Discover session entry in Nina.zip; the website-only gallery copies stay outside the app resource pack. The contact email remains omitted. No live members, message delivery, reviews, store availability or usage statistics are invented.
+The campaign image prompt is in `assets/brand/image-prompts.md`, under `website-crew-session-2026-11-18`. Its master stays outside the app resources; the app uses its native CrewSession image set. The compressed campaign image is also reused by the native Discover session entry through the CrewSession asset catalog; the website-only gallery copies stay outside the app resource pack. The contact email remains omitted. No live members, message delivery, reviews, store availability or usage statistics are invented.
 
 ## Verification boundary
 

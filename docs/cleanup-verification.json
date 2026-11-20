@@ -1,0 +1,626 @@
+{
+  "date": "2026-11-20",
+  "kind": "source-and-resource-only",
+  "backup_created": false,
+  "deleted_files": [
+    {
+      "path": "web/community/community.css",
+      "bytes": 18368
+    },
+    {
+      "path": "web/community/index.html",
+      "bytes": 7689
+    },
+    {
+      "path": "web/community/art/ink-like.png",
+      "bytes": 9716
+    },
+    {
+      "path": "web/community/art/crew-session.jpg",
+      "bytes": 387799
+    },
+    {
+      "path": "web/community/art/ink-flag.png",
+      "bytes": 10177
+    },
+    {
+      "path": "web/community/art/ink-spot.png",
+      "bytes": 10226
+    },
+    {
+      "path": "web/community/art/ink-add.png",
+      "bytes": 8970
+    },
+    {
+      "path": "web/community/art/ink-crew.png",
+      "bytes": 15091
+    },
+    {
+      "path": "web/community/art/welcome-ground.jpg",
+      "bytes": 429653
+    },
+    {
+      "path": "web/community/art/ink-check.png",
+      "bytes": 8696
+    },
+    {
+      "path": "web/community/art/ink-lines.png",
+      "bytes": 5547
+    },
+    {
+      "path": "web/community/art/ink-play.png",
+      "bytes": 10803
+    },
+    {
+      "path": "web/community/art/ink-back.png",
+      "bytes": 9904
+    },
+    {
+      "path": "web/community/art/ink-save.png",
+      "bytes": 8629
+    },
+    {
+      "path": "web/community/art/ink-avatar.png",
+      "bytes": 15715
+    },
+    {
+      "path": "web/community/art/ink-comment.png",
+      "bytes": 9207
+    },
+    {
+      "path": "web/community/community/community.js",
+      "bytes": 14690
+    },
+    {
+      "path": "web/community/fonts/BarlowCondensed-Bold.ttf",
+      "bytes": 109912
+    },
+    {
+      "path": "web/community/fonts/Barlow-OFL.txt",
+      "bytes": 4376
+    },
+    {
+      "path": "web/community/fonts/Barlow-Regular.ttf",
+      "bytes": 104068
+    },
+    {
+      "path": "web/community/fonts/Barlow-SemiBold.ttf",
+      "bytes": 108348
+    },
+    {
+      "path": "web/community/fonts/BarlowCondensed-OFL.txt",
+      "bytes": 4376
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-elevator-and-deck.jpg",
+      "bytes": 99016
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-park-path-crew.jpg",
+      "bytes": 267098
+    },
+    {
+      "path": "web/community/media/lines-v1-park-warehouse-roll-in-poster.jpg",
+      "bytes": 25725
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-roadside-sunset-pause.mp4",
+      "bytes": 432398
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-autumn-bench.jpg",
+      "bytes": 285961
+    },
+    {
+      "path": "web/community/media/lines-v1-street-boards-at-the-steps.jpg",
+      "bytes": 272336
+    },
+    {
+      "path": "web/community/media/lines-v1-street-night-sidewalk-line.mp4",
+      "bytes": 1690865
+    },
+    {
+      "path": "web/community/media/lines-v1-street-stone-ledge-slide.jpg",
+      "bytes": 133702
+    },
+    {
+      "path": "web/community/media/lines-v1-park-top-down-bowl.jpg",
+      "bytes": 179214
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-terrace-below-the-ridge.jpg",
+      "bytes": 304953
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-blue-jacket-passage.jpg",
+      "bytes": 204889
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-everyday-denim.jpg",
+      "bytes": 102438
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-deck-over-shoulder.jpg",
+      "bytes": 91392
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-light-trousers.jpg",
+      "bytes": 123906
+    },
+    {
+      "path": "web/community/media/lines-v1-park-fence-line.jpg",
+      "bytes": 177330
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-last-light-roll.mp4",
+      "bytes": 2819218
+    },
+    {
+      "path": "web/community/media/lines-v1-park-board-at-night-session.jpg",
+      "bytes": 128854
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-maple-walk.jpg",
+      "bytes": 300003
+    },
+    {
+      "path": "web/community/media/lines-v1-park-blue-pool-carve.jpg",
+      "bytes": 194908
+    },
+    {
+      "path": "web/community/media/lines-v1-park-backside-of-the-ramp.jpg",
+      "bytes": 238788
+    },
+    {
+      "path": "web/community/media/lines-v1-street-night-sidewalk-line-poster.jpg",
+      "bytes": 28809
+    },
+    {
+      "path": "web/community/media/lines-v1-park-coping-run-poster.jpg",
+      "bytes": 34255
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-court-deck-flip-poster.jpg",
+      "bytes": 60247
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-turn-and-roll-out-poster.jpg",
+      "bytes": 30418
+    },
+    {
+      "path": "web/community/media/lines-v1-street-concrete-bench-line-poster.jpg",
+      "bytes": 85640
+    },
+    {
+      "path": "web/community/media/lines-v1-park-indoor-turn.mp4",
+      "bytes": 1385623
+    },
+    {
+      "path": "web/community/media/lines-v1-street-garage-flatground-poster.jpg",
+      "bytes": 30173
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-wood-floor-portrait.jpg",
+      "bytes": 132872
+    },
+    {
+      "path": "web/community/media/lines-v1-street-stair-set-approach.jpg",
+      "bytes": 144839
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-rock-trail.jpg",
+      "bytes": 325435
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-deck-outside-the-shop.mp4",
+      "bytes": 2228843
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-mountain-rail.jpg",
+      "bytes": 201093
+    },
+    {
+      "path": "web/community/media/lines-v1-park-warehouse-roll-in.mp4",
+      "bytes": 2753790
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-city-corner-portrait.jpg",
+      "bytes": 196960
+    },
+    {
+      "path": "web/community/media/lines-v1-park-rail-to-roll-away.mp4",
+      "bytes": 2042485
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-roof-over-the-field.jpg",
+      "bytes": 171213
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-rooftop-skyline.jpg",
+      "bytes": 170027
+    },
+    {
+      "path": "web/community/media/lines-v1-park-coping-run.mp4",
+      "bytes": 855563
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-highland-lookout.jpg",
+      "bytes": 212433
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-green-fence-flip-poster.jpg",
+      "bytes": 67350
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-court-deck-flip.mp4",
+      "bytes": 934289
+    },
+    {
+      "path": "web/community/media/lines-v1-park-rail-to-roll-away-poster.jpg",
+      "bytes": 48208
+    },
+    {
+      "path": "web/community/media/lines-v1-street-tree-lined-roll-away.mp4",
+      "bytes": 3535821
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-elevator-pair.webp",
+      "bytes": 42060
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-alpine-field.jpg",
+      "bytes": 211991
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-grip-and-concrete.jpg",
+      "bytes": 196863
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-roadside-deck.jpg",
+      "bytes": 244516
+    },
+    {
+      "path": "web/community/media/lines-v1-park-indoor-turn-poster.jpg",
+      "bytes": 19317
+    },
+    {
+      "path": "web/community/media/lines-v1-street-stairwell-deck.jpg",
+      "bytes": 289472
+    },
+    {
+      "path": "web/community/media/lines-v1-park-boards-under-cover.jpg",
+      "bytes": 219608
+    },
+    {
+      "path": "web/community/media/lines-v1-street-winter-curb-pop-poster.jpg",
+      "bytes": 34235
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-roadside-sunset-pause-poster.jpg",
+      "bytes": 31929
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-plaza-deck-pop.jpg",
+      "bytes": 89588
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-stone-gate-courtyard.jpg",
+      "bytes": 99807
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-last-light-roll-poster.jpg",
+      "bytes": 19517
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-blue-wall-deck.jpg",
+      "bytes": 80152
+    },
+    {
+      "path": "web/community/media/lines-v1-street-garage-flatground.mp4",
+      "bytes": 2274845
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-courtyard-at-dusk.jpg",
+      "bytes": 121513
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-deck-outside-the-shop-poster.jpg",
+      "bytes": 41752
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-lakeside-dock.jpg",
+      "bytes": 154277
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-tunnel-deck-portrait.jpg",
+      "bytes": 118603
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-mountain-street.jpg",
+      "bytes": 247830
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-coastal-wind.jpg",
+      "bytes": 116234
+    },
+    {
+      "path": "web/community/media/lines-v1-park-palms-at-the-bowl.jpg",
+      "bytes": 253195
+    },
+    {
+      "path": "web/community/media/lines-v1-street-winter-curb-pop.mp4",
+      "bytes": 922095
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-turn-and-roll-out.mp4",
+      "bytes": 1276004
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-room-to-layer.jpg",
+      "bytes": 166622
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-harbor-rail.webp",
+      "bytes": 116926
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-green-fence-flip.mp4",
+      "bytes": 519914
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-window-seat-study.jpg",
+      "bytes": 217952
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-pink-board-cruise-poster.jpg",
+      "bytes": 26902
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-field-at-last-light.jpg",
+      "bytes": 49018
+    },
+    {
+      "path": "web/community/media/lines-v1-street-concrete-bench-line.mp4",
+      "bytes": 643374
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-lawn-break.jpg",
+      "bytes": 269721
+    },
+    {
+      "path": "web/community/media/lines-v1-flat-pink-board-cruise.mp4",
+      "bytes": 2569615
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-windward-dunes.jpg",
+      "bytes": 79651
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-black-layers.jpg",
+      "bytes": 49723
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-gilded-roof-courtyard.jpg",
+      "bytes": 221998
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-car-park-walk.jpg",
+      "bytes": 153749
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-city-stoop.jpg",
+      "bytes": 246400
+    },
+    {
+      "path": "web/community/media/lines-v1-street-tree-lined-roll-away-poster.jpg",
+      "bytes": 16636
+    },
+    {
+      "path": "web/community/media/lines-v1-offboard-patio-break.jpg",
+      "bytes": 141743
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-pause.png",
+      "bytes": 12687
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-grip.png",
+      "bytes": 15953
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-video.png",
+      "bytes": 9567
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-like.png",
+      "bytes": 9716
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-phone.png",
+      "bytes": 10195
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-expand.png",
+      "bytes": 10443
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-load.png",
+      "bytes": 11936
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-flag.png",
+      "bytes": 10177
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-spot.png",
+      "bytes": 10226
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-add.png",
+      "bytes": 8970
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-crew.png",
+      "bytes": 15091
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-close.png",
+      "bytes": 13218
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-thumb.png",
+      "bytes": 19374
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-camera.png",
+      "bytes": 14083
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-edit.png",
+      "bytes": 9933
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-check.png",
+      "bytes": 8696
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-lines.png",
+      "bytes": 5547
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-more.png",
+      "bytes": 5292
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-muted.png",
+      "bytes": 11077
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-play.png",
+      "bytes": 10803
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-back.png",
+      "bytes": 9904
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-settings.png",
+      "bytes": 12885
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-send.png",
+      "bytes": 8459
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-sessions.png",
+      "bytes": 15411
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-speaker.png",
+      "bytes": 10708
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-save.png",
+      "bytes": 8629
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-deck.png",
+      "bytes": 11516
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-avatar.png",
+      "bytes": 15715
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-ramp.png",
+      "bytes": 10077
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-comment.png",
+      "bytes": 9207
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-saved.png",
+      "bytes": 11314
+    },
+    {
+      "path": "assets/navigation/glyphs/ink-liked.png",
+      "bytes": 11443
+    },
+    {
+      "path": "assets/brand/exports/lines-ground.jpg",
+      "bytes": 339934
+    },
+    {
+      "path": "assets/brand/exports/cover-night.jpg",
+      "bytes": 154325
+    },
+    {
+      "path": "assets/brand/exports/cover-bowl.jpg",
+      "bytes": 185892
+    },
+    {
+      "path": "assets/brand/exports/cover-wax.jpg",
+      "bytes": 163761
+    },
+    {
+      "path": "assets/brand/exports/crew-ground.jpg",
+      "bytes": 403412
+    },
+    {
+      "path": "assets/brand/exports/wheel-mark.jpg",
+      "bytes": 27728
+    },
+    {
+      "path": "assets/brand/exports/welcome-ground.jpg",
+      "bytes": 429653
+    },
+    {
+      "path": "assets/brand/exports/website-crew-session.jpg",
+      "bytes": 387799
+    },
+    {
+      "path": "assets/brand/exports/sessions-ground.jpg",
+      "bytes": 372793
+    },
+    {
+      "path": "Nina/Resources/Assets.xcassets/WheelMark.imageset/WheelMark.jpg",
+      "bytes": 27728
+    },
+    {
+      "path": "Nina/Resources/Assets.xcassets/WheelMark.imageset/Contents.json",
+      "bytes": 307
+    },
+    {
+      "path": "assets/brand/welcome-fist-bump.png",
+      "bytes": 3090649
+    },
+    {
+      "path": "scripts/package-community.py",
+      "bytes": 2171
+    },
+    {
+      "path": "docs/WEB_BRIDGE_CONTRACT.md",
+      "bytes": 1797
+    }
+  ],
+  "deleted_bytes": 43602888,
+  "media_files_preserved": 82,
+  "original_media_bytes_preserved": true,
+  "not_run": [
+    "compilation",
+    "tests",
+    "app launch"
+  ],
+  "old_archive_bytes": 37385101,
+  "archive_bytes": 36275870,
+  "archive_entries": 82,
+  "archive_bytes_removed": 1109231,
+  "total_file_bytes_reduced": 44712119,
+  "deleted_file_count": 150,
+  "asset_references_checked": true,
+  "source_and_build_references_checked": true,
+  "archive_crc_and_all_media_sha256_checked": true,
+  "live_user_data_modified": false,
+  "native_resources_bytes_excluding_zip": 4523672
+}

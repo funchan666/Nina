@@ -13,10 +13,6 @@ actor OfflineArchive {
     private let limit = 64 * 1024 * 1024
     private var currentPackage: Package?
 
-    func mediaDirectory() throws -> URL {
-        try package().installed.appendingPathComponent("media", isDirectory: true)
-    }
-
     private func package() throws -> Package {
         if let currentPackage { return currentPackage }
         guard let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String,
@@ -35,12 +31,20 @@ actor OfflineArchive {
         return package
     }
 
-    func entryURL() throws -> URL {
+    func mediaDirectory(filenames: Set<String>) throws -> URL {
+        guard !filenames.isEmpty, filenames.count <= 512,
+              filenames.allSatisfy({ $0.range(of: #"^[a-z0-9][a-z0-9.-]*$"#, options: .regularExpression) != nil }) else {
+            throw NinaIssue("The bundled skate catalog is invalid.")
+        }
         let bundle = try package()
         let manager = FileManager.default
         let installed = bundle.installed
-        let index = installed.appendingPathComponent("index.html")
-        if manager.fileExists(atPath: index.path) { return index }
+        let media = installed.appendingPathComponent("media", isDirectory: true)
+        let expected = Set(filenames.map { "media/" + $0 })
+        if filenames.allSatisfy({ manager.fileExists(atPath: media.appendingPathComponent($0).path) }) {
+            removePreviousPackages(keeping: installed)
+            return media
+        }
 
         let archive = try Archive(url: bundle.source, accessMode: .read)
         var archiveRoot = installed.deletingLastPathComponent()
@@ -52,12 +56,12 @@ actor OfflineArchive {
         try manager.createDirectory(at: stage, withIntermediateDirectories: true)
         defer { try? manager.removeItem(at: stage) }
 
-        var required = Set(["index.html", "community.css", "community/community.js"])
+        var required = expected
         var remaining = UInt64(limit)
         var paths = Set<String>()
         for item in archive {
             let parts = item.path.split(separator: "/", omittingEmptySubsequences: false)
-            guard item.type == .file, parts.count <= 4,
+            guard item.type == .file, parts.count == 2, expected.contains(item.path),
                   parts.allSatisfy({ $0.range(of: #"^[A-Za-z0-9][A-Za-z0-9._-]*$"#, options: .regularExpression) != nil }),
                   paths.count < 512, paths.insert(item.path.lowercased()).inserted,
                   item.uncompressedSize <= remaining,
@@ -75,6 +79,16 @@ actor OfflineArchive {
         guard required.isEmpty else { throw NinaIssue("The bundled skate collection is incomplete.") }
         if manager.fileExists(atPath: installed.path) { try manager.removeItem(at: installed) }
         try manager.moveItem(at: stage, to: installed)
-        return index
+        removePreviousPackages(keeping: installed)
+        return media
+    }
+
+    private func removePreviousPackages(keeping installed: URL) {
+        let manager = FileManager.default
+        guard let previous = try? manager.contentsOfDirectory(at: installed.deletingLastPathComponent(), includingPropertiesForKeys: nil) else { return }
+        for file in previous where file.lastPathComponent != installed.lastPathComponent &&
+            file.lastPathComponent.range(of: #"^[a-f0-9]{64}$"#, options: .regularExpression) != nil {
+            try? manager.removeItem(at: file)
+        }
     }
 }

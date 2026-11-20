@@ -6,7 +6,7 @@
 - 原始照片与影片 56,909,835 B。此前的优化副本含首帧共 50,914,422 B，最终随包媒体含首帧 36,344,727 B，较此前副本减少 28.6%。
 - 12 条影片从原片重新编码，保持上版的显示尺寸与原视频帧数。4 条含音轨的转码逐包核对了原始 AAC 载荷。另 4 条影片复用之前的 H.264 副本。重编码影片的封面由最终影片真实首帧生成。
 - 50 张照片及全部封面通过静态解码检查，16 条影片通过全流解码。重编码影片逐条核对首段、中段和末段代表帧。App 设备播放和听验待实际运行验证。
-- 每个条目在 Nina.zip 的 `media/` 内，供 WebView 和原生播放器从同一解压目录读取。用户拍摄与导入的内容进入独立私有目录。 [逐项字节与校验记录](media-package-verification.json)
+- 每个条目在 Nina.zip 的 `media/` 内，由 SwiftUI 图片和 AVPlayer 从解压目录读取。用户拍摄与导入的内容进入独立私有目录。 [逐项字节与校验记录](media-package-verification.json)
 
 | 线路栏目 | 照片 | 影片 |
 | --- | ---: | ---: |
@@ -21,7 +21,7 @@
 
 | 素材 | 源文件 | 运行时与包内路径 | 尺寸与压缩 |
 | --- | --- | --- | --- |
-| WelcomeGround | `assets/brand/welcome-crew-hangout.png` | `assets/brand/exports/welcome-ground.jpg` → `art/welcome-ground.jpg` | 860 × 1828，PNG 2,649,814 B → JPEG 429,653 B，q88、无色度抽样、渐进编码，减少 83.8% |
+| WelcomeGround | `assets/brand/welcome-crew-hangout.png` | `Nina/Resources/Assets.xcassets/WelcomeGround.imageset/WelcomeGround.jpg` | 860 × 1828，PNG 2,649,814 B → JPEG 429,653 B，q88、无色度抽样、渐进编码，减少 83.8% |
 
 已查看压缩后的脸部、手部和暗部画面。原始插画源图放在品牌素材目录，运行时只归档 JPEG。原有 66 项用户内容及首帧仍按下表映射。
 
@@ -93,3 +93,5 @@
 | `videos/AQPND23FVCv81Fn3J_rsLOxVlFsa1FXDdg-BAFmURCGjqN6sw29PioZOnfrCXynlotyZdCHpU4xm5Soltt5YE9z2yO5nus0gBME6dYk.mp4` | 社区／Lines / Flatground / Green fence flip | `media/lines-v1-flat-green-fence-flip.mp4` | 720×900 / 519,914 B → 720×900 / 519,914 B · 6.69 s · 1 音轨 (0.0% 节省) | Source h264 retained after size/quality comparison | `media/lines-v1-flat-green-fence-flip-poster.jpg` · 672×840 · 67,350 B |
 | `videos/AQPYq1vSoNzumn13yiLH5681-tdjzd_OokP-Mdq2y75gRkUnXLBm1mj3d1bpUjAKs_Irezq1Z2uFmEVDnHJJ_hpU7-GeMZAzc6j1s0jMd4iFbQ.mp4` | 社区／Lines / Park / Warehouse roll-in | `media/lines-v1-park-warehouse-roll-in.mp4` | 1080×1920 / 5,246,836 B → 720×1280 / 2,753,790 B · 11.13 s · 0 音轨 (47.5% 节省) | HEVC hvc1 CRF 26, medium, yuv420p, original frame rate and AAC packets | `media/lines-v1-park-warehouse-roll-in-poster.jpg` · 472×840 · 25,725 B |
 | `videos/AQPsGAD7wh7UqDZrLKWhUqkysChi2WhQchTeFpPEFsyW-0gs4OuPgFrdmdhgTMcUKjrUMUBdDVaNI6hZzvQLRCgEddk2-k4sTUtVZ18.mp4` | 社区／Lines / Street / Concrete bench line | `media/lines-v1-street-concrete-bench-line.mp4` | 720×720 / 643,374 B → 720×720 / 643,374 B · 3.53 s · 1 音轨 (0.0% 节省) | Source h264 retained after size/quality comparison | `media/lines-v1-street-concrete-bench-line-poster.jpg` · 720×720 · 85,640 B |
+
+2026-11-20：按用户要求直接删除旧 H5 社区和重复媒体源目录，未另建备份。Nina.zip 现在只含本文记录的 66 项媒体与 16 张首帧；原字节与摘要均保持一致，当前 Native Asset Catalog 保留界面美术。

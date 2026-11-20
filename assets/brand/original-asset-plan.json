@@ -113,15 +113,14 @@
       "action_route": "",
       "generated_with": "imagegen/gpt-image-2",
       "referenced_by": [
-        "web/community/index.html"
-      ],
-      "web_runtime_asset": "web/community/art/welcome-ground.jpg"
+        "Nina/Sources/Features/Account/NinaWelcome.swift"
+      ]
     },
     {
       "id": "InkLines",
       "role": "tab_icon",
       "screen": "tab_1",
-      "source_file": "assets/navigation/glyphs/ink-lines.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkLines.imageset/InkLines.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkLines.imageset/InkLines.png",
       "purpose": "Discover",
       "interactive": true,
@@ -129,16 +128,14 @@
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
       "referenced_by": [
-        "Nina/Sources/Design/NinaTheme.swift",
-        "web/community/index.html"
-      ],
-      "web_runtime_asset": "web/community/art/ink-lines.png"
+        "Nina/Sources/Design/NinaTheme.swift"
+      ]
     },
     {
       "id": "InkSessions",
       "role": "tab_icon",
       "screen": "tab_2",
-      "source_file": "assets/navigation/glyphs/ink-sessions.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkSessions.imageset/InkSessions.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkSessions.imageset/InkSessions.png",
       "purpose": "Sessions",
       "interactive": true,
@@ -153,7 +150,7 @@
       "id": "InkCrew",
       "role": "tab_icon",
       "screen": "tab_3",
-      "source_file": "assets/navigation/glyphs/ink-crew.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkCrew.imageset/InkCrew.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkCrew.imageset/InkCrew.png",
       "purpose": "Crew",
       "interactive": true,
@@ -161,16 +158,14 @@
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
       "referenced_by": [
-        "Nina/Sources/Design/NinaTheme.swift",
-        "web/community/index.html"
-      ],
-      "web_runtime_asset": "web/community/art/ink-crew.png"
+        "Nina/Sources/Design/NinaTheme.swift"
+      ]
     },
     {
       "id": "InkAdd",
       "role": "functional_button",
       "screen": "post_editor",
-      "source_file": "assets/navigation/glyphs/ink-add.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkAdd.imageset/InkAdd.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkAdd.imageset/InkAdd.png",
       "purpose": "Post, add spot or log tricks",
       "interactive": true,
@@ -185,7 +180,7 @@
       "id": "InkBack",
       "role": "functional_button",
       "screen": "line_detail",
-      "source_file": "assets/navigation/glyphs/ink-back.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkBack.imageset/InkBack.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkBack.imageset/InkBack.png",
       "purpose": "Back",
       "interactive": true,
@@ -193,16 +188,14 @@
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
       "referenced_by": [
-        "Nina/Sources/Design/NinaTheme.swift",
-        "web/community/index.html"
-      ],
-      "web_runtime_asset": "web/community/art/ink-back.png"
+        "Nina/Sources/Design/NinaTheme.swift"
+      ]
     },
     {
       "id": "InkClose",
       "role": "functional_button",
       "screen": "policy",
-      "source_file": "assets/navigation/glyphs/ink-close.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkClose.imageset/InkClose.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkClose.imageset/InkClose.png",
       "purpose": "Close panel",
       "interactive": true,
@@ -217,7 +210,7 @@
       "id": "InkPlay",
       "role": "functional_button",
       "screen": "line_viewer",
-      "source_file": "assets/navigation/glyphs/ink-play.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkPlay.imageset/InkPlay.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkPlay.imageset/InkPlay.png",
       "purpose": "Play",
       "interactive": true,
@@ -232,7 +225,7 @@
       "id": "InkPause",
       "role": "functional_button",
       "screen": "line_viewer",
-      "source_file": "assets/navigation/glyphs/ink-pause.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkPause.imageset/InkPause.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkPause.imageset/InkPause.png",
       "purpose": "Pause",
       "interactive": true,
@@ -247,7 +240,7 @@
       "id": "InkSpeaker",
       "role": "functional_button",
       "screen": "line_viewer",
-      "source_file": "assets/navigation/glyphs/ink-speaker.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkSpeaker.imageset/InkSpeaker.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkSpeaker.imageset/InkSpeaker.png",
       "purpose": "Mute",
       "interactive": true,
@@ -262,7 +255,7 @@
       "id": "InkMuted",
       "role": "functional_button",
       "screen": "line_viewer",
-      "source_file": "assets/navigation/glyphs/ink-muted.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkMuted.imageset/InkMuted.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkMuted.imageset/InkMuted.png",
       "purpose": "Unmute",
       "interactive": true,
@@ -277,7 +270,7 @@
       "id": "InkExpand",
       "role": "functional_button",
       "screen": "line_viewer",
-      "source_file": "assets/navigation/glyphs/ink-expand.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkExpand.imageset/InkExpand.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkExpand.imageset/InkExpand.png",
       "purpose": "Open full screen",
       "interactive": true,
@@ -292,7 +285,7 @@
       "id": "InkLike",
       "role": "functional_button",
       "screen": "line_detail",
-      "source_file": "assets/navigation/glyphs/ink-like.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkLike.imageset/InkLike.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkLike.imageset/InkLike.png",
       "purpose": "Appreciate",
       "interactive": true,
@@ -300,16 +293,14 @@
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
       "referenced_by": [
-        "Nina/Sources/Design/NinaTheme.swift",
-        "web/community/index.html"
-      ],
-      "web_runtime_asset": "web/community/art/ink-like.png"
+        "Nina/Sources/Design/NinaTheme.swift"
+      ]
     },
     {
       "id": "InkLiked",
       "role": "functional_button",
       "screen": "line_detail",
-      "source_file": "assets/navigation/glyphs/ink-liked.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkLiked.imageset/InkLiked.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkLiked.imageset/InkLiked.png",
       "purpose": "Remove appreciation",
       "interactive": true,
@@ -324,7 +315,7 @@
       "id": "InkSave",
       "role": "functional_button",
       "screen": "line_detail",
-      "source_file": "assets/navigation/glyphs/ink-save.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkSave.imageset/InkSave.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkSave.imageset/InkSave.png",
       "purpose": "Save line",
       "interactive": true,
@@ -332,16 +323,14 @@
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-primary-ink-sheet.png",
       "referenced_by": [
-        "Nina/Sources/Design/NinaTheme.swift",
-        "web/community/index.html"
-      ],
-      "web_runtime_asset": "web/community/art/ink-save.png"
+        "Nina/Sources/Design/NinaTheme.swift"
+      ]
     },
     {
       "id": "InkComment",
       "role": "functional_button",
       "screen": "line_detail",
-      "source_file": "assets/navigation/glyphs/ink-comment.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkComment.imageset/InkComment.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkComment.imageset/InkComment.png",
       "purpose": "Comments and messages",
       "interactive": true,
@@ -356,7 +345,7 @@
       "id": "InkFlag",
       "role": "functional_button",
       "screen": "report",
-      "source_file": "assets/navigation/glyphs/ink-flag.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkFlag.imageset/InkFlag.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkFlag.imageset/InkFlag.png",
       "purpose": "Report",
       "interactive": true,
@@ -371,7 +360,7 @@
       "id": "InkSaved",
       "role": "functional_button",
       "screen": "line_detail",
-      "source_file": "assets/navigation/glyphs/ink-saved.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkSaved.imageset/InkSaved.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkSaved.imageset/InkSaved.png",
       "purpose": "Remove saved line",
       "interactive": true,
@@ -386,7 +375,7 @@
       "id": "InkGrip",
       "role": "functional_button",
       "screen": "wallet",
-      "source_file": "assets/navigation/glyphs/ink-grip.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkGrip.imageset/InkGrip.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkGrip.imageset/InkGrip.png",
       "purpose": "Wallet",
       "interactive": true,
@@ -401,7 +390,7 @@
       "id": "InkMore",
       "role": "functional_button",
       "screen": "skater",
-      "source_file": "assets/navigation/glyphs/ink-more.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkMore.imageset/InkMore.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkMore.imageset/InkMore.png",
       "purpose": "Profile actions",
       "interactive": true,
@@ -416,7 +405,7 @@
       "id": "InkSend",
       "role": "functional_button",
       "screen": "conversation",
-      "source_file": "assets/navigation/glyphs/ink-send.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkSend.imageset/InkSend.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkSend.imageset/InkSend.png",
       "purpose": "Send a message or save a draft",
       "interactive": true,
@@ -431,7 +420,7 @@
       "id": "InkPhone",
       "role": "functional_button",
       "screen": "conversation",
-      "source_file": "assets/navigation/glyphs/ink-phone.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkPhone.imageset/InkPhone.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkPhone.imageset/InkPhone.png",
       "purpose": "Voice call waiting",
       "interactive": true,
@@ -446,7 +435,7 @@
       "id": "InkVideo",
       "role": "functional_button",
       "screen": "conversation",
-      "source_file": "assets/navigation/glyphs/ink-video.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkVideo.imageset/InkVideo.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkVideo.imageset/InkVideo.png",
       "purpose": "Video call waiting",
       "interactive": true,
@@ -461,7 +450,7 @@
       "id": "InkCheck",
       "role": "functional_button",
       "screen": "email",
-      "source_file": "assets/navigation/glyphs/ink-check.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkCheck.imageset/InkCheck.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkCheck.imageset/InkCheck.png",
       "purpose": "Accept agreements",
       "interactive": true,
@@ -469,16 +458,14 @@
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
       "referenced_by": [
-        "Nina/Sources/Design/NinaTheme.swift",
-        "web/community/community.css"
-      ],
-      "web_runtime_asset": "web/community/art/ink-check.png"
+        "Nina/Sources/Design/NinaTheme.swift"
+      ]
     },
     {
       "id": "InkSettings",
       "role": "functional_button",
       "screen": "profile",
-      "source_file": "assets/navigation/glyphs/ink-settings.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkSettings.imageset/InkSettings.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkSettings.imageset/InkSettings.png",
       "purpose": "Settings",
       "interactive": true,
@@ -493,7 +480,7 @@
       "id": "InkCamera",
       "role": "functional_button",
       "screen": "profile_editor",
-      "source_file": "assets/navigation/glyphs/ink-camera.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkCamera.imageset/InkCamera.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkCamera.imageset/InkCamera.png",
       "purpose": "Open camera",
       "interactive": true,
@@ -508,7 +495,7 @@
       "id": "InkLoad",
       "role": "state_illustration",
       "screen": "startup",
-      "source_file": "assets/navigation/glyphs/ink-load.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkLoad.imageset/InkLoad.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkLoad.imageset/InkLoad.png",
       "purpose": "Contextual status or artwork",
       "interactive": false,
@@ -523,7 +510,7 @@
       "id": "InkSpot",
       "role": "functional_button",
       "screen": "spot",
-      "source_file": "assets/navigation/glyphs/ink-spot.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkSpot.imageset/InkSpot.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkSpot.imageset/InkSpot.png",
       "purpose": "Open Spot Book",
       "interactive": true,
@@ -531,16 +518,14 @@
       "generated_with": "imagegen/gpt-image-2",
       "generation_sheet": "assets/navigation/nina-detail-ink-sheet.png",
       "referenced_by": [
-        "Nina/Sources/Design/NinaTheme.swift",
-        "web/community/index.html"
-      ],
-      "web_runtime_asset": "web/community/art/ink-spot.png"
+        "Nina/Sources/Design/NinaTheme.swift"
+      ]
     },
     {
       "id": "InkEdit",
       "role": "functional_button",
       "screen": "profile_editor",
-      "source_file": "assets/navigation/glyphs/ink-edit.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkEdit.imageset/InkEdit.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkEdit.imageset/InkEdit.png",
       "purpose": "Edit",
       "interactive": true,
@@ -555,7 +540,7 @@
       "id": "InkRamp",
       "role": "state_illustration",
       "screen": "tab_1",
-      "source_file": "assets/navigation/glyphs/ink-ramp.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkRamp.imageset/InkRamp.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkRamp.imageset/InkRamp.png",
       "purpose": "Contextual status or artwork",
       "interactive": false,
@@ -570,7 +555,7 @@
       "id": "InkDeck",
       "role": "state_illustration",
       "screen": "tab_2",
-      "source_file": "assets/navigation/glyphs/ink-deck.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkDeck.imageset/InkDeck.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkDeck.imageset/InkDeck.png",
       "purpose": "Contextual status or artwork",
       "interactive": false,
@@ -585,7 +570,7 @@
       "id": "InkAvatar",
       "role": "state_illustration",
       "screen": "skater",
-      "source_file": "assets/navigation/glyphs/ink-avatar.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkAvatar.imageset/InkAvatar.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkAvatar.imageset/InkAvatar.png",
       "purpose": "Contextual status or artwork",
       "interactive": false,
@@ -600,7 +585,7 @@
       "id": "InkThumb",
       "role": "functional_button",
       "screen": "line_viewer",
-      "source_file": "assets/navigation/glyphs/ink-thumb.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkThumb.imageset/InkThumb.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkThumb.imageset/InkThumb.png",
       "purpose": "Seek",
       "interactive": true,
@@ -615,7 +600,7 @@
       "id": "CoverBowl",
       "role": "module_art",
       "screen": "covers",
-      "source_file": "assets/brand/exports/cover-bowl.jpg",
+      "source_file": "Nina/Resources/Assets.xcassets/CoverBowl.imageset/CoverBowl.jpg",
       "runtime_asset": "Nina/Resources/Assets.xcassets/CoverBowl.imageset/CoverBowl.jpg",
       "purpose": "Alternate Spot Book cover applied to the journal.",
       "interactive": false,
@@ -630,7 +615,7 @@
       "id": "CoverWax",
       "role": "module_art",
       "screen": "covers",
-      "source_file": "assets/brand/exports/cover-wax.jpg",
+      "source_file": "Nina/Resources/Assets.xcassets/CoverWax.imageset/CoverWax.jpg",
       "runtime_asset": "Nina/Resources/Assets.xcassets/CoverWax.imageset/CoverWax.jpg",
       "purpose": "Alternate Spot Book cover applied to the journal.",
       "interactive": false,
@@ -645,7 +630,7 @@
       "id": "CoverNight",
       "role": "module_art",
       "screen": "covers",
-      "source_file": "assets/brand/exports/cover-night.jpg",
+      "source_file": "Nina/Resources/Assets.xcassets/CoverNight.imageset/CoverNight.jpg",
       "runtime_asset": "Nina/Resources/Assets.xcassets/CoverNight.imageset/CoverNight.jpg",
       "purpose": "Alternate Spot Book cover applied to the journal.",
       "interactive": false,
@@ -660,7 +645,7 @@
       "id": "InboxTabIcon",
       "role": "tab_icon",
       "screen": "tab_4",
-      "source_file": "assets/navigation/glyphs/ink-comment.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkComment.imageset/InkComment.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkComment.imageset/InkComment.png",
       "purpose": "Inbox",
       "interactive": true,
@@ -676,7 +661,7 @@
       "id": "ProfileTabIcon",
       "role": "tab_icon",
       "screen": "tab_5",
-      "source_file": "assets/navigation/glyphs/ink-avatar.png",
+      "source_file": "Nina/Resources/Assets.xcassets/InkAvatar.imageset/InkAvatar.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/InkAvatar.imageset/InkAvatar.png",
       "purpose": "You",
       "interactive": true,
@@ -694,14 +679,11 @@
       "screen": "community",
       "source_file": "assets/brand/website-crew-session.png",
       "runtime_asset": "Nina/Resources/Assets.xcassets/CrewSession.imageset/CrewSession.jpg",
-      "web_runtime_asset": "web/community/art/crew-session.jpg",
       "purpose": "Original skate friends campaign reused as Discover’s session entry.",
       "interactive": true,
       "action_route": "Sessions",
       "generated_with": "imagegen/gpt-image-2",
       "referenced_by": [
-        "web/community/index.html",
-        "scripts/package-community.py",
         "Nina/Sources/Features/Lines/DiscoverPage.swift"
       ]
     }
@@ -716,5 +698,6 @@
       "generated_with": "imagegen/gpt-image-2"
     }
   ],
-  "native_migration_note": "2026-11-20: Existing compressed Image 2 rasters were copied byte for byte into native asset catalogs; no new artwork was generated for the Swift migration."
+  "native_migration_note": "2026-11-20: Existing compressed Image 2 rasters were copied byte for byte into native asset catalogs; no new artwork was generated for the Swift migration.",
+  "cleanup_note": "2026-11-20: Removed obsolete H5 assets, duplicate exports/glyph slices and the unused WheelMark. Native asset catalogs are the sole compressed app artwork sources; current original Image 2 masters remain."
 }

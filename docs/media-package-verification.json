@@ -1,9 +1,9 @@
 {
   "archive": "Nina/Resources/Nina.zip",
-  "archiveBytes": 37385101,
-  "archiveSHA256": "a5db5dacb08bd37b12efb14b11a1d3c9cf55468e971fe9f63d5126277937fa5e",
-  "expandedBytes": 37656687,
-  "archiveEntries": 104,
+  "archiveBytes": 36275870,
+  "archiveSHA256": "ef18e217ad71eafd6deb3d212830e88e8d951751e32020a51b6e8147c0bceccc",
+  "expandedBytes": 36344727,
+  "archiveEntries": 82,
   "photos": 50,
   "videos": 16,
   "posters": 16,
@@ -1762,5 +1762,8 @@
       },
       "priorSHA256": "646b22a9d898cee78cb45f9661af2c5e73d9035b5327ac384a916dd87745d5e9"
     }
-  ]
+  ],
+  "packageFormat": "native-media-only",
+  "cleanupDate": "2026-11-20",
+  "mediaBytesUnchanged": true
 }

@@ -18,12 +18,15 @@
   "existing_original_rasters_copied_without_reencoding": 40,
   "archive": {
     "path": "Nina/Resources/Nina.zip",
-    "bytes": 37385101,
-    "sha256": "a5db5dacb08bd37b12efb14b11a1d3c9cf55468e971fe9f63d5126277937fa5e",
-    "unchanged_from_previous_version": true,
+    "bytes": 36275870,
+    "sha256": "ef18e217ad71eafd6deb3d212830e88e8d951751e32020a51b6e8147c0bceccc",
+    "unchanged_from_previous_version": false,
     "crc_checked": true,
     "media_count": 66,
-    "posters": 16
+    "posters": 16,
+    "format": "native-media-only",
+    "entries": 82,
+    "media_bytes_unchanged": true
   },
   "swift_package": {
     "name": "ZIPFoundation",
@@ -48,7 +51,11 @@
     "RN native bridge",
     "Metro bundling phase",
     "Node/npm configuration and dependencies",
-    "CocoaPods configuration and dependencies"
+    "CocoaPods configuration and dependencies",
+    "obsolete H5 pages and bridge contract",
+    "duplicate raster exports and glyph slices",
+    "unused WheelMark asset",
+    "obsolete welcome illustration"
   ],
   "not_run": [
     "Swift parser or typecheck",

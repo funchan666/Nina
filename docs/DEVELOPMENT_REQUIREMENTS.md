@@ -24,9 +24,9 @@
 
 ## 资源与原生工程
 
-用户授权的 50 张照片、16 条影片和 16 张首帧仍随 Nina.zip 分发，未重命名或再次转码。OfflineArchive 以资源摘要复用安装目录，限制路径、条目数量、解压量并检查 CRC。NinaConfiguration 验证清单与本地媒体存在，SwiftUI 图片和 AVPlayer 直接读解压目录。
+用户授权的 50 张照片、16 条影片和 16 张首帧仍随 Nina.zip 分发，媒体文件名和内容保持不变，未再次转码。OfflineArchive 以资源摘要复用安装目录，限制路径、条目数量、解压量并检查 CRC。NinaConfiguration 验证清单与本地媒体存在，SwiftUI 图片和 AVPlayer 直接读解压目录。
 
-全部业务页面位于 Nina/Sources；入口为 Application/NinaApp.swift，导航为 Application/NinaFlow.swift，数据由 NinaLibrary 与 Features 中的扩展管理。原创欢迎、底图、图标和封面由 Asset Catalog 打包，字体及许可仍保留。旧 ZIP 内的网页只是兼容资源，不再承担登录或业务界面。
+全部业务页面位于 Nina/Sources；入口为 Application/NinaApp.swift，导航为 Application/NinaFlow.swift，数据由 NinaLibrary 与 Features 中的扩展管理。原创欢迎、底图、图标和封面由 Asset Catalog 打包，字体及许可仍保留。旧 H5 网页、脚本和重复资源已直接删除。ZIP 内只保留 82 份清单媒体及首帧，scripts/package-media.py 负责无损重整媒体包。
 
 Xcode 可打开 Nina.xcodeproj 或 Nina.xcworkspace；选择 Nina scheme。ZIPFoundation 0.9.20 通过 Swift Package Manager 精确固定，两个入口均保留 Package.resolved。修改 project.yml 后执行 xcodegen generate，不需要 pod install、npm 或 JS 开发服务器。
 

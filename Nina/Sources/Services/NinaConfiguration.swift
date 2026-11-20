@@ -19,13 +19,11 @@ enum NinaConfiguration {
 
     static func prepareMedia() async throws {
         guard media == nil else { return }
-        let entry = try await OfflineArchive.shared.entryURL()
-        let folder = entry.deletingLastPathComponent().appendingPathComponent("media", isDirectory: true)
-        guard !lines.isEmpty, lines.allSatisfy({ item in
-            ([item.path] + [item.poster].compactMap { $0 }).allSatisfy { path in
-                validFilename(path) && FileManager.default.fileExists(atPath: folder.appendingPathComponent(path).path)
-            }
-        }) else { throw NinaIssue("The bundled skate collection is incomplete.") }
+        let filenames = Set(lines.flatMap { [$0.path] + [$0.poster].compactMap { $0 } })
+        guard !filenames.isEmpty, filenames.allSatisfy(validFilename) else {
+            throw NinaIssue("The bundled skate collection is incomplete.")
+        }
+        let folder = try await OfflineArchive.shared.mediaDirectory(filenames: filenames)
         media = folder
     }
 

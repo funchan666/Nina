@@ -8,7 +8,7 @@
 | 工具链 | iPhoneOS SDK 27.1；最低部署版本 iOS 17.6。 |
 | 工程 | Nina.xcodeproj / Nina.xcworkspace，target 与 scheme 为 Nina，Bundle ID 为 com.funchan666.nina。 |
 | 启动与导航 | NinaApp → NinaGate → NinaShell。Discover、Sessions、Crew、Inbox、You 五个根页面与独立类型化路由栈。 |
-| 资源 | ZIPFoundation 0.9.20 由 Swift Package Manager 提供，精确固定版本与提交。Nina.zip 保留现有优化媒体。 |
+| 资源 | ZIPFoundation 0.9.20 由 Swift Package Manager 提供，精确固定版本与提交。Nina.zip 仅含现有 82 份优化媒体和首帧，不再含旧网页。 |
 | 图文与视频 | SwiftUI 原生列表和图片、AVPlayer 播放本地媒体，单个播放所有者；无自动播放。 |
 | 登录 | AuthenticationServices 官方 Sign in with Apple；邮箱格式正确且密码非空即可按邮箱打开档案。密码不保存、不验证。 |
 | 数据 | NinaLibrary 管理 Codable version 4 账本；JSON 原子写入，Keychain 保存会话；用户媒体保留原有账号目录。 |
@@ -16,7 +16,7 @@
 | 官网与协议 | WKWebView，官网线上加载；用户协议和隐私政策失败时读取随包单文件副本；无业务 JS 桥接。 |
 | 后端与通话 | 没有业务后端。消息只在同一应用的已有档案间持久化；通话保留权限检查、自拍视频及等待预览。 |
 
-应用已移除 React Native、TypeScript、Metro、npm 和 CocoaPods 源码及配置。打开工程无需启动 JS 开发服务器，也没有 main.jsbundle 构建阶段。ZIP 内既有 HTML/CSS/JS 是旧资源包的兼容内容，不承担当前注册、登录、社区或业务执行；这些页面全部由 SwiftUI 实现。
+应用已移除 React Native、TypeScript、Metro、npm 和 CocoaPods 源码及配置。打开工程无需启动 JS 开发服务器，也没有 main.jsbundle 构建阶段。旧 HTML/CSS/JS、社区打包脚本和重复导出资源已直接删除；Nina.zip 整理为纯媒体包，由 scripts/package-media.py 维护。
 
 ## 旧数据迁移
 

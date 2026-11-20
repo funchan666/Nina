@@ -36,8 +36,6 @@
       "ios_target": "Nina",
       "ios_scheme": "Nina",
       "source_root": "Nina/Sources",
-      "web_root": "web/community",
-      "web_archive": "Nina/Resources/Nina.zip",
       "theme": "滑板运动爱好者社交",
       "audience": "Adult skateboarders building their trick repertoire and returning to familiar skate spots.",
       "product_promise": "Turn a line you spotted into a trackable goal and a reason to return to a spot.",
@@ -136,7 +134,8 @@
         "com.funchan666.nina.placeholder.grip.line": "19.99",
         "com.funchan666.nina.placeholder.grip.crew": "49.99",
         "com.funchan666.nina.placeholder.grip.tour": "99.99"
-      }
+      },
+      "media_archive": "Nina/Resources/Nina.zip"
     }
   ],
   "backend": "none",

@@ -4,7 +4,7 @@ Built-in image generation, Host-Native mode.
 
 ## website-crew-session-2026-11-18
 
-Built-in image generation, Garden Image 2 Host-Native workflow. Original campaign artwork for the website. Master `assets/brand/website-crew-session.png`; runtime `assets/brand/exports/website-crew-session.jpg` and `website/dist/assets/crew-session.jpg`. The JPEG q88 copy keeps the original 1817 × 866 dimensions and was visually inspected. It is 387,799 bytes; the PNG master is 2,564,654 bytes. The compressed campaign image is also reused by the authenticated Discover session entry in Nina.zip.
+Built-in image generation, Garden Image 2 Host-Native workflow. Original campaign artwork for the website. Master `assets/brand/website-crew-session.png`; runtime `Nina/Resources/Assets.xcassets/CrewSession.imageset/CrewSession.jpg` and `website/dist/assets/crew-session.jpg`. The JPEG q88 copy keeps the original 1817 × 866 dimensions and was visually inspected. It is 387,799 bytes; the PNG master is 2,564,654 bytes. The compressed campaign image is used by the native Discover session entry. Nina.zip now contains only collection media.
 
 ```text
 Use case: photorealistic-natural.
@@ -21,7 +21,7 @@ Text: absolutely no text, letters, logotypes, brands, UI, badges, signatures or 
 
 Generated with the built-in image tool using the Garden Image 2 Host-Native workflow.
 Source master is `assets/brand/welcome-crew-hangout.png`, 860 × 1828 pixels.
-The compressed runtime image is `assets/brand/exports/welcome-ground.jpg` and is copied into `Nina.zip/art/welcome-ground.jpg`.
+The compressed runtime image is `Nina/Resources/Assets.xcassets/WelcomeGround.imageset/WelcomeGround.jpg`. It is loaded directly by SwiftUI.
 
 Use case: illustration-story.
 Asset type: a finished original illustration for the full-screen welcome background of Nina, a social app for adult skateboard enthusiasts. A single tall portrait canvas, approximately 9:19.5, ideally 1024 by 2176 pixels. This is artwork only, with absolutely no UI, words, lettering, logo, watermark, badges or speech bubbles.
@@ -49,10 +49,6 @@ Use case: illustration-story. Asset type: full-bleed portrait app background, ta
 ## crew
 
 Use case: illustration-story. Asset type: full-bleed portrait app background, tall 9:19 composition for NINA's skate crew and profile directory. Subject: fragment of woven mesh and interlocking cast shadows of two skateboards leaned on a bench together, no people and no identifiable marks. Composition: structure concentrated at the right bottom edge, restrained top and left 75% almost open warm ivory canvas. Ink is soft warm black forest; nostalgic muted clay tone and faded cyan can appear only in shadow. Retro print grain, bold independent skate zine aesthetic with honest material texture, low contrast in text area, no gradient. No handles, text, names, letters, border, UI, or watermark.
-
-## welcome
-
-Use case: illustration-story. Asset type: portrait full-bleed illustration for Nina, an adult skateboarding journal and crew app. Print poster without text, tall portrait 9:19. Two adult skaters, diverse and androgynous, in comfortable baggy street clothes and helmets, greet with a single fist bump while holding separate authentic skateboards by their sides, shown at a legible full-body scale, standing in a quiet neighborhood concrete bowl. Figures clustered near center-right and middle of canvas, headroom and bottom 25% left dark for typography. Independent textured skate zine lino and risograph print, ivory ink sketched on rich pine black #172620, burnt clay shirt and acid chartreuse #DBF26D accents. Natural anatomically credible stance, rugged matte paper texture, simplified flat shapes. No text, logos, letters, watermark, text-like marks, UI, neon glow, render gloss, or illustration border.
 
 ## icons
 

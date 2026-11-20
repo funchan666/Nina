@@ -16,7 +16,7 @@
 | 等待通话 | InkPhone、InkVideo、InkClose、InkSettings | 等待、权限失败和结束。视频仅显示前置自拍。 |
 | Report、Block、黑名单、删档、设置 | CrewGround、InkFlag、InkCheck、InkClose、InkSettings | 设置按应用信息、Crew 安全和个人档案分组。删除确认使用独立页面和明确的危险操作样式。 |
 | 条款与规则 | InkClose、InkLoad | WKWebView 负责文档正文，原生壳负责关闭与错误恢复。 |
-| 原生社区 | CrewSession、LinesGround、原创 Ink 图标 | SwiftUI 的 Discover 页面承载发布、搜索、地形 / 收藏筛选、完整图库、互动与媒体详情。横幅打开 Sessions，底部为统一五 Tab。旧网页不参与业务执行。 |
+| 原生社区 | CrewSession、LinesGround、原创 Ink 图标 | SwiftUI 的 Discover 页面承载发布、搜索、地形 / 收藏筛选、完整图库、互动与媒体详情。横幅打开 Sessions，底部为统一五 Tab。旧网页已删除。 |
 | 钱包、购买确认、封面 | InkGrip、InkCheck、CoverBowl、CoverWax、CoverNight | 余额和 Apple 报价由真实状态驱动。消费后所选原画应用在 Sessions 账簿。 |
 
 登录后各根页面统一显示 Discover、Sessions、Crew、Inbox、You 五个 Tab。返回与关闭使用独立位图和 VoiceOver 名称。滚动区域按容器宽度限宽，SwiftUI GeometryProxy 读取内容边距，并在 iOS 27.1 及以上查询活动保留区。原生动作栏和自拍视频框按同一局部坐标系避让交叠区域。键盘由可见的编辑滚动区处理。真实内外屏、RTL、大字、分屏和折叠姿态未运行验证。
@@ -25,6 +25,6 @@
 
 文案统一为自然的滑板社交语气。欢迎副文案为 For the clips you replay and the friends you skate with. 登录和注册分别使用 Welcome back 与 Meet your next crew，切换入口直接说明目标。社区、照片与短片、评论、板点和日志空状态提供明确动作，Crew 搜索无结果时与首次空列表使用不同提示。文案调整没有引入在线匹配或消息送达承诺。
 
-目录 [assets/brand](../assets/brand) 与 [assets/navigation](../assets/navigation) 保存 Host-Native 输出、提示词与从独立素材格取出的位图。运行时资源映射见 [原创素材清单](../assets/brand/original-asset-plan.json)。
+目录 [assets/brand](../assets/brand) 与 [assets/navigation](../assets/navigation) 保存 Host-Native 输出、提示词。功能位图只保留原生 Asset Catalog 中的实际使用版本。运行时资源映射见 [原创素材清单](../assets/brand/original-asset-plan.json)。
 
 2026-11-20 恢复 Swift 原生实现：所有业务页面、欢迎与邮箱表单均为 SwiftUI，保留五个 Tab 和原创素材；40 份运行位图拷入原生 Asset Catalog。仅官网和协议使用 WKWebView。原生样式和布局仅完成静态检查，未渲染验收。
